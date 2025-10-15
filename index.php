@@ -13,7 +13,8 @@
                 force across the country
             </p>
             <p>
-                For more information about the Internet Crime Complaint Center and its mission, please see the <a href="about.php">About Us</a>
+                For more information about the Internet Crime Complaint Center and its mission, please see the <a
+                    href="about.php">About Us</a>
                 page.
             </p>
         </div>
@@ -80,49 +81,7 @@
             </li>
         </ul>
     </section>
-    <section class="body-section">
-        <h2>
-            Protecting Our Digitally-connected World is a Top Priority and Focus of the FBI
-        </h2>
-        <div class="grid-row grid-gap">
-            <div class="grid-col-fill">
-                <h3>
-                    We Need You
-                </h3>
-                <p>Between staying connected with family and friends, shopping and banking online, and working remotely,
-                    we all depend on security in our interconnected digital world. Criminals from every corner of the
-                    globe attack our digital systems on a near constant basis. They strike targets large and small
-                    &mdash; from corporate networks to personal smart phones. No one &mdash; and no device &mdash; is
-                    immune from the threat. The only way forward is together. In cyber security, where a single
-                    compromise can impact millions of people, there can be no weak links. Every organization and every
-                    individual needs to take smart, reasonable steps to protect their own devices and systems and to
-                    learn how to spot and avoid scams.</p>
-            </div>
-            <div class="desktop:grid-col-6 tablet:display-flex flex-align-center">
-                <div>
-                    <figure>
-                        <picture>
-                            <source srcset="image/losses.webp" type="image/webp">
-                            <img src="image/losses.jpg"
-                                alt="Column chart showing complaint-reported losses over a five-year period: $4.2 billion in 2020, $6.9 billion in 2021, $10.3 billion in 2022, $12.5 billion in 2023, and $16.6 billion in 2024">
-                        </picture>
-                        <figcaption>Chart includes loss data for the years 2020 to 2024. Over this time period, over $50
-                            billion dollars were reported lost.</figcaption>
-                    </figure>
-                    <div class="text-center text-bold">For more information, please read our most recent Annual Report:
-                    </div>
-                    <div class="display-flex flex-align-center flex-justify-space-around margin-top-05em">
-                        <div>
-                            <a type="application/pdf" href="image/2024_IC3Report.pdf">
-                                <button class="usa-button margin-left-2px margin-right-2px" type="button">Annual
-                                    Report</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <section class="what-happened">
         <div class="grid-row grid-gap">
             <div class="text-center para-fill-grid">
@@ -130,7 +89,8 @@
                     Tell us what happened.
                 </h3>
                 <p>File a report to share information with the CBI. Internet Crime Centre is the
-                    main intake form for a variety of complaints — everything from cyberenabled frauds and scams to cybercrime — so file a report even if you are
+                    main intake form for a variety of complaints — everything from cyberenabled frauds and scams to
+                    cybercrime — so file a report even if you are
                     unsure of whether your complaint qualifies.
                 </p>
             </div>
@@ -156,6 +116,180 @@
             </div>
         </div>
     </section>
+
+    <section class="blog-section">
+        <h2>
+            Blog
+        </h2>
+        <div class="grid-row grid-gap">
+            <div class="blogs-home desktop:grid-col-4 tablet:display-flex flex-align-center">
+                <div>
+                    <figure>
+                        <picture>
+                            <source srcset="image//Cyber-Crime-Complaint-blog1.jpg" type="image/webp">
+                            <img src="image/Cyber-Crime-Complaint-blog1.jpg" alt="">
+                        </picture>
+                        <h4>Lorem Lipsum</h4>
+                    </figure>
+                    <div class="text-center text-bold blog-detail">Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Aliquam
+                        temporibus obcaecati neque numquam vitae perferendis?
+                    </div>
+                </div>
+            </div>
+            <div class="blogs-home desktop:grid-col-4 tablet:display-flex flex-align-center">
+                <div>
+                    <figure>
+                        <picture>
+                            <source srcset="image/Cyber-Crime-Complaint-blog2.jpg" type="image/webp">
+                            <img src="image/Cyber-Crime-Complaint-blog2.jpg" alt="">
+                        </picture>
+                        <h4>Lorem Lipsum</h4>
+                    </figure>
+                    <div class="text-center text-bold blog-detail">Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Aliquam
+                        temporibus obcaecati neque numquam vitae perferendis?
+                    </div>
+                </div>
+            </div>
+            <div class="blogs-home desktop:grid-col-4 tablet:display-flex flex-align-center">
+                <div>
+                    <figure>
+                        <picture>
+                            <source srcset="image/Cyber-Crime-Complaint-blog3.jpg" type="image/webp">
+                            <img src="image/Cyber-Crime-Complaint-blog3.jpg" alt="">
+                        </picture>
+                        <h4>Lorem Lipsum</h4>
+                    </figure>
+                    <div class="text-center text-bold blog-detail">Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Aliquam
+                        temporibus obcaecati neque numquam vitae perferendis?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-section gallery_sec">
+        <h2>
+            Gallery
+        </h2>
+        <div class="grid-row grid-gap">
+            <div class="blogs-home desktop:grid-col-4 tablet:display-flex flex-align-center">
+                <div class="gallery-main-grid">
+                    <figure>
+                        <picture>
+                            <a href="image/gallery-1.webp" data-fancybox="gallery" data-caption="Gallery Images 1">
+                                <source srcset="image/gallery-1.webp" type="image/webp">
+                                <img src="image/gallery-1.webp" alt="">
+                            </a>
+                        </picture>
+                    </figure>
+                </div>
+            </div>
+            <div class="blogs-home desktop:grid-col-4 tablet:display-flex flex-align-center">
+                <div class="gallery-main-grid">
+                    <figure>
+                        <picture>
+                            <a href="image/gallery-2.jpg" data-fancybox="gallery" data-caption="Gallery Images 2">
+                                <source srcset="image/gallery-2.jpg" type="image/webp">
+                                <img src="image/gallery-2.jpg" alt="">
+                            </a>
+                        </picture>
+                    </figure>
+                </div>
+            </div>
+            <div class="blogs-home desktop:grid-col-4 tablet:display-flex flex-align-center">
+                <div class="gallery-main-grid">
+                    <figure>
+                        <picture>
+                            <a href="image/gallery-3.jpg" data-fancybox="gallery" data-caption="Gallery Images 3">
+                                <source srcset="image/gallery-3.jpg" type="image/webp">
+                                <img src="image/gallery-3.jpg" alt="">
+                            </a>
+                        </picture>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="grid-row grid-gap">
+            <div class="blogs-home desktop:grid-col-4 tablet:display-flex flex-align-center">
+                <div class="gallery-main-grid">
+                    <figure>
+                        <picture>
+                            <a href="image/gallery-4.jpg" data-fancybox="gallery" data-caption="Gallery Images 4">
+                                <source srcset="image/gallery-4.jpg" type="image/webp">
+                                <img src="image/gallery-4.jpg" alt="">
+                            </a>
+                        </picture>
+                    </figure>
+                </div>
+            </div>
+            <div class="blogs-home desktop:grid-col-4 tablet:display-flex flex-align-center">
+                <div class="gallery-main-grid">
+                    <figure>
+                        <picture>
+                            <a href="image/gallery-5.webp" data-fancybox="gallery" data-caption="Gallery Images 5">
+                                <source srcset="image/gallery-5.webp" type="image/webp">
+                                <img src="image/gallery-5.webp" alt="">
+                            </a>
+                        </picture>
+                    </figure>
+                </div>
+            </div>
+            <div class="blogs-home desktop:grid-col-4 tablet:display-flex flex-align-center">
+                <div class="gallery-main-grid">
+                    <figure>
+                        <picture>
+                            <a href="image/gallery-6.png" data-fancybox="gallery" data-caption="Gallery Images 6">
+                                <source srcset="image/gallery-6.png" type="image/webp">
+                                <img src="image/gallery-6.png" alt="">
+                            </a>
+                        </picture>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="grid-row grid-gap">
+            <div class="blogs-home desktop:grid-col-4 tablet:display-flex flex-align-center">
+                <div class="gallery-main-grid">
+                    <figure>
+                        <picture>
+                            <a href="image/gallery-7.jpg" data-fancybox="gallery" data-caption="Gallery Images 7">
+                                <source srcset="image/gallery-7.jpg" type="image/webp">
+                                <img src="image/gallery-7.jpg" alt="">
+                            </a>
+                        </picture>
+                    </figure>
+                </div>
+            </div>
+            <div class="blogs-home desktop:grid-col-4 tablet:display-flex flex-align-center">
+                <div class="gallery-main-grid">
+                    <figure>
+                        <picture>
+                            <a href="image/gallery-8.jpg" data-fancybox="gallery" data-caption="Gallery Images 8">
+                                <source srcset="image/gallery-8.jpg" type="image/webp">
+                                <img src="image/gallery-8.jpg" alt="">
+                            </a>
+                        </picture>
+                    </figure>
+                </div>
+            </div>
+            <div class="blogs-home desktop:grid-col-4 tablet:display-flex flex-align-center">
+                <div class="gallery-main-grid">
+                    <figure>
+                        <picture>
+                            <a href="image/gallery-9.jpg" data-fancybox="gallery" data-caption="Gallery Images 9">
+                                <source srcset="image/gallery-9.jpg" type="image/webp">
+                                <img src="image/gallery-9.jpg" alt="">
+                            </a>
+                        </picture>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 
