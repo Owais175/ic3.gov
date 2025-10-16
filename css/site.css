@@ -772,4 +772,23 @@ p.dng {
     font-weight: 600;
 }
 
+p.suc {
+    margin: 0;
+    padding: 5px 2px;
+    background: green;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.track-order {
+    padding: 100px 0;
+}
+
+body .track-order .dt-paging nav button {
+    color: white !important;
+    font-size: 15px;
+}
+
 /* new css added */
