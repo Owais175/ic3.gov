@@ -53,6 +53,8 @@ define('BASE_URL', '/ic3.gov/');
     <link rel="alternate" type="application/rss+xml" href="PSA/rss.txt" title="IC3 News">
     <link rel="alternate" type="application/rss+xml" href="CSA/rss.txt" title="IC3 Industry Alerts">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.css" />
 </head>
 
 <body>
@@ -137,7 +139,7 @@ define('BASE_URL', '/ic3.gov/');
                         <a class="usa-nav-link" href="about.php">About Us</a>
                     </li>
                     <li class="usa-nav__primary-item">
-                        <a class="usa-nav-link" href="#">Track Order</a>
+                        <a class="usa-nav-link" href="track-order.php">Track Order</a>
                     </li>
                     <li class="usa-nav__primary-item">
                         <a class="usa-nav-link" href="contact.php">Contact</a>

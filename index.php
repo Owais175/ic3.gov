@@ -117,6 +117,189 @@
         </div>
     </section>
 
+    <section class="body-section">
+        <h2>
+            Protecting Our Digitally-connected World is a Top Priority and Focus of the FBI
+        </h2>
+        <div class="grid-row grid-gap">
+            <div class="grid-col-fill">
+                <h3>
+                    We Need You
+                </h3>
+                <p>Between staying connected with family and friends, shopping and banking online, and working remotely,
+                    we all depend on security in our interconnected digital world. Criminals from every corner of the
+                    globe attack our digital systems on a near constant basis. They strike targets large and small
+                    &mdash; from corporate networks to personal smart phones. No one &mdash; and no device &mdash; is
+                    immune from the threat. The only way forward is together. In cyber security, where a single
+                    compromise can impact millions of people, there can be no weak links. Every organization and every
+                    individual needs to take smart, reasonable steps to protect their own devices and systems and to
+                    learn how to spot and avoid scams.</p>
+            </div>
+            <div class="desktop:grid-col-6 tablet:display-flex flex-align-center">
+                <div>
+                    <figure>
+                        <picture>
+                            <source srcset="image/losses.webp" type="image/webp">
+                            <img src="image/losses.jpg"
+                                alt="Column chart showing complaint-reported losses over a five-year period: $4.2 billion in 2020, $6.9 billion in 2021, $10.3 billion in 2022, $12.5 billion in 2023, and $16.6 billion in 2024">
+                        </picture>
+                        <figcaption>Chart includes loss data for the years 2020 to 2024. Over this time period, over $50
+                            billion dollars were reported lost.</figcaption>
+                    </figure>
+                    <div class="text-center text-bold">For more information, please read our most recent Annual Report:
+                    </div>
+                    <div class="display-flex flex-align-center flex-justify-space-around margin-top-05em">
+                        <div>
+                            <a type="application/pdf" href="image/2024_IC3Report.pdf">
+                                <button class="usa-button margin-left-2px margin-right-2px" type="button">Annual
+                                    Report</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>
+            The Information You Submit to IC3 Makes All the Difference
+        </h3>
+        <div>
+            <p>Combined with other data, it allows the FBI to investigate reported crimes, track trends and threats,
+                and, in some cases, even freeze stolen funds. Just as importantly, IC3 shares reports of crime
+                throughout its vast network of FBI field offices and law enforcement partners, strengthening our
+                nation’s collective response both locally and nationally.</p>
+            <p>Due to the massive number of complaints, we receive each year, IC3 cannot respond directly to every
+                submission, but please know we take each report seriously. With your help, we can and will respond
+                faster, defend cyber networks better, and more effectively protect our nation.</p>
+        </div>
+    </section>
+
+    <section class="body-section">
+        <h2>Articles</h2>
+        <div id="recentAlerts">
+            <section>
+                <ul class="usa-collection">
+                    <li class="usa-collection__item">
+                        <div class="usa-collection__calendar-date">
+                            <time datetime="2025-09-19T10:00:00-04:00">
+                                <span class="usa-collection__calendar-date-month">Sep</span>
+                                <span class="usa-collection__calendar-date-day">15</span>
+                            </time>
+                        </div>
+                        <div class="usa-collection__body">
+                            <h4 class="usa-collection__heading">
+                                <a class="usa-link" target="_blank"
+                                    href="article/Digest_202509151058014947317.pdf">Indian Cyber
+                                    Crime
+                                    Coordination Centre Ministry Of Home Affairs</a>
+                            </h4>
+                        </div>
+                    </li>
+                    <li class="usa-collection__item">
+                        <div class="usa-collection__calendar-date">
+                            <time datetime="2025-09-04T08:00:00-04:00">
+                                <span class="usa-collection__calendar-date-month">Sep</span>
+                                <span class="usa-collection__calendar-date-day">17</span>
+                            </time>
+                        </div>
+                        <div class="usa-collection__body">
+                            <h4 class="usa-collection__heading">
+                                <a class="usa-link" target="_blank"
+                                    href="article/Digest_202509171125159116104.pdf">Indian
+                                    Cyber
+                                    Crime
+                                    Coordination Centre Ministry Of Home Affairs</a>
+                            </h4>
+                        </div>
+                    </li>
+                    <li class="usa-collection__item">
+                        <div class="usa-collection__calendar-date">
+                            <time datetime="2025-08-20T09:00:00-04:00">
+                                <span class="usa-collection__calendar-date-month">Sep</span>
+                                <span class="usa-collection__calendar-date-day">22</span>
+                            </time>
+                        </div>
+                        <div class="usa-collection__body">
+                            <h4 class="usa-collection__heading">
+                                <a class="usa-link" href="article/Digest_202509221256097069772.pdf">Indian Cyber
+                                    Crime
+                                    Coordination Centre Ministry Of Home Affairs</a>
+                            </h4>
+                        </div>
+                    </li>
+                    <li class="usa-collection__item">
+                        <div class="usa-collection__calendar-date">
+                            <time datetime="2025-08-13T14:00:00-04:00">
+                                <span class="usa-collection__calendar-date-month">Sep</span>
+                                <span class="usa-collection__calendar-date-day">26</span>
+                            </time>
+                        </div>
+                        <div class="usa-collection__body">
+                            <h4 class="usa-collection__heading">
+                                <a class="usa-link" href="article/Digest_202509290932205290931.pdf">Indian Cyber
+                                    Crime
+                                    Coordination Centre Ministry Of Home Affairs</a>
+                            </h4>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+
+
+            <section class="tablet:margin-0 margin-top-2">
+                <ul class="usa-collection">
+                    <li class="usa-collection__item">
+                        <div class="usa-collection__calendar-date">
+                            <time datetime="2025-09-29T06:00:00-04:00">
+                                <span class="usa-collection__calendar-date-month">Oct</span>
+                                <span class="usa-collection__calendar-date-day">8</span>
+                            </time>
+                        </div>
+                        <div class="usa-collection__body">
+                            <h4 class="usa-collection__heading">
+                                <a class="usa-link" type="application/pdf"
+                                    href="article/Digest_202510091813144851909.pdf">Indian Cyber
+                                    Crime
+                                    Coordination Centre Ministry Of Home Affairs</a>
+                            </h4>
+                        </div>
+                    </li>
+                    <li class="usa-collection__item">
+                        <div class="usa-collection__calendar-date">
+                            <time datetime="2025-09-12T15:00:00-04:00">
+                                <span class="usa-collection__calendar-date-month">Oc</span>
+                                <span class="usa-collection__calendar-date-day">15</span>
+                            </time>
+                        </div>
+                        <div class="usa-collection__body">
+                            <h4 class="usa-collection__heading">
+                                <a class="usa-link" type="application/pdf"
+                                    href="article/Digest_202510151714492495235.pdf">Indian Cyber
+                                    Crime
+                                    Coordination Centre Ministry Of Home Affairs</a>
+                            </h4>
+                        </div>
+                    </li>
+                    <li class="usa-collection__item">
+                        <div class="usa-collection__calendar-date">
+                            <time datetime="2025-08-27T10:30:00-04:00">
+                                <span class="usa-collection__calendar-date-month">Oct</span>
+                                <span class="usa-collection__calendar-date-day">12</span>
+                            </time>
+                        </div>
+                        <div class="usa-collection__body">
+                            <h4 class="usa-collection__heading">
+                                <a class="usa-link" type="application/pdf" href="article/IJSRA-2024-1919.pdf">A
+                                    comprehensive survey of cybercrimes in India over the last decade
+                                </a>
+                            </h4>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </section>
+
     <section class="blog-section">
         <h2>
             Blog

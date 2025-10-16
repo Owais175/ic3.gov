@@ -146,13 +146,20 @@
         </nav>
         <nav class="usa-footer__nav" aria-label="Footer navigation">
             <div>
+
+                <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+                    <h4 class="usa-footer__primary-link">Last Updated: 11/06/2025 | Visitors : 2100661
+                    </h4>
+                </section>
+            </div>
+            <div>
                 <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
                     <h4 class="usa-footer__primary-link">Copyright @ Internet Crime Complaint Centre</h4>
                 </section>
             </div>
             <div>
-                <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                    <h4 class="usa-footer__primary-link">Last Updated: 11/06/2025 | Visitors : 2100661
+                <section class="usa-footer__primary-content usa-footer__primary-content--collapsible privacy-link">
+                    <h4 class="usa-footer__primary-link"><a href="privacy-policy.php">Privacy policy</a>
                     </h4>
                 </section>
             </div>
@@ -163,6 +170,15 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+<script src="https://cdn.datatables.net/2.3.4/js/dataTables.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    });
+</script>
 
 <script>
     $('[data-fancybox="gallery"]').fancybox({

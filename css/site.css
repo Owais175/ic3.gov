@@ -750,4 +750,26 @@ button[disabled] {
     object-fit: cover;
 }
 
+.privacy-link h4 a {
+    color: #1b1b1b;
+}
+
+table#myTable tr th {
+    border: 1px solid white;
+}
+
+table#myTable tr td {
+    border: 1px solid white;
+}
+
+p.dng {
+    margin: 0;
+    padding: 5px 2px;
+    background: red;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
 /* new css added */
