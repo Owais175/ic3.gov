@@ -1,0 +1,345 @@
+:root {
+    --fieldset-blur-transition: filter 300ms linear 0s;
+    --required-indicator-width: 0.5em;
+    --error-color: #f00;
+    --modal-control-color: #00e;
+    --submitted-dl-margin: calc(calc(2.5rem/2 - .25rem)*2);
+}
+
+#complaintStep.event-enabled .usa-step-indicator__segments {
+    cursor: pointer;
+}
+
+#IC3ComplaintForm .usa-radio__label {
+    margin-top: unset;
+    padding-top: 0.75rem;
+}
+
+#IC3ComplaintForm .usa-radio {
+    background-color: unset;
+}
+
+abbr.usa-hint--required {
+    text-decoration: none;
+}
+
+[disabled] .val-error {
+    display: none;
+}
+
+.val-error, li.usa-step-indicator__segment--error span.usa-step-indicator__segment-label {
+    color: var(--error-color);
+}
+
+    .val-error::before, li.usa-step-indicator__segment--error span.usa-step-indicator__segment-label::before {
+        content: "\26A0  ";
+    }
+
+    .val-error:empty::before {
+        content: unset;
+    }
+
+.usa-label {
+    font-weight: bold;
+    margin-left: var(--required-indicator-width);
+}
+
+    .usa-label abbr.usa-hint--required {
+        width: 0.5em;
+        display: inline-block;
+        position: relative;
+        left: calc(-1 * var(--required-indicator-width));
+        margin-right: calc(-1 * var(--required-indicator-width));
+    }
+
+legend.width-full {
+    margin: unset;
+}
+
+input[type="date"] {
+    width: 10rem;
+}
+
+input[type="tel"] {
+    width: 12rem;
+}
+
+fieldset.fieldset-contingent {
+    transition: var(--fieldset-blur-transition);
+    filter: none;
+}
+
+    fieldset.fieldset-contingent[disabled] {
+        transition: var(--fieldset-blur-transition);
+        filter: opacity(70%) brightness(80%) blur(1px);
+    }
+
+fieldset[disabled] :is(label, legend) .usa-hint--required {
+    display: none;
+}
+
+[disabled] .usa-tooltip__body {
+    display: none;
+}
+
+@media (prefers-reduced-motion) {
+    fieldset .fieldset-contingent[disabled] {
+        transition: unset;
+    }
+}
+
+input[type="number"] {
+    text-align: right;
+    width: 10rem;
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button,
+    input[type='number']:hover::-webkit-inner-spin-button,
+    input[type='number']:hover::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+fieldset.noborder {
+    border: unset;
+    padding: unset;
+}
+
+:is(label, input, select).inline {
+    display: inline-block;
+}
+
+label.inline {
+    width: 12rem;
+}
+
+.step-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+    .step-buttons .prev {
+        margin-right: 1rem;
+    }
+
+    .step-buttons .next {
+        margin-left: 1rem;
+    }
+
+div.usa-step-indicator--counters li.usa-step-indicator__segment--error::before, div.usa-step-indicator--counters li.usa-step-indicator__segment--error::after, #IC3ComplaintForm :is(.transactions, .subjects) .usa-accordion__error .usa-accordion__button {
+    background-color: var(--error-color);
+}
+
+#IC3ComplaintForm :is(.transactions, .subjects) .usa-accordion__button {
+    background-color: var(--ic3-blue);
+    color: #fff;
+    background-image: url(../img/remove.svg),linear-gradient(transparent,transparent)
+}
+
+    #IC3ComplaintForm :is(.transactions, .subjects) .usa-accordion__button[aria-expanded="false"] {
+        background-image: url(../img/add.svg),linear-gradient(transparent,transparent)
+    }
+
+#IC3ComplaintForm :is(.transactions, .subjects) .usa-accordion__content {
+    border-color: var(--ic3-blue);
+}
+
+#IC3ComplaintForm :is(.transactions, .subjects) .usa-accordion__error .usa-accordion__content {
+    border-color: var(--error-color);
+}
+
+.transactions label.inline {
+    width: 15rem;
+}
+
+select.transaction-type {
+    width: 18rem;
+}
+
+:is(.transactions, .subjects) [data-index] + [data-index] {
+    margin-top: 1rem;
+}
+
+:is(.transactions, .subjects) .usa-accordion__button {
+    display: flex;
+    column-gap: 5%;
+}
+
+#IC3ComplaintForm .width-full :is(label, textarea) {
+    max-width: unset;
+}
+
+.ic3-open-modal, .ic3-open-modal:hover, .ic3-open-modal:active, .ic3-open-modal:visited {
+    color: var(--modal-control-color);
+}
+
+#tTypeDefDescription dt {
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    [data-index] .content-contingent {
+        float: right;
+        position: relative;
+        top: -4rem;
+    }
+
+    fieldset label.usa-label.inline {
+        width: 100%;
+    }
+}
+
+@media (min-width: 481px) {
+    fieldset.label-sm label.usa-label.inline {
+        font-size: 80%;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --modal-control-color: #9e93ff;
+    }
+
+    .usa-step-indicator {
+        background-color: #000;
+    }
+
+    .usa-step-indicator__segment-label {
+        color: #ddd;
+    }
+
+    .usa-step-indicator__segment--current .usa-step-indicator__segment-label {
+        color: #008aee;
+    }
+
+    .usa-step-indicator__segment--complete .usa-step-indicator__segment-label {
+        color: #999;
+    }
+
+    .usa-step-indicator--counters .usa-step-indicator__segment--complete::before, .usa-step-indicator__segment--complete::after {
+        background-color: #1c3c6d;
+    }
+
+    .usa-accordion__content {
+        background: #171717;
+        color: #ccc;
+    }
+}
+
+#ic3ComplaintPrint {
+    position: sticky;
+    top: 1rem;
+    opacity: 0.8;
+    margin: 1.2rem 0 -1rem;
+    z-index: 1000;
+}
+
+@media (min-width: 40em) {
+    #ic3ComplaintPrint {
+        display: flex;
+        flex-direction: row-reverse;
+        margin: 0 0 -2.0rem;
+        padding-top: 0.5rem;
+    }
+}
+
+@media (min-width: 64em) {
+    #ic3ComplaintPrint {
+        margin-bottom: -3rem;
+    }
+}
+
+#submitted hgroup h1 {
+    margin-bottom: 0;
+}
+
+    #submitted hgroup h1 + p {
+        margin-top: 0;
+        font-size: 150%;
+        font-weight: bold;
+    }
+
+#submitted .usa-process-list dt {
+    display: list-item;
+    list-style-type: disc;
+    margin-left: var(--submitted-dl-margin);
+}
+
+#submitted .usa-process-list dd {
+    display: list-item;
+    list-style-type: '\2610';
+    margin-left: calc(var(--submitted-dl-margin) * 1.5);
+    padding-left: 1rem;
+}
+
+.ic3-learn-more h4 {
+    margin-bottom: 0;
+}
+
+    .ic3-learn-more h4 + p {
+        margin-top: 0;
+    }
+
+@media(min-width: 40em)
+{
+    .ic3-complaint-info, .ic3-complaint-info > div {
+        display: grid;
+    }
+}
+
+@media(max-width: 40em) {
+    .ic3-complaint-info dd + :is(div, dt) {
+        margin-top: 1rem;
+    }
+}
+
+.ic3-complaint-info, .ic3-complaint-info > div {
+    grid-auto-flow: column;
+    grid-auto-columns: 35%;
+}
+
+.ic3-complaint-info {
+    padding-left: 1rem;
+    grid-gap: 1rem;
+}
+
+    .ic3-complaint-info :is(dt, div) {
+        grid-column-start: 1;
+        font-weight: bold;
+    }
+
+    .ic3-complaint-info > div {
+        grid-column-end: span 2;
+    }
+
+    .ic3-complaint-info .ic3-complaint-info_separator {
+        margin-top: unset;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .ic3-complaint-info span[role="heading"] {
+        font-size: 125%;
+        border-bottom: 1px solid currentcolor;
+        margin-top: 1rem;
+    }
+
+    .ic3-complaint-info dd {
+        white-space: pre-wrap;
+        margin-left: 0;
+    }
+
+    .ic3-complaint-info :is(.wide, span[role="heading"]) {
+        grid-column: 1 / span 2;
+    }
+    .ic3-complaint-info .ic3-complaint-info_signature, .ic3-complaint-info .ic3-complaint-info_signature div {
+        font-weight: normal;
+        display: block;
+    }
+        .ic3-complaint-info .ic3-complaint-info_signature div + div {
+            margin-top: 1rem;
+        }
