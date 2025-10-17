@@ -15,10 +15,10 @@ Route::get('privacy-policy', [Homecontroller::class, 'privacy_policy'])->name('p
 
 
 
-Route::post('/login', [AuthController::class, 'login'])->name('login');
-Route::get('/register', [AuthController::class, 'showRegister'])->name('admin.register');
-Route::post('/register', [AuthController::class, 'register'])->name('register');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('login', [AuthController::class, 'login'])->name('login');
+Route::get('register', [AuthController::class, 'showRegister'])->name('admin.register');
+Route::post('admin-register', [AuthController::class, 'register'])->name('registerdata');
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 // Dashboards
 Route::middleware(['auth', 'isAdmin'])->group(function () {

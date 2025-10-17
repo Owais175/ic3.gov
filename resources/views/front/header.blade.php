@@ -39,8 +39,8 @@
                             <strong>Secure .gov websites use HTTPS</strong><br>
                             A <strong>lock</strong> (
                             <span class="icon-lock">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="52" height="64"
-                                    viewBox="0 0 52 64" class="usa-banner__lock-image" role="img"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64"
+                                    class="usa-banner__lock-image" role="img"
                                     aria-labelledby="banner-lock-description-default" focusable="false">
                                     <title id="banner-lock-title-default">Lock</title>
                                     <desc id="banner-lock-description-default">Locked padlock icon</desc>
@@ -98,7 +98,7 @@
                     <a class="usa-nav-link" href="{{ route('contact') }}">Contact</a>
                 </li>
                 <li class="usa-nav__primary-item">
-                    <a class="usa-button usa-button--big" href="register.php">Register</a>
+                    <a class="usa-button usa-button--big" href="{{(route('admin.register'))}}">Register</a>
                 </li>
             </ul>
         </nav>

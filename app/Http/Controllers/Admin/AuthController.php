@@ -19,20 +19,24 @@ class AuthController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'email' => 'required|unique:users',
+            'password' => 'required|min:6',
         ]);
+
+        // dd($request->all());
+
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'user',
+            'role' => '2',
         ]);
+
 
         Auth::login($user);
 
-        return redirect()->route('user.dashboard');
+        return redirect()->route('user.dashboard')->with('success', 'Registration successful!');
     }
 
     public function login(Request $request)
@@ -45,7 +49,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
 
-            if ($user->role === 'admin') {
+            if ($user->role === '1') {
                 return redirect()->route('admin.dashboard');
             } else {
                 return redirect()->route('user.dashboard');

@@ -690,6 +690,7 @@ button[disabled] {
 
 .register-forms .field-grid input {
     width: 100%;
+    color: black;
 }
 
 .register-forms #contactForm {
