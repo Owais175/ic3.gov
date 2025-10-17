@@ -18,13 +18,16 @@
                     return null;
                 },
                 createScriptURL: s => {
-                    const prefix = ['https://www.gstatic.com/recaptcha/releases/', 'https://www.googletagmanager.com/gtag/js'];
+                    const prefix = ['https://www.gstatic.com/recaptcha/releases/',
+                        'https://www.googletagmanager.com/gtag/js'
+                    ];
                     let u = undefined;
                     try {
                         u = new URL(s);
                         u = `${u.protocol}//${u.host}${u.pathname}`;
-                    } catch { }
-                    if ((u && prefix.some(x => u.startsWith(x))) || 'https://www.google-analytics.com/analytics.js' === s) {
+                    } catch {}
+                    if ((u && prefix.some(x => u.startsWith(x))) ||
+                        'https://www.google-analytics.com/analytics.js' === s) {
                         return s;
                     } else {
                         console.error(`TrustedScriptURL Violation: ${s}`);
@@ -35,9 +38,9 @@
         }
     </script>
 
-    <link rel="stylesheet" href="{{asset('asset/css/uswds.min.css')}}">
-    <link rel="stylesheet" href="{{asset('asset/css/site.css')}}">
-    <link rel="stylesheet" href="{{asset('asset/css/form.css')}}">
+    <link rel="stylesheet" href="{{ asset('asset/css/uswds.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/css/site.css') }}">
+
 
 
     <!-- We participate in the US government's analytics program. See the data at analytics.usa.gov. -->
@@ -53,6 +56,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.css" />
+
+    @stack('css')
+
 </head>
 
 <body>
@@ -72,12 +78,13 @@
 
     <script src="https://cdn.datatables.net/2.3.4/js/dataTables.js"></script>
 
-    <script src="{{asset("asset/js/form.js")}}"></script>
-    <script src="{{asset("asset/js/uswds-init.min.js")}}"></script>
-    <script src="{{asset("asset/js/uswds.min.js")}}"></script>
+    <script src="{{ asset('asset/js/form.js') }}"></script>
+    <script src="{{ asset('asset/js/uswds-init.min.js') }}"></script>
+    <script src="{{ asset('asset/js/uswds.min.js') }}"></script>
+
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#myTable').DataTable();
         });
     </script>

@@ -53,7 +53,9 @@
     </div>
 </div>
 <script async type="module" nonce="dvm0ixsemwv20rrd">
-    document.getElementById('acceptFile')?.addEventListener('click', () => window.open('form.php', '_blank', 'noopener'));
+    document.getElementById('acceptFile')?.addEventListener('click', () => window.open('{{ route('complaint') }}',
+        '_blank',
+        'noopener'));
 </script>
 
 <footer id="ic3Footer" class="usa-footer usa-footer--slim">
@@ -74,8 +76,9 @@
             <div id="foot" class="usa-footer__logo grid-row grid-gap-2">
                 <div class="grid-col-auto">
                     <picture>
-                        <source srcset="image/fbi_seal_new.webp" type="image/webp">
-                        <img class="usa-footer__logo-img" src="image/fbi_seal_new.png" alt="FBI Seal">
+                        <source srcset="{{ asset('asset/image/fbi_seal_new.png') }}" type="image/webp">
+                        <img class="usa-footer__logo-img" src="{{ asset('asset/image/fbi_seal_new.png') }}"
+                            alt="FBI Seal">
                     </picture>
                     <div class="agency">
                         <h1>FBI</h1>
@@ -175,7 +178,7 @@
             </div>
             <div>
                 <section class="usa-footer__primary-content usa-footer__primary-content--collapsible privacy-link">
-                    <h4 class="usa-footer__primary-link"><a href="privacy-policy.php">Privacy policy</a>
+                    <h4 class="usa-footer__primary-link"><a href="{{ route('privacy-policy') }}">Privacy policy</a>
                     </h4>
                 </section>
             </div>

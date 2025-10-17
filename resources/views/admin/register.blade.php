@@ -1,4 +1,4 @@
-<?php include "include/header.php" ?>
+<?php include 'include/header.php'; ?>
 
 <main id="main-content" class="usa-prose grid-container">
 
@@ -7,13 +7,15 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="form-fill-contact register-forms">
-                        <form id="contactForm">
+                        <form id="contactForm" method="POST" action="{{ route('login') }}">
+                            @csrf
                             <h3>Login </h3>
                             <div class="field-grid">
 
                                 <div>
                                     <label for="email">Email address</label>
-                                    <input id="email" name="email" type="email" required aria-required="true" placeholder="you@example.com">
+                                    <input id="email" name="email" type="email" required aria-required="true"
+                                        placeholder="you@example.com">
                                 </div>
                             </div>
 
@@ -28,19 +30,22 @@
                                 <button type="submit" class="usa-button usa-button--big" id="submitBtn">Login</button>
                             </div>
                         </form>
-                        <form id="contactForm">
+                        <form id="contactForm" method="POST" action="{{ route('register') }}">
+                            @csrf
                             <h3>Sign Up </h3>
                             <div class="field-grid">
                                 <div>
                                     <label for="name">Full name</label>
-                                    <input id="name" name="name" type="text" required aria-required="true" placeholder="Jane Doe">
+                                    <input id="name" name="name" type="text" required aria-required="true"
+                                        placeholder="Jane Doe">
                                 </div>
                             </div>
                             <div class="field-grid">
 
                                 <div>
                                     <label for="email">Email address</label>
-                                    <input id="email" name="email" type="email" required aria-required="true" placeholder="you@example.com">
+                                    <input id="email" name="email" type="email" required aria-required="true"
+                                        placeholder="you@example.com">
                                 </div>
                             </div>
 
@@ -59,7 +64,8 @@
                             </div>
 
                             <div class="actions">
-                                <button type="submit" class="usa-button usa-button--big" id="submitBtn">Register</button>
+                                <button type="submit" class="usa-button usa-button--big"
+                                    id="submitBtn">Register</button>
                             </div>
                         </form>
                     </div>
@@ -71,4 +77,4 @@
 </main>
 
 
-<?php include "include/footer.php" ?>
+<?php include 'include/footer.php'; ?>

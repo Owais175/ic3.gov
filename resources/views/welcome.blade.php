@@ -2,7 +2,6 @@
 
 
 @section('content')
-
     <main id="main-content" class="usa-prose grid-container">
 
         <section class="body-section margin-top-1">
@@ -16,7 +15,7 @@
                 </p>
                 <p>
                     For more information about the Internet Crime Complaint Center and its mission, please see the <a
-                        href="about.php">About Us</a>
+                        href="{{ route('about') }}">About Us</a>
                     page.
                 </p>
             </div>
@@ -34,10 +33,11 @@
             </div>
             <p>The Internet Crime Complaint Centre focuses on collecting cyber-enabled crime. Crimes against
                 women/ children should be filed with <span>Cyber Crime Portal</span>. Other types of crimes, such as threats
-                of terrorism, should be reported at <a href="#">https://cbi.gov.in/</a></p>
+                of terrorism, should be reported at <a href="{{ route('index') }}">https://cbi.gov.in/</a></p>
             <button id="fileComplaint" class="usa-button usa-button--big" type="button" data-open-modal href="#fileTerms"
                 aria-controls="fileTerms">
-                <svg width="25" height="25" fill="currentColor" viewBox="0 0 16 16" role="img" aria-hidden="true">
+                <svg width="25" height="25" fill="currentColor" viewBox="0 0 16 16" role="img"
+                    aria-hidden="true">
                     <path
                         d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5" />
                     <path
@@ -53,32 +53,32 @@
             <ul class="display-flex flex-justify usa-list--unstyled grid-row grid-gap">
                 <li class="text-center tablet:grid-col-4">
                     <div class="post-hygiene">
-                        <img src="{{asset('asset/image/hygiene-post-1.jpg')}}" class="img-fluid" alt="">
+                        <img src="{{ asset('asset/image/hygiene-post-1.jpg') }}" class="img-fluid" alt="">
                     </div>
                 </li>
                 <li class="text-center tablet:grid-col-4">
                     <div class="post-hygiene">
-                        <img src="{{asset('asset/image/hygiene-post-2.jpg')}}" class="img-fluid" alt="">
+                        <img src="{{ asset('asset/image/hygiene-post-2.jpg') }}" class="img-fluid" alt="">
                     </div>
                 </li>
                 <li class="text-center tablet:grid-col-4">
                     <div class="post-hygiene">
-                        <img src="{{asset("asset/image/hygiene-post-3.jpg")}}" class="img-fluid" alt="">
+                        <img src="{{ asset('asset/image/hygiene-post-3.jpg') }}" class="img-fluid" alt="">
                     </div>
                 </li>
                 <li class="text-center tablet:grid-col-4">
                     <div class="post-hygiene">
-                        <img src="{{asset('asset/image/hygiene-post-4.jpg')}}" class="img-fluid" alt="">
+                        <img src="{{ asset('asset/image/hygiene-post-4.jpg') }}" class="img-fluid" alt="">
                     </div>
                 </li>
                 <li class="text-center tablet:grid-col-4">
                     <div class="post-hygiene">
-                        <img src="{{asset('asset/image/hygiene-post-5.jpg')}}" class="img-fluid" alt="">
+                        <img src="{{ asset('asset/image/hygiene-post-5.jpg') }}" class="img-fluid" alt="">
                     </div>
                 </li>
                 <li class="text-center tablet:grid-col-4">
                     <div class="post-hygiene">
-                        <img src="{{asset('asset/image/hygiene-post-6.jpg')}}" class="img-fluid" alt="">
+                        <img src="{{ asset('asset/image/hygiene-post-6.jpg') }}" class="img-fluid" alt="">
                     </div>
                 </li>
             </ul>
@@ -141,8 +141,8 @@
                     <div>
                         <figure>
                             <picture>
-                                <source srcset="image/losses.webp" type="image/webp">
-                                <img src="image/losses.jpg"
+                                <source srcset="{{ asset('asset/image/losses.jpg') }}" type="image/webp">
+                                <img src="{{ asset('asset/image/losses.jpg') }}"
                                     alt="Column chart showing complaint-reported losses over a five-year period: $4.2 billion in 2020, $6.9 billion in 2021, $10.3 billion in 2022, $12.5 billion in 2023, and $16.6 billion in 2024">
                             </picture>
                             <figcaption>Chart includes loss data for the years 2020 to 2024. Over this time period, over $50
@@ -152,7 +152,7 @@
                         </div>
                         <div class="display-flex flex-align-center flex-justify-space-around margin-top-05em">
                             <div>
-                                <a type="application/pdf" href="image/2024_IC3Report.pdf">
+                                <a type="application/pdf" href="{{ asset('asset/image/2024_IC3Report.pdf') }}">
                                     <button class="usa-button margin-left-2px margin-right-2px" type="button">Annual
                                         Report</button>
                                 </a>
@@ -190,7 +190,7 @@
                             <div class="usa-collection__body">
                                 <h4 class="usa-collection__heading">
                                     <a class="usa-link" target="_blank"
-                                        href="article/Digest_202509151058014947317.pdf">Indian Cyber
+                                        href="{{ asset('asset/article/Digest_202509151058014947317.pdf') }}">Indian Cyber
                                         Crime
                                         Coordination Centre Ministry Of Home Affairs</a>
                                 </h4>
@@ -206,7 +206,7 @@
                             <div class="usa-collection__body">
                                 <h4 class="usa-collection__heading">
                                     <a class="usa-link" target="_blank"
-                                        href="article/Digest_202509171125159116104.pdf">Indian
+                                        href="{{ asset('asset/article/Digest_202509171125159116104.pdf') }}">Indian
                                         Cyber
                                         Crime
                                         Coordination Centre Ministry Of Home Affairs</a>
@@ -222,7 +222,8 @@
                             </div>
                             <div class="usa-collection__body">
                                 <h4 class="usa-collection__heading">
-                                    <a class="usa-link" href="article/Digest_202509221256097069772.pdf">Indian Cyber
+                                    <a class="usa-link" target="_blank"
+                                        href="{{ asset('asset/article/Digest_202509221256097069772.pdf') }}">Indian Cyber
                                         Crime
                                         Coordination Centre Ministry Of Home Affairs</a>
                                 </h4>
@@ -237,7 +238,8 @@
                             </div>
                             <div class="usa-collection__body">
                                 <h4 class="usa-collection__heading">
-                                    <a class="usa-link" href="article/Digest_202509290932205290931.pdf">Indian Cyber
+                                    <a class="usa-link" target="_blank"
+                                        href="{{ asset('asset/article/Digest_202509290932205290931.pdf') }}">Indian Cyber
                                         Crime
                                         Coordination Centre Ministry Of Home Affairs</a>
                                 </h4>
@@ -259,8 +261,8 @@
                             </div>
                             <div class="usa-collection__body">
                                 <h4 class="usa-collection__heading">
-                                    <a class="usa-link" type="application/pdf"
-                                        href="article/Digest_202510091813144851909.pdf">Indian Cyber
+                                    <a class="usa-link" type="application/pdf" target="_blank"
+                                        href="{{ asset('asset/article/Digest_202510091813144851909.pdf') }}">Indian Cyber
                                         Crime
                                         Coordination Centre Ministry Of Home Affairs</a>
                                 </h4>
@@ -275,8 +277,8 @@
                             </div>
                             <div class="usa-collection__body">
                                 <h4 class="usa-collection__heading">
-                                    <a class="usa-link" type="application/pdf"
-                                        href="article/Digest_202510151714492495235.pdf">Indian Cyber
+                                    <a class="usa-link" type="application/pdf" target="_blank"
+                                        href="{{ asset('asset/article/Digest_202510151714492495235.pdf') }}">Indian Cyber
                                         Crime
                                         Coordination Centre Ministry Of Home Affairs</a>
                                 </h4>
@@ -291,7 +293,8 @@
                             </div>
                             <div class="usa-collection__body">
                                 <h4 class="usa-collection__heading">
-                                    <a class="usa-link" type="application/pdf" href="article/IJSRA-2024-1919.pdf">A
+                                    <a class="usa-link" type="application/pdf" target="_blank"
+                                        href="{{ asset('asset/article/IJSRA-2024-1919.pdf') }}">A
                                         comprehensive survey of cybercrimes in India over the last decade
                                     </a>
                                 </h4>
@@ -311,8 +314,9 @@
                     <div>
                         <figure>
                             <picture>
-                                <source srcset="image//Cyber-Crime-Complaint-blog1.jpg" type="image/webp">
-                                <img src="image/Cyber-Crime-Complaint-blog1.jpg" alt="">
+                                <source srcset="{{ asset('asset/image/Cyber-Crime-Complaint-blog1.jpg') }}"
+                                    type="image/webp">
+                                <img src="{{ asset('asset/image/Cyber-Crime-Complaint-blog1.jpg') }}" alt="">
                             </picture>
                             <h4>Lorem Lipsum</h4>
                         </figure>
@@ -326,8 +330,9 @@
                     <div>
                         <figure>
                             <picture>
-                                <source srcset="image/Cyber-Crime-Complaint-blog2.jpg" type="image/webp">
-                                <img src="image/Cyber-Crime-Complaint-blog2.jpg" alt="">
+                                <source srcset="{{ asset('asset/image/Cyber-Crime-Complaint-blog2.jpg') }}"
+                                    type="image/webp">
+                                <img src="{{ asset('asset/image/Cyber-Crime-Complaint-blog2.jpg') }}" alt="">
                             </picture>
                             <h4>Lorem Lipsum</h4>
                         </figure>
@@ -341,8 +346,9 @@
                     <div>
                         <figure>
                             <picture>
-                                <source srcset="image/Cyber-Crime-Complaint-blog3.jpg" type="image/webp">
-                                <img src="image/Cyber-Crime-Complaint-blog3.jpg" alt="">
+                                <source srcset="{{ asset('asset/image/Cyber-Crime-Complaint-blog3.jpg') }}"
+                                    type="image/webp">
+                                <img src="{{ asset('asset/image/Cyber-Crime-Complaint-blog3.jpg') }}" alt="">
                             </picture>
                             <h4>Lorem Lipsum</h4>
                         </figure>
@@ -364,9 +370,10 @@
                     <div class="gallery-main-grid">
                         <figure>
                             <picture>
-                                <a href="image/gallery-1.webp" data-fancybox="gallery" data-caption="Gallery Images 1">
+                                <a href="{{ asset('asset/image/gallery-1.webp') }}" data-fancybox="gallery"
+                                    data-caption="Gallery Images 1">
                                     <source srcset="image/gallery-1.webp" type="image/webp">
-                                    <img src="image/gallery-1.webp" alt="">
+                                    <img src="{{ asset('asset/image/gallery-1.webp') }}" alt="">
                                 </a>
                             </picture>
                         </figure>
@@ -376,9 +383,10 @@
                     <div class="gallery-main-grid">
                         <figure>
                             <picture>
-                                <a href="image/gallery-2.jpg" data-fancybox="gallery" data-caption="Gallery Images 2">
+                                <a href="{{ asset('asset/image/gallery-2.jpg') }}" data-fancybox="gallery"
+                                    data-caption="Gallery Images 2">
                                     <source srcset="image/gallery-2.jpg" type="image/webp">
-                                    <img src="image/gallery-2.jpg" alt="">
+                                    <img src="{{ asset('asset/image/gallery-2.jpg') }}" alt="">
                                 </a>
                             </picture>
                         </figure>
@@ -388,9 +396,10 @@
                     <div class="gallery-main-grid">
                         <figure>
                             <picture>
-                                <a href="image/gallery-3.jpg" data-fancybox="gallery" data-caption="Gallery Images 3">
+                                <a href="{{ asset('asset/image/gallery-3.jpg') }}" data-fancybox="gallery"
+                                    data-caption="Gallery Images 3">
                                     <source srcset="image/gallery-3.jpg" type="image/webp">
-                                    <img src="image/gallery-3.jpg" alt="">
+                                    <img src="{{ asset('asset/image/gallery-3.jpg') }}" alt="">
                                 </a>
                             </picture>
                         </figure>
@@ -402,9 +411,10 @@
                     <div class="gallery-main-grid">
                         <figure>
                             <picture>
-                                <a href="image/gallery-4.jpg" data-fancybox="gallery" data-caption="Gallery Images 4">
+                                <a href="{{ asset('asset/image/gallery-4.jpg') }}" data-fancybox="gallery"
+                                    data-caption="Gallery Images 4">
                                     <source srcset="image/gallery-4.jpg" type="image/webp">
-                                    <img src="image/gallery-4.jpg" alt="">
+                                    <img src="{{ asset('asset/image/gallery-4.jpg') }}" alt="">
                                 </a>
                             </picture>
                         </figure>
@@ -414,9 +424,10 @@
                     <div class="gallery-main-grid">
                         <figure>
                             <picture>
-                                <a href="image/gallery-5.webp" data-fancybox="gallery" data-caption="Gallery Images 5">
+                                <a href="{{ asset('asset/image/gallery-5.webp') }}" data-fancybox="gallery"
+                                    data-caption="Gallery Images 5">
                                     <source srcset="image/gallery-5.webp" type="image/webp">
-                                    <img src="image/gallery-5.webp" alt="">
+                                    <img src="{{ asset('asset/image/gallery-5.webp') }}" alt="">
                                 </a>
                             </picture>
                         </figure>
@@ -426,9 +437,10 @@
                     <div class="gallery-main-grid">
                         <figure>
                             <picture>
-                                <a href="image/gallery-6.png" data-fancybox="gallery" data-caption="Gallery Images 6">
+                                <a href="{{ asset('asset/image/gallery-6.png') }}" data-fancybox="gallery"
+                                    data-caption="Gallery Images 6">
                                     <source srcset="image/gallery-6.png" type="image/webp">
-                                    <img src="image/gallery-6.png" alt="">
+                                    <img src="{{ asset('asset/image/gallery-6.png') }}" alt="">
                                 </a>
                             </picture>
                         </figure>
@@ -440,9 +452,10 @@
                     <div class="gallery-main-grid">
                         <figure>
                             <picture>
-                                <a href="image/gallery-7.jpg" data-fancybox="gallery" data-caption="Gallery Images 7">
+                                <a href="{{ asset('asset/image/gallery-7.jpg') }}" data-fancybox="gallery"
+                                    data-caption="Gallery Images 7">
                                     <source srcset="image/gallery-7.jpg" type="image/webp">
-                                    <img src="image/gallery-7.jpg" alt="">
+                                    <img src="{{ asset('asset/image/gallery-7.jpg') }}" alt="">
                                 </a>
                             </picture>
                         </figure>
@@ -452,9 +465,10 @@
                     <div class="gallery-main-grid">
                         <figure>
                             <picture>
-                                <a href="image/gallery-8.jpg" data-fancybox="gallery" data-caption="Gallery Images 8">
+                                <a href="{{ asset('asset/image/gallery-8.jpg') }}" data-fancybox="gallery"
+                                    data-caption="Gallery Images 8">
                                     <source srcset="image/gallery-8.jpg" type="image/webp">
-                                    <img src="image/gallery-8.jpg" alt="">
+                                    <img src="{{ asset('asset/image/gallery-8.jpg') }}" alt="">
                                 </a>
                             </picture>
                         </figure>
@@ -464,9 +478,10 @@
                     <div class="gallery-main-grid">
                         <figure>
                             <picture>
-                                <a href="image/gallery-9.jpg" data-fancybox="gallery" data-caption="Gallery Images 9">
+                                <a href="{{ asset('asset/image/gallery-9.jpg') }}" data-fancybox="gallery"
+                                    data-caption="Gallery Images 9">
                                     <source srcset="image/gallery-9.jpg" type="image/webp">
-                                    <img src="image/gallery-9.jpg" alt="">
+                                    <img src="{{ asset('asset/image/gallery-9.jpg') }}" alt="">
                                 </a>
                             </picture>
                         </figure>
@@ -476,6 +491,4 @@
         </section>
 
     </main>
-
-
 @endsection

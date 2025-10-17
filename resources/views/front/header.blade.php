@@ -5,7 +5,8 @@
         <header class="usa-banner__header">
             <div class="usa-banner__inner">
                 <div class="grid-col-auto">
-                    <img aria-hidden="true" class="usa-banner__header-flag" src="image/us_flag_small.png" alt="">
+                    <img aria-hidden="true" class="usa-banner__header-flag"
+                        src="{{ asset('asset/image/us_flag_small.png') }}" alt="">
                 </div>
                 <div class="grid-col-fill tablet:grid-col-auto" aria-hidden="true">
                     <p class="usa-banner__header-text">An official website of the United States government</p>
@@ -20,8 +21,8 @@
         <div class="usa-banner__content usa-accordion__content" id="gov-banner-default">
             <div class="grid-row grid-gap-lg">
                 <div class="usa-banner__guidance tablet:grid-col-6">
-                    <img class="usa-banner__icon usa-media-block__img" src="image/icon-dot-gov.svg" role="img" alt=""
-                        aria-hidden="true">
+                    <img class="usa-banner__icon usa-media-block__img" src="{{ asset('asset/image/icon-dot-gov.svg') }}"
+                        role="img" alt="" aria-hidden="true">
                     <div class="usa-media-block__body">
                         <p>
                             <strong>Official websites use .gov</strong><br>
@@ -31,15 +32,15 @@
                     </div>
                 </div>
                 <div class="usa-banner__guidance tablet:grid-col-6">
-                    <img class="usa-banner__icon usa-media-block__img" src="image/icon-https.svg" role="img" alt=""
-                        aria-hidden="true">
+                    <img class="usa-banner__icon usa-media-block__img" src="{{ asset('asset/image/icon-https.svg') }}"
+                        role="img" alt="" aria-hidden="true">
                     <div class="usa-media-block__body">
                         <p>
                             <strong>Secure .gov websites use HTTPS</strong><br>
                             A <strong>lock</strong> (
                             <span class="icon-lock">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64"
-                                    class="usa-banner__lock-image" role="img"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="52" height="64"
+                                    viewBox="0 0 52 64" class="usa-banner__lock-image" role="img"
                                     aria-labelledby="banner-lock-description-default" focusable="false">
                                     <title id="banner-lock-title-default">Lock</title>
                                     <desc id="banner-lock-description-default">Locked padlock icon</desc>
@@ -62,8 +63,8 @@
             <div class="usa-logo">
                 <a href="index.php">
                     <picture>
-                        <source srcset="image/ic3_logo.webp" type="image/webp">
-                        <img class="usa-footer__logo-img" src="image/ic3_logo.png" alt="IC3 Logo">
+                        <source srcset="{{ asset('asset/image/ic3_logo.webp') }}" type="image/webp">
+                        <img class="usa-footer__logo-img" src="{{ asset('asset/image/ic3_logo.png') }}" alt="IC3 Logo">
                     </picture>
                 </a>
                 <em class="usa-logo__text"><a href="index.php">Internet Crime Complaint Center (IC3)</a></em>
@@ -85,16 +86,16 @@
                         Complaint</a>
                 </li>
                 <li class="usa-nav__primary-item">
-                    <a class="usa-nav-link" href="index.php">Home</a>
+                    <a class="usa-nav-link" href="{{ route('index') }}">Home</a>
                 </li>
                 <li class="usa-nav__primary-item">
-                    <a class="usa-nav-link" href="about.php">About Us</a>
+                    <a class="usa-nav-link" href="{{ route('about') }}">About Us</a>
                 </li>
                 <li class="usa-nav__primary-item">
                     <a class="usa-nav-link" href="track-order.php">Track Order</a>
                 </li>
                 <li class="usa-nav__primary-item">
-                    <a class="usa-nav-link" href="contact.php">Contact</a>
+                    <a class="usa-nav-link" href="{{ route('contact') }}">Contact</a>
                 </li>
                 <li class="usa-nav__primary-item">
                     <a class="usa-button usa-button--big" href="register.php">Register</a>
