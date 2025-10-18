@@ -551,6 +551,16 @@ section.contact-form {
     background: #0d2441;
 }
 
+#loginform {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    box-shadow: 0 0 5px 0px #fff;
+    border-radius: 20px;
+    padding: 35px 25px;
+    background: #0d2441;
+}
+
 .field-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -706,6 +716,19 @@ button[disabled] {
     text-transform: uppercase;
 }
 
+.register-forms #loginform {
+    width: 50%;
+}
+
+.register-forms #loginform h3 {
+    font-size: 30px;
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+}
+
 .blogs-home figure {
     margin: 0;
 }
@@ -792,4 +815,115 @@ body .track-order .dt-paging nav button {
     font-size: 15px;
 }
 
+.main-dashborad-flex {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+
+.sidebar-user-profile {
+    width: 35%;
+    background: var(--ic3-banner-bg);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.sidebar-user-profile ul {
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-user-profile ul li {
+    background: white;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.user-profile {
+    padding: 50px 0;
+}
+
+.sidebar-user-profile ul li a {
+    text-decoration: none;
+    color: #1b1b1b;
+    font-weight: 800;
+    font-size: 20px;
+    display: block;
+    padding: 10px;
+}
+
+.sidebar-user-profile ul li button {
+    text-decoration: none;
+    color: #1b1b1b;
+    font-weight: 800;
+    font-size: 20px;
+    padding: 10px;
+    width: 100%;
+    text-align: start;
+}
+
+.profile-data {
+    background: white;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 18px solid var(--ic3-banner-bg);
+}
+
+.dashborad-content {
+    width: 65%;
+}
+
+.manage-user {
+    padding: 15px 0;
+}
+
+.manage-user h3 {
+    margin: 0;
+    display: block;
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+    border-bottom: 3px solid black;
+}
+
+.manage-user h3 span {
+    margin-right: 10px;
+    font-size: 22px;
+}
+
+.dashborad-content input {
+    color: black;
+    font-weight: 600;
+}
+
+.dashborad-content h4 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+form#IC3ComplaintForm input {
+    color: black;
+    font-weight: 600;
+}
+.usa-input--error {
+    border-color: #e52207;
+    box-shadow: 0 0 0 2px #e52207;
+}
+
+.val-error {
+    color: #e52207;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.usa-accordion__error .usa-accordion__button {
+    color: #e52207;
+    font-weight: bold;
+}
 /* new css added */

@@ -47,7 +47,8 @@
                 </ul>
             </div>
         </div>
-        <form id="IC3ComplaintForm" action="" method="post" novalidate>
+      <form id="IC3ComplaintForm" action="{{ route('complaint.submit') }}" method="post" novalidate>
+    @csrf
             <a id="prompt" aria-controls="promptModal" data-open-modal></a>
             <div class="modal-bootstrap-hidden display-none">
                 <div id="promptModal" class="usa-modal" aria-labelledby="promptModalHeading"
@@ -3235,3 +3236,59 @@
 
     </main>
 @endsection
+@if($errors->any())
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    @foreach($errors->keys() as $key)
+        @php
+            // Field name mapping for frontend
+            $fieldName = str_replace('.', '_', $key);
+            $fieldName = str_replace('[', '_', $fieldName);
+            $fieldName = str_replace(']', '_', $fieldName);
+        @endphp
+        
+        const errorField = document.querySelector('[name="{{ $key }}"]');
+        if (errorField) {
+            // Add error class
+            errorField.classList.add('usa-input--error');
+            
+            // Find error message container
+            let errorElement = document.getElementById(errorField.getAttribute('aria-errormessage'));
+            if (!errorElement) {
+                errorElement = document.getElementById('{{ $fieldName }}_error');
+            }
+            
+            if (errorElement) {
+                errorElement.textContent = '{{ $errors->first($key) }}';
+                errorElement.style.display = 'block';
+            }
+            
+            // Scroll to first error
+            @if($loop->first && session('scroll_to_errors'))
+                errorField.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+                errorField.focus();
+            @endif
+        }
+    @endforeach
+});
+</script>
+@endif
+
+@if(session('success'))
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    alert('{{ session('success') }}');
+});
+</script>
+@endif
+
+@if(session('error'))
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    alert('{{ session('error') }}');
+});
+</script>
+@endif

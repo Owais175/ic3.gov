@@ -20,10 +20,10 @@
                                     </ul>
                                 </div>
                             @endif
-                            @if(session('success'))
+                            @if (session('success'))
                                 <div class="alert alert-success">{{ session('success') }}</div>
                             @endif
-                            <form id="contactForm" method="POST" action="{{ route('registerdata') }}">
+                            <form id="contactForm" method="POST" action="{{ route('registeruser') }}">
                                 @csrf
                                 <h3>Sign Up </h3>
                                 <div class="field-grid">
@@ -54,7 +54,7 @@
                                         id="submitBtn">Register</button>
                                 </div>
                             </form>
-                            <form id="contactForm" method="POST" action="{{ route('login') }}">
+                            <form id="loginform" method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <h3>Login </h3>
                                 <div class="field-grid">

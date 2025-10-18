@@ -3,48 +3,35 @@
         <div class="usa-modal__main" id="fileTermsDesc">
             <div class="usa-alert usa-alert--warning">
                 <div class="usa-alert__body">
-                    <h4 id="fileTermsHeading" class="usa-alert__heading">Terms and Conditions</h4>
-                    <p class="usa-alert__text">
-                        Prior to filing a complaint with the IC3, please read the following information regarding terms
-                        and conditions.
-                    </p>
+                    <h4 id="fileTermsHeading" class="usa-alert__heading">Filing a Complaint on National Cyber Crime
+                        Reporting Portal</h4>
                 </div>
             </div>
             <div class="font-serif-sm">
-                <p>Should you have additional questions prior to filing your complaint, view <a target="_blank"
-                        href="/Home/FAQ">FAQ</a> for more information on inquiries such as:
-                <ul>
-                    <li>What details will I be asked to include in my complaint?</li>
-                    <li>What happens after I file a complaint?</li>
-                    <li>How are complaints resolved?</li>
-                    <li>Should I retain evidence related to my complaint?</li>
-                </ul>
+                <p>Prior to filing a complaint with this portal, we would request you to read the below information
+                    regarding terms and conditions. Should you have queries prior to filing your complaint, view
+                    Frequently Asked Questions FAQ
+                    The information I've provided on this form is correct to the best of my knowledge. I acknowledge
+                    that providing false information could make me liable to penal actions under Indian Laws.</p>
+
+
+                <p>I understand that action on the complaints reported on this portal shall be taken by concerned
+                    authorities as per Indian Laws.
                 </p>
-                <p>Complaints filed via this website are analyzed and may be referred to federal, state, local or
-                    international law enforcement and partner agencies for possible investigation.</p>
-                <p>The complaint information you submit to this site is encrypted via secure socket layer (SSL)
-                    encryption. Please see the <a target="_blank" href="privacy-policy.php">Privacy Policy</a> for
-                    further information.</p>
                 <p>We thank you for your cooperation.</p>
                 <hr class="tablet:margin-left-0">
-                <p>By clicking "I Accept" you acknowledge the following:</p>
-                <p>I understand any contact or investigation regarding any complaint I file on this website is initiated
-                    at the discretion of the agency receiving the complaint information. I will not be contacted by the
-                    IC3.</p>
-                <p>The information I'm providing on this form is correct to the best of my knowledge. I understand that
-                    providing false information could make me subject to fine, imprisonment, or both. (<cite>TITLE 18,
-                        U.S. CODE, SECTION 1001</cite>)</p>
+                <p>The complaint information you submit to this site is encrypted via secure socket layer (SSL)
+                    encryption. Please see the <a href="{{ route('privacy-policy') }}">Privacy Policy</a> for further
+                    information.
+                </p>
+                <p>We thank you for your cooperation.
+                </p>
             </div>
             <div class="usa-modal__footer">
                 <ul class="usa-button-group display-flex flex-justify-center">
                     <li class="usa-button-group__item">
                         <button id="acceptFile" type="button" class="usa-button" data-close-modal>
                             Accept
-                        </button>
-                    </li>
-                    <li class="usa-button-group__item">
-                        <button type="button" class="usa-button usa-button--base" data-close-modal>
-                            Decline
                         </button>
                     </li>
                 </ul>
