@@ -1,5 +1,4 @@
 <?php
-// app/Models/Transaction.php
 
 namespace App\Models;
 
@@ -23,21 +22,21 @@ class Transaction extends Model
         'victim_bank_city',
         'victim_bank_country',
         'victim_bank_state',
-        'victim_bank_zip_code',
+        'victim_bank_zipcode',
         'victim_account_name',
         'victim_account_number',
         'cryptocurrency_type',
         'p2p_application',
         'transaction_id',
         'crypto_atm',
+        'gift_card_type',
         'atm_address',
         'atm_city',
         'atm_country',
         'atm_state',
-        'atm_zip_code',
+        'atm_zipcode',
         'victim_account_wallet',
         'victim_account_identifier',
-        'gift_card_type',
         'gift_card_number',
         'recipient_bank_name',
         'recipient_bank_address1',
@@ -46,7 +45,7 @@ class Transaction extends Model
         'recipient_bank_city',
         'recipient_bank_country',
         'recipient_bank_state',
-        'recipient_bank_zip_code',
+        'recipient_bank_zipcode',
         'recipient_account_name',
         'recipient_name',
         'recipient_bank_routing_number',
@@ -55,13 +54,6 @@ class Transaction extends Model
         'recipient_account_wallet',
         'recipient_account_identifier',
         'recipient_identifier'
-    ];
-
-    protected $casts = [
-        'was_sent' => 'boolean',
-        'institution_notified' => 'boolean',
-        'amount' => 'decimal:2',
-        'date' => 'date'
     ];
 
     public function complaint()

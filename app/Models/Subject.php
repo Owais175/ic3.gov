@@ -1,5 +1,4 @@
 <?php
-// app/Models/Subject.php
 
 namespace App\Models;
 
@@ -18,7 +17,7 @@ class Subject extends Model
         'city',
         'country',
         'state',
-        'zip_code',
+        'zipcode',
         'phone',
         'email',
         'website',

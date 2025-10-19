@@ -1,165 +1,154 @@
 <?php
-// app/Http/Controllers/ComplaintController.php
 
 namespace App\Http\Controllers;
 
-use App\Models\Subject;
 use App\Models\Complaint;
-use App\Models\Transaction;
-use App\Rules\RecaptchaRule;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class ComplaintController extends Controller
 {
-    public function create()
+    public function index()
     {
         return view('complaint-form');
     }
 
     public function store(Request $request)
     {
-        dd($request->all());
-        \Log::info('Form submitted with data:', $request->all());
-
+        // 🔹 Validation (optional — you can expand this)
         $validator = Validator::make($request->all(), [
-            'g-recaptcha-response' => ['required', new RecaptchaRule],
-            'IsVictim' => 'required|boolean',
-            'Complainant_Name' => 'required|string|max:50',
-            'Complainant_BusinessName' => 'nullable|string|max:50',
-            'Complainant_Phone' => 'required|string|max:50',
-            'Complainant_Email' => 'required|email|max:50',
-            'Victim_Name' => 'required|string|max:50',
-            'Victim_AgeRange' => 'nullable|string',
-            'Victim_IsMinor' => 'nullable|boolean',
-            'Victim_Address1' => 'required|string|max:50',
-            'Victim_Address2' => 'nullable|string|max:50',
-            'Victim_Suite' => 'nullable|string|max:50',
-            'Victim_City' => 'required|string|max:50',
-            'Victim_County' => 'nullable|string|max:50',
-            'Victim_Country' => 'required|string|max:3',
-            'Victim_State' => 'nullable|string|max:2',
-            'Victim_ZipCode' => 'required|string|max:20',
-            'Victim_Phone' => 'required|string|max:50',
-            'Victim_Email' => 'required|email|max:50',
-            'Victim_IsBusiness' => 'nullable|boolean',
-            'Victim_BusinessName' => 'nullable|string|max:50',
-            'Victim_BusinessImpacted' => 'nullable|boolean',
-            'Victim_ItPoc' => 'nullable|string|max:150',
-            'Victim_OtherPoc' => 'nullable|string|max:150',
-            'Victim_Sector' => 'nullable|string',
-            'Victim_Subsector' => 'nullable|string',
-            'MoneySent' => 'required|boolean',
-            'ReportedLoss' => 'nullable|numeric|min:0|max:9999999999.99',
-            'IncidentDescription' => 'required|string|max:3500',
-            'EmailHeaders' => 'nullable|string|max:5000',
-            'Witnesses' => 'nullable|string|max:1000',
-            'LawEnforcement' => 'nullable|string|max:1000',
-            'ComplaintUpdate' => 'nullable|boolean',
-            'DigitalSignature' => 'required|string|max:50',
+            'Complainant.Name' => 'nullable|string|max:255',
+            'Complainant.Email' => 'nullable|email|max:255',
+            'Victim.Name' => 'nullable|string|max:255',
+            'Victim.Email' => 'nullable|email|max:255',
+            'IncidentDescription' => 'nullable|string',
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()
-                ->withErrors($validator)
-                ->withInput();
+            return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        DB::beginTransaction();
-        try {
+        // 🔹 Create Complaint (explicit mapping)
+        $complaint = Complaint::create([
+            'is_victim' => filter_var($request->input('IsVictim'), FILTER_VALIDATE_BOOLEAN),
+            'complainant_name' => $request->input('Complainant.Name'),
+            'complainant_business_name' => $request->input('Complainant.BusinessName'),
+            'complainant_phone' => $request->input('Complainant.Phone'),
+            'complainant_email' => $request->input('Complainant.Email'),
+            'victim_name' => $request->input('Victim.Name'),
+            'victim_age_range' => $request->input('Victim.AgeRange'),
+            'victim_is_minor' => filter_var($request->input('Victim.IsMinor'), FILTER_VALIDATE_BOOLEAN),
+            'victim_address1' => $request->input('Victim.Address1'),
+            'victim_address2' => $request->input('Victim.Address2'),
+            'victim_suite' => $request->input('Victim.Suite'),
+            'victim_city' => $request->input('Victim.City'),
+            'victim_county' => $request->input('Victim.County'),
+            'victim_country' => $request->input('Victim.Country'),
+            'victim_state' => $request->input('Victim.State'),
+            'victim_zipcode' => $request->input('Victim.ZipCode'),
+            'victim_phone' => $request->input('Victim.Phone'),
+            'victim_email' => $request->input('Victim.Email'),
+            'victim_is_business' => filter_var($request->input('Victim.IsBusiness'), FILTER_VALIDATE_BOOLEAN),
+            'victim_business_name' => $request->input('Victim.BusinessName'),
+            'victim_business_impacted' => $request->input('Victim.BusinessImpacted'),
+            'victim_it_poc' => $request->input('Victim.ItPoc'),
+            'victim_other_poc' => $request->input('Victim.OtherPoc'),
+            'victim_sector' => $request->input('Victim.Sector'),
+            'victim_subsector' => $request->input('Victim.Subsector'),
+            'money_sent' => filter_var($request->input('MoneySent'), FILTER_VALIDATE_BOOLEAN),
+            'reported_loss' => $request->input('ReportedLoss'),
+            'incident_description' => $request->input('IncidentDescription'),
+            'email_headers' => $request->input('EmailHeaders'),
+            'witnesses' => $request->input('Witnesses'),
+            'law_enforcement' => $request->input('LawEnforcement'),
+            'complaint_update' => $request->input('ComplaintUpdate'),
+            'digital_signature' => $request->input('DigitalSignature'),
+            'complaint_session' => $request->input('COMPLAINT_SESSION'),
+        ]);
 
-            $complaint = Complaint::create([
-                'is_victim' => $request->IsVictim,
-                'complainant_name' => $request->Complainant_Name,
-                'complainant_business_name' => $request->Complainant_BusinessName,
-                'complainant_phone' => $request->Complainant_Phone,
-                'complainant_email' => $request->Complainant_Email,
-                'victim_name' => $request->Victim_Name,
-                'victim_age_range' => $request->Victim_AgeRange,
-                'victim_is_minor' => $request->Victim_IsMinor,
-                'victim_address1' => $request->Victim_Address1,
-                'victim_address2' => $request->Victim_Address2,
-                'victim_suite' => $request->Victim_Suite,
-                'victim_city' => $request->Victim_City,
-                'victim_county' => $request->Victim_County,
-                'victim_country' => $request->Victim_Country,
-                'victim_state' => $request->Victim_State, // This might be missing in your form data
-                'victim_zip_code' => $request->Victim_ZipCode,
-                'victim_phone' => $request->Victim_Phone,
-                'victim_email' => $request->Victim_Email,
-                'victim_is_business' => $request->Victim_IsBusiness,
-                'victim_business_name' => $request->Victim_BusinessName,
-                'victim_business_impacted' => $request->Victim_BusinessImpacted,
-                'victim_it_poc' => $request->Victim_ItPoc,
-                'victim_other_poc' => $request->Victim_OtherPoc,
-                'victim_sector' => $request->Victim_Sector,
-                'victim_subsector' => $request->Victim_Subsector,
-                'money_sent' => $request->MoneySent,
-                'reported_loss' => $request->ReportedLoss,
-                'incident_description' => $request->IncidentDescription,
-                'email_headers' => $request->EmailHeaders,
-                'witnesses' => $request->Witnesses,
-                'law_enforcement' => $request->LawEnforcement,
-                'complaint_update' => $request->ComplaintUpdate,
-                'digital_signature' => $request->DigitalSignature,
-            ]);
-
-            // Save transactions - check if array exists and has data
-            if ($request->has('Transactions') && is_array($request->Transactions)) {
-                foreach ($request->Transactions as $transactionData) {
-                    // Check if transaction data exists and has required fields
-                    if (is_array($transactionData) && !empty($transactionData['TransactionType'])) {
-                        $complaint->transactions()->create([
-                            'transaction_type' => $transactionData['TransactionType'],
-                            'other_type' => $transactionData['OtherType'] ?? null,
-                            'was_sent' => $transactionData['WasSent'] ?? null,
-                            'amount' => $transactionData['Amount'] ?? null,
-                            'date' => $transactionData['Date'] ?? null,
-                            'institution_notified' => $transactionData['InstitutionNotified'] ?? null,
-                        ]);
-                    }
-                }
+        // 🔹 Handle Transactions
+        if ($request->has('Transactions')) {
+            foreach ($request->input('Transactions') as $tx) {
+                $complaint->transactions()->create([
+                    'transaction_type' => $tx['TransactionType'] ?? null,
+                    'other_type' => $tx['OtherType'] ?? null,
+                    'was_sent' => $tx['WasSent'] ?? null,
+                    'amount' => $tx['Amount'] ?? null,
+                    'date' => $tx['Date'] ?? null,
+                    'institution_notified' => $tx['InstitutionNotified'] ?? null,
+                    'victim_bank_name' => $tx['VictimBankName'] ?? null,
+                    'victim_bank_address1' => $tx['VictimBankAddress1'] ?? null,
+                    'victim_bank_address2' => $tx['VictimBankAddress2'] ?? null,
+                    'victim_bank_mail_stop' => $tx['VictimBankMailStop'] ?? null,
+                    'victim_bank_city' => $tx['VictimBankCity'] ?? null,
+                    'victim_bank_country' => $tx['VictimBankCountry'] ?? null,
+                    'victim_bank_state' => $tx['VictimBankState'] ?? null,
+                    'victim_bank_zipcode' => $tx['VictimBankZipCode'] ?? null,
+                    'victim_account_name' => $tx['VictimAccountName'] ?? null,
+                    'victim_account_number' => $tx['VictimAccountNumber'] ?? null,
+                    'cryptocurrency_type' => $tx['CryptocurrencyType'] ?? null,
+                    'p2p_application' => $tx['P2PApplication'] ?? null,
+                    'transaction_id' => $tx['TransactionID'] ?? null,
+                    'crypto_atm' => $tx['CryptoATM'] ?? null,
+                    'gift_card_type' => $tx['GiftCardType'] ?? null,
+                    'atm_address' => $tx['ATMAddress'] ?? null,
+                    'atm_city' => $tx['ATMCity'] ?? null,
+                    'atm_country' => $tx['ATMCountry'] ?? null,
+                    'atm_state' => $tx['ATMState'] ?? null,
+                    'atm_zipcode' => $tx['ATMZipCode'] ?? null,
+                    'victim_account_wallet' => $tx['VictimAccountWallet'] ?? null,
+                    'victim_account_identifier' => $tx['VictimAccountIdentifier'] ?? null,
+                    'gift_card_number' => $tx['GiftCardNumber'] ?? null,
+                    'recipient_bank_name' => $tx['RecipientBankName'] ?? null,
+                    'recipient_bank_address1' => $tx['RecipientBankAddress1'] ?? null,
+                    'recipient_bank_address2' => $tx['RecipientBankAddress2'] ?? null,
+                    'recipient_bank_mail_stop' => $tx['RecipientBankMailStop'] ?? null,
+                    'recipient_bank_city' => $tx['RecipientBankCity'] ?? null,
+                    'recipient_bank_country' => $tx['RecipientBankCountry'] ?? null,
+                    'recipient_bank_state' => $tx['RecipientBankState'] ?? null,
+                    'recipient_bank_zipcode' => $tx['RecipientBankZipCode'] ?? null,
+                    'recipient_account_name' => $tx['RecipientAccountName'] ?? null,
+                    'recipient_name' => $tx['RecipientName'] ?? null,
+                    'recipient_bank_routing_number' => $tx['RecipientBankRoutingNumber'] ?? null,
+                    'recipient_account_number' => $tx['RecipientAccountNumber'] ?? null,
+                    'recipient_bank_swift_code' => $tx['RecipientBankSwiftCode'] ?? null,
+                    'recipient_account_wallet' => $tx['RecipientAccountWallet'] ?? null,
+                    'recipient_account_identifier' => $tx['RecipientAccountIdentifier'] ?? null,
+                    'recipient_identifier' => $tx['RecipientIdentifier'] ?? null,
+                ]);
             }
-
-            // Save subjects - check if array exists and has data
-            if ($request->has('Subjects') && is_array($request->Subjects)) {
-                foreach ($request->Subjects as $subjectData) {
-                    // Check if subject data exists and has required fields
-                    if (is_array($subjectData) && (!empty($subjectData['Name']) || !empty($subjectData['BusinessName']))) {
-                        $complaint->subjects()->create([
-                            'name' => $subjectData['Name'] ?? null,
-                            'business_name' => $subjectData['BusinessName'] ?? null,
-                            'address1' => $subjectData['Address1'] ?? null,
-                            'address2' => $subjectData['Address2'] ?? null,
-                            'mail_stop' => $subjectData['MailStop'] ?? null,
-                            'city' => $subjectData['City'] ?? null,
-                            'country' => $subjectData['Country'] ?? null,
-                            'state' => $subjectData['State'] ?? null,
-                            'zip_code' => $subjectData['ZipCode'] ?? null,
-                            'phone' => $subjectData['Phone'] ?? null,
-                            'email' => $subjectData['Email'] ?? null,
-                            'website' => $subjectData['Website'] ?? null,
-                            'ip_address' => $subjectData['IPAddress'] ?? null,
-                        ]);
-                    }
-                }
-            }
-
-            DB::commit();
-
-            return redirect()->route('complaint.create')
-                ->with('success', 'Your complaint has been submitted successfully!');
-        } catch (\Exception $e) {
-            DB::rollBack();
-
-            // Log the actual error
-            \Log::error('Complaint submission error: ' . $e->getMessage());
-            \Log::error('Stack trace: ' . $e->getTraceAsString());
-
-            return redirect()->back()
-                ->with('error', 'There was an error submitting your complaint: ' . $e->getMessage())
-                ->withInput();
         }
+
+        // 🔹 Handle Subjects
+        if ($request->has('Subjects')) {
+            foreach ($request->input('Subjects') as $subject) {
+                $complaint->subjects()->create([
+                    'name' => $subject['Name'] ?? null,
+                    'business_name' => $subject['BusinessName'] ?? null,
+                    'address1' => $subject['Address1'] ?? null,
+                    'address2' => $subject['Address2'] ?? null,
+                    'mail_stop' => $subject['MailStop'] ?? null,
+                    'city' => $subject['City'] ?? null,
+                    'country' => $subject['Country'] ?? null,
+                    'state' => $subject['State'] ?? null,
+                    'zipcode' => $subject['ZipCode'] ?? null,
+                    'phone' => $subject['Phone'] ?? null,
+                    'email' => $subject['Email'] ?? null,
+                    'website' => $subject['Website'] ?? null,
+                    'ip_address' => $subject['IPAddress'] ?? null,
+                ]);
+            }
+        }
+
+        return redirect()
+            ->back()
+            ->with('success', 'Complaint created successfully ✅');
+    }
+
+
+    public function show($id)
+    {
+        $complaint = Complaint::with(['transactions', 'subjects'])->findOrFail($id);
+        return response()->json($complaint);
     }
 }

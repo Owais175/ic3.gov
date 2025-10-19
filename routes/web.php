@@ -24,8 +24,13 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 
-Route::get('/complaint', [ComplaintController::class, 'create'])->name('complaint.create');
-Route::post('/complaint', [ComplaintController::class, 'store'])->name('complaint.store');
+Route::post('/complaints', [ComplaintController::class, 'index'])->name('complaint-form');
+
+Route::post('/complaints', [ComplaintController::class, 'store'])
+    ->name('complaints.store');
+
+Route::get('/complaints/{id}', [ComplaintController::class, 'show'])
+    ->name('complaints.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', [Dashbardcontroller::class, 'index'])->name('dashboard');
