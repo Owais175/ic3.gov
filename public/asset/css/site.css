@@ -960,4 +960,8 @@ form#IC3ComplaintForm input {
     padding: 5px;
 }
 
+#contactForm input {
+    color: black;
+}
+
 /* new css added */
