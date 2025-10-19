@@ -407,7 +407,7 @@
             </div>
         </section>
 
-        <section class="blog-section">
+        {{-- <section class="blog-section">
             <h2>
                 Blog
             </h2>
@@ -590,7 +590,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
     </main>
 @endsection

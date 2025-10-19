@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Complaint;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class ComplaintController extends Controller
 {
+
+
     public function index()
     {
         return view('complaint-form');
@@ -60,9 +63,10 @@ class ComplaintController extends Controller
             'email_headers' => $request->input('EmailHeaders'),
             'witnesses' => $request->input('Witnesses'),
             'law_enforcement' => $request->input('LawEnforcement'),
-            'complaint_update' => $request->boolean('ComplaintUpdate'),
+            // 'complaint_update' => $request->boolean('ComplaintUpdate'),
             'digital_signature' => $request->input('DigitalSignature'),
             'complaint_session' => $request->input('COMPLAINT_SESSION'),
+            'user_id' => Auth::id(),
         ]);
 
         // 🔹 Handle Transactions
@@ -158,5 +162,20 @@ class ComplaintController extends Controller
     {
         $complaint = Complaint::with(['transactions', 'subjects'])->findOrFail($id);
         return response()->json($complaint);
+    }
+
+
+    public function approve($id)
+    {
+        $complaint = Complaint::findOrFail($id);
+
+        // Sirf admin hi approve kar sake
+        if (Auth::user()->role != 1) {
+            abort(403, 'Unauthorized');
+        }
+
+        $complaint->update(['complaint_update' => true]);
+
+        return redirect()->back()->with('success', 'Complaint approved successfully ✅');
     }
 }

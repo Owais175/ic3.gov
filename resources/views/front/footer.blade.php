@@ -39,11 +39,17 @@
         </div>
     </div>
 </div>
-<script async type="module" nonce="dvm0ixsemwv20rrd">
+{{-- <script async type="module" nonce="dvm0ixsemwv20rrd">
     document.getElementById('acceptFile')?.addEventListener('click', () => window.open('{{ route('complaint') }}',
         '_blank',
         'noopener'));
+</script> --}}
+<script async type="module" nonce="dvm0ixsemwv20rrd">
+    document.getElementById('acceptFile')?.addEventListener('click', () =>
+        window.open('{{ route('complaint-form') }}', '_blank', 'noopener')
+    );
 </script>
+
 
 <footer id="ic3Footer" class="usa-footer usa-footer--slim">
     <div class="grid-container usa-footer__return-to-top">

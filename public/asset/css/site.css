@@ -779,7 +779,9 @@ button[disabled] {
 }
 
 table#myTable tr th {
-    border: 1px solid white;
+    border: 1px solid black;
+    background: white;
+    color: black;
 }
 
 table#myTable tr td {
@@ -807,7 +809,11 @@ p.suc {
 }
 
 .track-order {
-    padding: 100px 0;
+    padding: 50px 30px;
+    overflow-x: auto;
+    border: 5px solid white;
+    background: var(--ic3-banner-bg);
+    margin: 50px 0;
 }
 
 body .track-order .dt-paging nav button {
@@ -936,6 +942,22 @@ form#IC3ComplaintForm input {
     background: var(--ic3-banner-bg);
     padding: 15px;
     border-radius: 15px;
+}
+
+.tracking-container {
+    max-width: 100rem;
+}
+
+.bg-success-green {
+    background-color: #22bb33;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.bg-danger-red {
+    background-color: #bb2124;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 /* new css added */

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\Subject;
 use App\Models\Transaction;
 use Illuminate\Database\Eloquent\Model;
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class Complaint extends Model
 {
     protected $fillable = [
+        'user_id',
         'is_victim',
         'complainant_name',
         'complainant_business_name',
@@ -53,5 +55,9 @@ class Complaint extends Model
     public function subjects()
     {
         return $this->hasMany(Subject::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

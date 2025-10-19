@@ -61,13 +61,13 @@
     <div class="usa-nav-container">
         <div class="usa-navbar">
             <div class="usa-logo">
-                <a href="index.php">
+                <a href="{{ route('index') }}">
                     <picture>
                         <source srcset="{{ asset('asset/image/ic3_logo.webp') }}" type="image/webp">
                         <img class="usa-footer__logo-img" src="{{ asset('asset/image/ic3_logo.png') }}" alt="IC3 Logo">
                     </picture>
                 </a>
-                <em class="usa-logo__text"><a href="index.php">Internet Crime Complaint Center (IC3)</a></em>
+                <em class="usa-logo__text"><a href="{{ route('index') }}">Internet Crime Complaint Center (IC3)</a></em>
             </div>
             <button type="button" class="usa-menu-btn">Menu</button>
         </div>
@@ -92,7 +92,7 @@
                     <a class="usa-nav-link" href="{{ route('about') }}">About Us</a>
                 </li>
                 <li class="usa-nav__primary-item">
-                    <a class="usa-nav-link" href="track-order.php">Track Order</a>
+                    <a class="usa-nav-link" href="{{ route('track-order') }}">Track Order</a>
                 </li>
                 <li class="usa-nav__primary-item">
                     <a class="usa-nav-link" href="{{ route('contact') }}">Contact</a>

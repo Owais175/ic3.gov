@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Complaint;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -57,5 +58,21 @@ class Dashbardcontroller extends Controller
 
         $contact = Contact::all();
         return view('admin.contact', compact('contact'));
+    }
+
+    public function tracking()
+    {
+        $user = Auth::user();
+
+        if ($user->role == 1) {
+            $complaints = Complaint::with(['transactions', 'subjects'])->latest()->get();
+        } else {
+            $complaints = Complaint::with(['transactions', 'subjects'])
+                ->where('user_id', $user->id)
+                ->latest()
+                ->get();
+        }
+
+        return view('track-order', compact('complaints'));
     }
 }

@@ -23,14 +23,18 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
+// Route::get('/complaints', [ComplaintController::class, 'index'])->name('complaint-form');
 
-Route::post('/complaints', [ComplaintController::class, 'index'])->name('complaint-form');
+// Route::post('/complaints', [ComplaintController::class, 'store'])
+//     ->name('complaints.store');
 
-Route::post('/complaints', [ComplaintController::class, 'store'])
-    ->name('complaints.store');
+// Route::get('/complaints/{id}', [ComplaintController::class, 'show'])
+//     ->name('complaints.show');
 
-Route::get('/complaints/{id}', [ComplaintController::class, 'show'])
-    ->name('complaints.show');
+// Route::put('/complaints/{id}/approve', [ComplaintController::class, 'approve'])->name('complaint.approve');
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', [Dashbardcontroller::class, 'index'])->name('dashboard');
@@ -38,4 +42,12 @@ Route::middleware('auth')->group(function () {
     Route::get('profile-edit', [Dashbardcontroller::class, 'edit'])->name('user.edit');
     Route::put('profile-update', [Dashbardcontroller::class, 'update'])->name('user.update');
     Route::get('User-contact', [Dashbardcontroller::class, 'contactshow'])->name('admin.contact');
+    Route::get('track-order', [Dashbardcontroller::class, 'tracking'])->name('track-order');
+    Route::get('/complaints', [ComplaintController::class, 'index'])->name('complaint-form');
+
+    Route::post('/complaints', [ComplaintController::class, 'store'])->name('complaints.store');
+
+    Route::get('/complaints/{id}', [ComplaintController::class, 'show'])->name('complaints.show');
+
+    Route::put('/complaints/{id}/approve', [ComplaintController::class, 'approve'])->name('complaint.approve');
 });
