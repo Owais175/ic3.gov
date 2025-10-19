@@ -2,7 +2,6 @@
 
 
 @section('content')
-
     <main id="main-content" class="usa-prose grid-container">
 
         <section class="contact-form">
@@ -10,19 +9,6 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-fill-contact register-forms">
-                            @if ($errors->any())
-                                <div
-                                    style="background: #f8d7da; color: #721c24; padding: 10px 15px; border-radius: 8px; margin-bottom: 15px;">
-                                    <ul style="margin:0; padding-left:20px;">
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                            @if (session('success'))
-                                <div class="alert alert-success">{{ session('success') }}</div>
-                            @endif
                             <form id="contactForm" method="POST" action="{{ route('registeruser') }}">
                                 @csrf
                                 <h3>Sign Up </h3>
@@ -85,6 +71,25 @@
         </section>
 
     </main>
-
-
 @endsection
+
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Welcome!',
+            text: "{{ session('success') }}",
+            background: '#fefefe',
+            color: '#333',
+            showConfirmButton: false,
+            timer: 2200,
+            timerProgressBar: true,
+            backdrop: `
+        rgba(0,0,0,0.3)
+        url("https://sweetalert2.github.io/images/nyan-cat.gif")
+        center left
+        no-repeat
+    `
+        });
+    </script>
+@endif

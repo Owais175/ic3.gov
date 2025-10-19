@@ -89,6 +89,8 @@
         });
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
         $('[data-fancybox="gallery"]').fancybox({
             buttons: [
@@ -105,6 +107,30 @@
     </script>
 
     <script src="https://www.google.com/recaptcha/api.js" async defer nonce="dzvwhr5k53xm1rye"></script>
+
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: "{{ session('success') }}",
+                showConfirmButton: false,
+                timer: 2500,
+                timerProgressBar: true,
+            });
+        </script>
+    @endif
+
+    @if (session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "{{ session('error') }}",
+                showConfirmButton: true,
+            });
+        </script>
+    @endif
 
 </body>
 

@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <main id="main-content" class="usa-prose grid-container">
+    <main id="main-content" class="usa-prose grid-container dashborad-styling">
 
         <section class="user-profile">
             <div class="main-dashborad-flex">

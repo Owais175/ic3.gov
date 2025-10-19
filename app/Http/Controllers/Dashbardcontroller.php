@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -49,5 +50,12 @@ class Dashbardcontroller extends Controller
         $user->save();
 
         return redirect()->route('dashboard')->with('success', 'Profile updated successfully.');
+    }
+
+    public function contactshow()
+    {
+
+        $contact = Contact::all();
+        return view('admin.contact', compact('contact'));
     }
 }

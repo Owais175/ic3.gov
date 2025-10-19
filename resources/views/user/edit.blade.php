@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <main id="main-content" class="usa-prose grid-container">
+    <main id="main-content" class="usa-prose grid-container dashborad-styling">
 
         <section class="user-profile">
             <div class="main-dashborad-flex">
@@ -10,19 +10,6 @@
                     @include('auth.include.sidebar')
                 </div>
                 <div class="dashborad-content">
-                    @if ($errors->any())
-                        <div
-                            style="background: #f8d7da; color: #721c24; padding: 10px 15px; border-radius: 8px; margin-bottom: 15px;">
-                            <ul style="margin:0; padding-left:20px;">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    @if (session('success'))
-                        <div class="alert alert-success">{{ session('success') }}</div>
-                    @endif
                     <form id="contactForm" method="POST" action="{{ route('user.update') }}">
                         <h4>Edit Profile <a href="{{ route('dashboard') }}" class="usa-button usa-button--big">Back</a>
                         </h4>

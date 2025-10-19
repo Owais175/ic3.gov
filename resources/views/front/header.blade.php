@@ -97,9 +97,15 @@
                 <li class="usa-nav__primary-item">
                     <a class="usa-nav-link" href="{{ route('contact') }}">Contact</a>
                 </li>
-                <li class="usa-nav__primary-item">
-                    <a class="usa-button usa-button--big" href="{{ route('auth.register') }}">Register</a>
-                </li>
+                @if (!Auth::check())
+                    <li class="usa-nav__primary-item">
+                        <a class="usa-button usa-button--big" href="{{ route('auth.register') }}">Register</a>
+                    </li>
+                @else
+                    <li class="usa-nav__primary-item">
+                        <a class="usa-button usa-button--big" href="{{ route('dashboard') }}">Dashoboard</a>
+                    </li>
+                @endif
             </ul>
         </nav>
     </div>

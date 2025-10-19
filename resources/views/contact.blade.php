@@ -9,8 +9,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-fill-contact">
-                            <form id="contactForm">
-
+                            <form id="contactForm" action="{{ route('contactsubmit') }}" method="POST">
+                                @csrf
                                 <div class="field-grid">
                                     <div>
                                         <label for="name">Full name</label>
@@ -28,8 +28,7 @@
                                 <div class="field-grid">
                                     <div>
                                         <label for="phone">Phone</label>
-                                        <input id="phone" name="phone" type="tel" placeholder="+1 555 555 5555"
-                                            pattern="^\+?[0-9\s\-\(\)]{6,}$" aria-describedby="phoneHelp">
+                                        <input id="phone" name="phone" type="tel" placeholder="">
                                     </div>
 
                                     <div>
@@ -59,3 +58,24 @@
 
     </main>
 @endsection
+
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Message Sent!',
+            text: "{{ session('success') }}",
+            background: '#fefefe',
+            color: '#333',
+            showConfirmButton: false,
+            timer: 2200,
+            timerProgressBar: true,
+            backdrop: `
+    rgba(0,0,0,0.3)
+    url("https://sweetalert2.github.io/images/nyan-cat.gif")
+    center left
+    no-repeat
+  `
+        });
+    </script>
+@endif

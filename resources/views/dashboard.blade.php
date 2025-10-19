@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <main id="main-content" class="usa-prose grid-container">
+    <main id="main-content" class="usa-prose grid-container dashborad-styling">
 
         <section class="user-profile">
             <div class="main-dashborad-flex">
@@ -23,3 +23,23 @@
 
     </main>
 @endsection
+
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Welcome Back!',
+            text: "{{ session('success') }}",
+            background: '#fefefe',
+            color: '#333',
+            showConfirmButton: false,
+            timer: 2500,
+            backdrop: `
+    rgba(0,0,123,0.2)
+    url("/images/nyan-cat.gif")
+    left top
+    no-repeat
+  `
+        });
+    </script>
+@endif

@@ -7,10 +7,15 @@
          <a href="{{ route('user.profile') }}">Profile</a>
      </li>
 
-     <li>
-         @if (Auth::user()->role == '2')
+     @if (Auth::user()->role == '2')
+         <li>
              <a href="#">Complains</a>
-     </li>
+         </li>
+     @endif
+     @if (Auth::user()->role == '1')
+         <li>
+             <a href="{{ route('admin.contact') }}">User Contacts</a>
+         </li>
      @endif
      <li>
          <form action="{{ route('logout') }}" method="POST">

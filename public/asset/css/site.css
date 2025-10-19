@@ -822,7 +822,7 @@ body .track-order .dt-paging nav button {
 }
 
 .sidebar-user-profile {
-    width: 35%;
+    width: 30%;
     background: var(--ic3-banner-bg);
     padding: 15px;
     border-radius: 15px;
@@ -871,7 +871,7 @@ body .track-order .dt-paging nav button {
 }
 
 .dashborad-content {
-    width: 65%;
+    width: 70%;
 }
 
 .manage-user {
@@ -910,6 +910,7 @@ form#IC3ComplaintForm input {
     color: black;
     font-weight: 600;
 }
+
 .usa-input--error {
     border-color: #e52207;
     box-shadow: 0 0 0 2px #e52207;
@@ -926,4 +927,15 @@ form#IC3ComplaintForm input {
     color: #e52207;
     font-weight: bold;
 }
+
+.dashborad-styling {
+    max-width: 100rem;
+}
+
+.user-contact-show {
+    background: var(--ic3-banner-bg);
+    padding: 15px;
+    border-radius: 15px;
+}
+
 /* new css added */

@@ -32,7 +32,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('dashboard')->with('success', 'Registration successful!');
+        return redirect()->route('dashboard')->with('success', '🎉 Registration successful! Welcome aboard.');
     }
 
     public function login(Request $request)
@@ -45,14 +45,10 @@ class AuthController extends Controller
         if (Auth::attempt($request->only('email', 'password'))) {
             $user = Auth::user();
 
-            if ($user->role == 1) {
-                return redirect()->route('dashboard');
-            }
-
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard')->with('success', '✅ Welcome back, ' . $user->name . '!');
         }
 
-        return back()->withErrors(['email' => 'Invalid credentials.']);
+        return back()->with('error', '❌ Invalid credentials, please try again.');
     }
 
     public function logout(Request $request)
@@ -61,6 +57,6 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('auth.register');
+        return redirect()->route('auth.register')->with('success', '👋 You have logged out successfully.');
     }
 }
