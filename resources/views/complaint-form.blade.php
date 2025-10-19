@@ -47,8 +47,8 @@
                 </ul>
             </div>
         </div>
-      <form id="IC3ComplaintForm" action="{{ route('complaint.submit') }}" method="post" novalidate>
-    @csrf
+        <form id="IC3ComplaintForm" action="{{ route('complaint.store') }}" method="POST" novalidate>
+            @csrf
             <a id="prompt" aria-controls="promptModal" data-open-modal></a>
             <div class="modal-bootstrap-hidden display-none">
                 <div id="promptModal" class="usa-modal" aria-labelledby="promptModalHeading"
@@ -1278,7 +1278,7 @@
                                     data-val-required-when-allowempty="false"
                                     data-val-required-when-input="Transactions[0].TransactionType"
                                     data-val-required-when-op="ne" data-val-required-when-target=""
-                                    id="Transactions_0__Date" max="2025-10-17" name="Transactions[0].Date"
+                                    id="Transactions_0__Date" max="2025-10-20" name="Transactions[0].Date"
                                     value="" aria-errormessage="Transactions_0__Date_error" />
                                 <div class="val-error" id="Transactions_0__Date_error"></div>
                             </fieldset>
@@ -3230,65 +3230,25 @@
                 </fieldset>
             </article>
             <input name="COMPLAINT_SESSION" type="hidden"
-                value="CfDJ8ApAv3mLQVVIr3Og8tcM06NmE01_MH-BxLEBS71TD0Gu_Xh5J8BgyX6x9r5YYH3UAxbP-2y-_0pw6rJ0PxhxYFmkYZY60flIFixNGiAnNsnB3-FZCIqCY-Id3vVS5dF6_67tRQoylJZyQdaODiICyO8" />
+                value="CfDJ8ApAv3mLQVVIr3Og8tcM06Mgi3EQ8E4_o7d1XCIkPDgRc6DW6O0PdE2uk7_DflnotIav02GGBy9y3XLMHZmxCw2VPbWkb6fBC79dZvaRSlci-cZ7VG6cC-LiSG0P4P-Jah0YgsL2Q5itaqVBaLw1Kho" />
         </form>
 
 
     </main>
 @endsection
-@if($errors->any())
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    @foreach($errors->keys() as $key)
-        @php
-            // Field name mapping for frontend
-            $fieldName = str_replace('.', '_', $key);
-            $fieldName = str_replace('[', '_', $fieldName);
-            $fieldName = str_replace(']', '_', $fieldName);
-        @endphp
-        
-        const errorField = document.querySelector('[name="{{ $key }}"]');
-        if (errorField) {
-            // Add error class
-            errorField.classList.add('usa-input--error');
-            
-            // Find error message container
-            let errorElement = document.getElementById(errorField.getAttribute('aria-errormessage'));
-            if (!errorElement) {
-                errorElement = document.getElementById('{{ $fieldName }}_error');
-            }
-            
-            if (errorElement) {
-                errorElement.textContent = '{{ $errors->first($key) }}';
-                errorElement.style.display = 'block';
-            }
-            
-            // Scroll to first error
-            @if($loop->first && session('scroll_to_errors'))
-                errorField.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'center' 
-                });
-                errorField.focus();
-            @endif
-        }
-    @endforeach
-});
-</script>
+
+@if (session('success'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            alert('{{ session('success') }}');
+        });
+    </script>
 @endif
 
-@if(session('success'))
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    alert('{{ session('success') }}');
-});
-</script>
-@endif
-
-@if(session('error'))
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    alert('{{ session('error') }}');
-});
-</script>
+@if (session('error'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            alert('{{ session('error') }}');
+        });
+    </script>
 @endif

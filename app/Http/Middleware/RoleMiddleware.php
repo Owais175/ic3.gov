@@ -20,7 +20,6 @@ class RoleMiddleware
             return redirect()->route('auth.register');
         }
 
-        // Compare numeric roles (1=Admin, 2=User)
         if (Auth::user()->role != (int) $role) {
             abort(403, 'Unauthorized access.');
         }

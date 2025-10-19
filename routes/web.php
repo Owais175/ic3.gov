@@ -18,32 +18,19 @@ Route::post('contactsubmit', [Homecontroller::class, 'contactsubmit'])->name('co
 
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('auth.register');
 Route::post('/register', [AuthController::class, 'register'])->name('registeruser');
-
-Route::post('/login', [AuthController::class, 'login'])->name('login');
-
+Route::get('/login', [AuthController::class, 'showRegisterForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
-Route::get('dashboard', [Dashbardcontroller::class, 'index'])->name('dashboard');
-Route::get('profile', [Dashbardcontroller::class, 'profile'])->name('user.profile');
-Route::get('profile-edit', [Dashbardcontroller::class, 'edit'])->name('user.edit');
-Route::put('profile-update', [Dashbardcontroller::class, 'update'])->name('user.update');
-Route::get('User-contact', [Dashbardcontroller::class, 'contactshow'])->name('admin.contact');
 
-// // Dashboards
-// Route::middleware(['auth', 'role:2'])->get('dashboard', function () {
-//     return view('user.dashboard');
-// })->name('user.dashboard');
+Route::get('/complaint', [ComplaintController::class, 'create'])->name('complaint.create');
+Route::post('/complaint', [ComplaintController::class, 'store'])->name('complaint.store');
 
-// Route::middleware(['auth', 'role:1'])->get('dashboard', function () {
-//     return view('admin.dashboard');
-// })->name('admin.dashboard');
-
-// routes/web.php
-Route::get('/complaint', [ComplaintController::class, 'index'])->name('complaint.form');
-Route::post('/complaint/submit', [ComplaintController::class, 'submitComplaint'])->name('complaint.submit');
-
-Route::middleware('auth')->get('dashboard', function () {
-    $user = Auth::user();
-    return view('dashboard', compact('user'));
-})->name('dashboard');
+Route::middleware('auth')->group(function () {
+    Route::get('dashboard', [Dashbardcontroller::class, 'index'])->name('dashboard');
+    Route::get('profile', [Dashbardcontroller::class, 'profile'])->name('user.profile');
+    Route::get('profile-edit', [Dashbardcontroller::class, 'edit'])->name('user.edit');
+    Route::put('profile-update', [Dashbardcontroller::class, 'update'])->name('user.update');
+    Route::get('User-contact', [Dashbardcontroller::class, 'contactshow'])->name('admin.contact');
+});

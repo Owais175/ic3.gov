@@ -1,18 +1,14 @@
-const maxSubjects = 10, maxTransactions = 10;
-const maxStep = Symbol('maxStep'), setStep = Symbol('setStep'), currentStep = Symbol('currentStep');
-const targetStep = Symbol('targetStep'), validateStep = Symbol('validateStep'), setStepInvalid = Symbol('setStepInvalid');
-const template = Symbol('template'), subsectorMap = Symbol('subsectorMap'), subsectors = Symbol('subsectors'), actions = Symbol('actions');
+const maxSubjects = 10, maxTransactions = 10, maxStep = Symbol('maxStep'), setStep = Symbol('setStep'), currentStep = Symbol('currentStep'),
+    targetStep = Symbol('targetStep'), validateStep = Symbol('validateStep'), setStepInvalid = Symbol('setStepInvalid'),
+    template = Symbol('template'), subsectorMap = Symbol('subsectorMap'), subsectors = Symbol('subsectors'), actions = Symbol('actions');
 
-// Modal setup
 document.querySelectorAll('.modal-bootstrap-hidden').forEach(x => x.classList.remove('display-none'));
-
 const showPrompt = (text, ...callbacks) => {
     document.querySelectorAll('#promptModalDescription').forEach(x => x.textContent = text);
     const a = document.querySelector('#promptModal .prompt-button--confirm');
     callbacks.filter(x => 'function' === typeof (x)).forEach(x => a?.[actions].push(x));
     document.getElementById('prompt')?.dispatchEvent(new Event('click', { bubbles: true }));
 };
-
 const remapItem = (item, placeholder, sub) => {
     const placeNum = placeholder - 1;
     const subNum = sub - 1;
@@ -37,7 +33,6 @@ const remapItem = (item, placeholder, sub) => {
     item.querySelectorAll('fieldset[data-target]').forEach(x => x.dataset.target = x.dataset.target.replace(oldId, newId));
     return item;
 };
-
 const removeItem = (className, actionName, maxItems, e) => {
     e.preventDefault();
     const rm = e.target.closest('[data-index]');
@@ -60,7 +55,6 @@ const removeItem = (className, actionName, maxItems, e) => {
         }
     }).bind(null, className, actionName, maxItems, rm, rmIdx));
 };
-
 const generateHelpLink = (modalId, label) => {
     if (!(modalId && label)) {
         return;
@@ -81,7 +75,6 @@ const generateHelpLink = (modalId, label) => {
     a.append(svg);
     return a;
 };
-
 document.querySelectorAll('.transaction-type').forEach(x => {
     const t = x.closest('[data-index]');
     [{ sel: `label[for="${x.id}"]`, target: 'beforeend', param: ['tTypeDef', 'Get definitions of transaction types'] },
@@ -107,7 +100,6 @@ document.querySelectorAll('.transaction-type').forEach(x => {
     d.dataset.ordinal = '99999';
     t.querySelector('fieldset:last-of-type')?.insertAdjacentElement('afterend', d);
 });
-
 const openModal = e => {
     const target = document.getElementById(`${e.target?.getAttribute('aria-controls') || e.target.closest('[aria-controls]')?.getAttribute('aria-controls')}Open`);
     if (target) {
@@ -116,7 +108,6 @@ const openModal = e => {
         target.dispatchEvent(new Event('click'));
     }
 };
-
 const blurFieldset = e => {
     const newVal = e.target.value || e.target.querySelector(':checked')?.value;
     const target = document.getElementById(e.currentTarget.dataset.target);
@@ -124,7 +115,6 @@ const blurFieldset = e => {
         target.disabled = (e.currentTarget.dataset.targetValue || 'true') !== newVal;
     }
 };
-
 const setupItems = (className, actionName, toggleFunction, maxItems) => {
     const nodes = [...document.querySelectorAll(className)];
     nodes.forEach(x => {
@@ -185,7 +175,6 @@ const setupItems = (className, actionName, toggleFunction, maxItems) => {
     });
     return nodes;
 };
-
 const toggleTransactionHeader = transaction => {
     const target = transaction.closest('[data-index]');
     if (target.querySelector('.usa-accordion__content[hidden]')) {
@@ -206,7 +195,6 @@ const toggleTransactionHeader = transaction => {
     }
     return transaction;
 };
-
 const transactionTypeSetup = e => {
     const type = Number.parseInt(e.target.value);
     const transaction = e.target.closest('[id^="transaction"]');
@@ -236,7 +224,6 @@ const transactionTypeSetup = e => {
         });
     transaction?.querySelectorAll('.content-contingent').forEach(x => x.classList.toggle('display-none', !x.classList.contains(`t${type}`)));
 };
-
 const toggleSubjectHeader = subject => {
     const target = subject.closest('[data-index]');
     if (target.querySelector('.usa-accordion__content[hidden]')) {
@@ -250,61 +237,49 @@ const toggleSubjectHeader = subject => {
     return subject;
 };
 
-// Prompt Modal Setup
 document.querySelectorAll('#promptModal').forEach(x => {
     x.querySelectorAll('.prompt-button--confirm').forEach(y => {
         y.addEventListener('click', e => {
-            if (e.target[actions]) {
-                e.target[actions].forEach(z => z());
-                e.target[actions] = [];
-            }
+            e.target[actions].forEach(z => z());
+            e.target[actions] = [];
         }, { passive: true });
         y[actions] = [];
     });
     x.querySelectorAll('.prompt-button--cancel').forEach(y => y.addEventListener('click', e => {
-        const confirmBtn = e.target.closest('ul').querySelector('.prompt-button--confirm');
-        if (confirmBtn && confirmBtn[actions]) {
-            confirmBtn[actions] = [];
-        }
+        e.target.closest('ul').querySelector('.prompt-button-confirm')[actions] = [];
     }, { passive: true }));
 });
-
-// Step Indicator Setup
 document.querySelectorAll('#complaintStep').forEach(x => {
     const steps = [...x.querySelectorAll('.usa-step-indicator__segment[data-step-num]')];
     steps.forEach(y => y.setAttribute('tabindex', '0'));
     x.classList.add('event-enabled');
     x[maxStep] = steps.map(x => Number.parseInt(x.dataset.stepNum)).reduce((x, y) => Math.max(x, y), 1);
-
-    // FIX: setStepInvalid function properly define karein
-    x[setStepInvalid] = function (isInvalid, stepNum) {
-        const step = this.querySelector(`.usa-step-indicator__segment[data-step-num="${stepNum || this[currentStep]}"]`);
-        step?.classList.toggle('usa-step-indicator__segment--error', isInvalid);
-        if (step) {
-            const sr = step.querySelector('.usa-sr-only:not(.text)');
-            if (isInvalid) {
-                if (sr) {
-                    sr.textContent = ' error';
-                } else {
-                    step.querySelector('.usa-sr-only.text')?.appendChild(Object.assign(document.createElement('span'), { textContent: ' error', className: 'usa-sr-only' }));
-                }
-            } else {
-                if (sr) {
-                    if (step.classList.contains('usa-step-indicator__segment--complete')) {
-                        sr.textContent = ' completed';
-                    } else {
-                        sr.remove();
-                    }
-                }
-            }
-        }
-    };
-
     x[setStep] = num => {
         if (1 > num || num > x[maxStep]) {
             return;
         }
-
+        x[setStepInvalid] = (isInvalid, stepNum) => {
+            const step = x.querySelector(`.usa-step-indicator__segment[data-step-num="${stepNum || x[currentStep]}"]`);
+            step?.classList.toggle('usa-step-indicator__segment--error', isInvalid);
+            if (step) {
+                const sr = step.querySelector('.usa-sr-only:not(.text)');
+                if (isInvalid) {
+                    if (sr) {
+                        sr.textContent = ' error';
+                    } else {
+                        step.querySelector('.usa-sr-only.text')?.appendChild(Object.assign(document.createElement('span'), { textContent: ' error', className: 'usa-sr-only' }));
+                    }
+                } else {
+                    if (sr) {
+                        if (step.classList.contains('usa-step-indicator__segment--complete')) {
+                            sr.textContent = ' completed';
+                        } else {
+                            sr.remove();
+                        }
+                    }
+                }
+            }
+        };
         steps.forEach(step => {
             const cmp = Number.parseInt(step.dataset.stepNum) - num;
             if (0 > cmp) {
@@ -332,7 +307,6 @@ document.querySelectorAll('#complaintStep').forEach(x => {
         document.dispatchEvent(new CustomEvent('stepchange', { detail: { step: num, prev: x[currentStep] }, cancelable: true }));
         x[currentStep] = num;
     };
-
     const handler = e => {
         const step = Number.parseInt(e.target.dataset.stepNum);
         if (!isNaN(step)) {
@@ -350,8 +324,6 @@ document.querySelectorAll('#complaintStep').forEach(x => {
         y.querySelector('.usa-sr-only')?.remove();
     });
 });
-
-// Event Listeners
 document.addEventListener('stepchange', e => {
     if (4 !== e.detail.prev) {
         return;
@@ -376,7 +348,6 @@ document.addEventListener('stepchange', e => {
         subjectMatch.scrollIntoView(true, { behavior: 'instant' });
     }
 });
-
 document.addEventListener('stepchange', e => {
     if (e.defaultPrevented) {
         return;
@@ -388,8 +359,6 @@ document.addEventListener('stepchange', e => {
     });
     document.getElementById('complaintStep')?.scrollIntoView(true, { behavior: 'instant' });
 }, { passive: true });
-
-// Form Steps Setup
 document.querySelectorAll('.form-step[data-step-num]').forEach(x => {
     const stepNum = Number.parseInt(x.dataset.stepNum);
     const container = Object.assign(document.createElement('div'), { className: 'step-buttons' });
@@ -402,87 +371,79 @@ document.querySelectorAll('.form-step[data-step-num]').forEach(x => {
         container.appendChild(next);
     }
     x.appendChild(container);
-
-    // FIX: validateStep function properly define karein
     x[validateStep] = function () {
         const isInvalid = ![...this.querySelectorAll('[aria-errormessage]:enabled')].every(y => y.checkValidity());
-        const stepIndicator = document.getElementById('complaintStep');
-        if (stepIndicator && stepIndicator[setStepInvalid]) {
-            stepIndicator[setStepInvalid](isInvalid, Number.parseInt(this.dataset.stepNum));
-        }
-
+        document.getElementById('complaintStep')[setStepInvalid](isInvalid, Number.parseInt(this.dataset.stepNum));
         if (isInvalid) {
             this.querySelectorAll('[aria-errormessage]:enabled:invalid').forEach(y => {
                 const err = document.getElementById(y.getAttribute('aria-errormessage'));
                 if (!y.validity || y.validity.valid || !err) {
-                    return;
-                }
-
-                if (y.validity.valueMissing) {
-                    if (y.dataset.valRequiredIfInput && 'true' !== y.dataset.valRequiredIfAllowempty) {
-                        const ifTar = document.querySelector(`[name='${y.dataset.valRequiredIfInput}']`);
-                        if (ifTar && !(null === ifTar.value || undefined === ifTar.value) && 'true' === ifTar.value.trim()) {
-                            err.textContent = y.dataset.valRequiredIf;
-                        }
-                    } else if (y.dataset.valRequiredWhenInput && 'true' !== y.dataset.valRequiredWhenAllowempty) {
-                        const whenTar = document.querySelector(`[name='${y.dataset.valRequiredWhenInput}']`);
-                        if (whenTar && !(null === whenTar.value || undefined === whenTar.value)) {
-                            let result = true;
-                            switch (y.dataset.valRequiredWhenOp) {
-                                case 'ieq':
-                                    result = whenTar.value.trim().toLowerCase() === y.dataset.valRequiredWhenTarget.toLowerCase();
-                                    break;
-                                case 'eq':
-                                    result = whenTar.value.trim() === y.dataset.valRequiredWhenTarget;
-                                    break;
-                                case 'ine':
-                                    result = whenTar.value.trim().toLowerCase() !== y.dataset.valRequiredWhenTarget.toLowerCase();
-                                    break;
-                                case 'ne':
-                                    result = whenTar.value.trim() !== y.dataset.valRequiredWhenTarget;
-                                    break;
-                                case 'gt':
-                                    result = whenTar.dataset.valRequiredWhenTarget < y.value;
-                                    break;
-                                case 'ge':
-                                    result = whenTar.dataset.valRequiredWhenTarget <= y.value;
-                                    break;
-                                case 'lt':
-                                    result = whenTar.dataset.valRequiredWhenTarget > y.value;
-                                    break;
-                                case 'le':
-                                    result = whenTar.dataset.valRequiredWhenTarget >= y.value;
-                                    break;
+                    //skip
+                } else {
+                    if (y.validity.valueMissing) {
+                        if (y.dataset.valRequiredIfInput && 'true' !== y.dataset.valRequiredIfAllowempty) {
+                            const ifTar = document.querySelector(`[name='${y.dataset.valRequiredIfInput}']`);
+                            if (ifTar && !(null === ifTar.value || undefined === ifTar.value) && 'true' === ifTar.value.trim()) {
+                                err.textContent = y.dataset.valRequiredIf;
                             }
-                            if (result) {
-                                err.textContent = y.dataset.valRequiredWhen;
+                        } else if (y.dataset.valRequiredWhenInput && 'true' !== y.dataset.valRequiredWhenAllowempty) {
+                            const whenTar = document.querySelector(`[name='${y.dataset.valRequiredWhenInput}']`);
+                            if (whenTar && !(null === whenTar.value || undefined === whenTar.value)) {
+                                let result = true;
+                                switch (y.dataset.valRequiredWhenOp) {
+                                    case 'ieq':
+                                        result = whenTar.value.trim().toLowerCase() === y.dataset.valRequiredWhenTarget.toLowerCase();
+                                        break;
+                                    case 'eq':
+                                        result = whenTar.value.trim() === y.dataset.valRequiredWhenTarget;
+                                        break;
+                                    case 'ine':
+                                        result = whenTar.value.trim().toLowerCase() !== y.dataset.valRequiredWhenTarget.toLowerCase();
+                                        break;
+                                    case 'ne':
+                                        result = whenTar.value.trim() !== y.dataset.valRequiredWhenTarget;
+                                        break;
+                                    case 'gt':
+                                        result = whenTar.dataset.valRequiredWhenTarget < y.value;
+                                        break;
+                                    case 'ge':
+                                        result = whenTar.dataset.valRequiredWhenTarget <= y.value;
+                                        break;
+                                    case 'lt':
+                                        result = whenTar.dataset.valRequiredWhenTarget > y.value;
+                                        break;
+                                    case 'le':
+                                        result = whenTar.dataset.valRequiredWhenTarget >= y.value;
+                                        break;
+                                }
+                                if (result) {
+                                    err.textContent = y.dataset.valRequiredWhen;
+                                }
+                            }
+                        } else {
+                            if (y.dataset.valRequired) {
+                                err.textContent = y.dataset.valRequired;
                             }
                         }
-                    } else {
-                        if (y.dataset.valRequired) {
-                            err.textContent = y.dataset.valRequired;
-                        }
+                    } else if (y.dataset.valLength && y.validity.tooLong) {
+                        err.textContent = x.dataset.valLength;
+                    } else if (y.dataset.valEmailaddress && y.validity.typeMismatch) {
+                        err.textContent = y.dataset.valEmailaddress;
+                    } else if (y.dataset.valRegex && y.validity.patternMismatch) {
+                        err.textContent = y.dataset.valRegex;
+                    } else if (y.dataset.valRange && (y.validity.rangeUnderflow || y.validity.rangeOverflow)) {
+                        err.textContent = y.dataset.valRange;
+                    } else if (y.dataset.valIpaddress && y.validity.patternMismatch) {
+                        err.textContent = y.dataset.valIpaddress;
                     }
-                } else if (y.dataset.valLength && y.validity.tooLong) {
-                    err.textContent = y.dataset.valLength;
-                } else if (y.dataset.valEmailaddress && y.validity.typeMismatch) {
-                    err.textContent = y.dataset.valEmailaddress;
-                } else if (y.dataset.valRegex && y.validity.patternMismatch) {
-                    err.textContent = y.dataset.valRegex;
-                } else if (y.dataset.valRange && (y.validity.rangeUnderflow || y.validity.rangeOverflow)) {
-                    err.textContent = y.dataset.valRange;
-                } else if (y.dataset.valIpaddress && y.validity.patternMismatch) {
-                    err.textContent = y.dataset.valIpaddress;
-                }
-
-                const accErr = y.closest('[data-index]');
-                if (accErr && !accErr.classList.contains('usa-accordion__error')) {
-                    accErr.classList.add('usa-accordion__error');
-                    accErr.querySelector('.usa-accordion__button div')?.insertAdjacentElement('beforeend', Object.assign(document.createElement('span'), { className: 'usa-sr-only', textContent: ' error' }));
+                    const accErr = y.closest('[data-index]');
+                    if (accErr && !accErr.classList.contains('usa-accordion__error')) {
+                        accErr.classList.add('usa-accordion__error');
+                        accErr.querySelector('.usa-accordion__button div')?.insertAdjacentElement('beforeend', Object.assign(document.createElement('span'), { className: 'usa-sr-only', textContent: ' error' }));
+                    }
                 }
             });
         }
-
         this.querySelectorAll('.usa-accordion__error[data-index]').forEach(y => {
             const hasErr = y.querySelector('[aria-errormessage]:enabled:invalid');
             if (!hasErr) {
@@ -490,55 +451,38 @@ document.querySelectorAll('.form-step[data-step-num]').forEach(x => {
                 y.querySelector('.usa-accordion__button div span')?.remove();
             }
         });
-
         [...this.querySelectorAll('.usa-accordion__error[data-index]')].slice(0, 1).forEach(y => {
             const btn = y.querySelector('.usa-accordion__button');
             if ('true' !== btn.ariaExpanded) {
                 btn.dispatchEvent(new Event('click', { bubbles: true }));
             }
         });
-
         this.querySelectorAll('[aria-errormessage]:valid,[aria-errormessage]:disabled').forEach(y => {
             const err = document.getElementById(y.getAttribute('aria-errormessage'));
             if (err) {
                 err.textContent = null;
             }
         });
-
         return this.querySelector('[aria-errormessage][id]:enabled:invalid')?.id;
     };
 });
-
-// Step buttons event listeners
 document.querySelectorAll('.step-buttons :is(.prev, .next)').forEach(x => {
     x.addEventListener('click', e => {
         e.preventDefault();
         e.stopPropagation();
-        const stepElement = e.currentTarget.closest('.form-step[data-step-num]');
-        if (stepElement && stepElement[validateStep]) {
-            const err = stepElement[validateStep]();
-            if (e.currentTarget.classList.contains('prev') || !err) {
-                const stepIndicator = document.getElementById('complaintStep');
-                if (stepIndicator && stepIndicator[setStep]) {
-                    stepIndicator[setStep](e.currentTarget[targetStep]);
-                }
-            }
-            if (err) {
-                document.getElementById(err)?.scrollIntoView(true, { behavior: 'instant' });
-            }
+        const err = e.currentTarget.closest('.form-step[data-step-num]')[validateStep]();
+        if (e.currentTarget.classList.contains('prev') || !err) {
+            document.getElementById('complaintStep')[setStep](e.currentTarget[targetStep]);
         }
+        document.getElementById(err)?.scrollIntoView(true, { behavior: 'instant' });
     });
 });
-
-// Additional setup
 document.querySelectorAll('fieldset[data-target]').forEach(x => {
     x.addEventListener('change', blurFieldset, { passive: true });
     x.dispatchEvent(new Event('change'));
 });
-
 document.querySelectorAll('#contactInfo legend').forEach(x =>
     x.insertAdjacentElement('afterend', Object.assign(document.createElement('aside'), { className: "text-italic", textContent: 'If you are the one affected by this incident, the information below will be transferred to the Complainant section.' })));
-
 document.addEventListener('stepchange', e => {
     if (!(2 === e.detail.step && document.querySelector('.is-victim [value="true"]:checked'))) {
         return;
@@ -550,8 +494,6 @@ document.addEventListener('stepchange', e => {
         }
     });
 }, { passive: true });
-
-// Setup transactions and subjects
 setupItems('.transactions', 'Transaction', toggleTransactionHeader, maxTransactions).forEach(x => {
     x.querySelectorAll('.transaction-type').forEach(y => {
         y.addEventListener('change', transactionTypeSetup, { passive: true });
@@ -564,10 +506,16 @@ setupItems('.transactions', 'Transaction', toggleTransactionHeader, maxTransacti
         });
     }, { passive: true });
 });
-
 setupItems('.subjects', 'Subject', toggleSubjectHeader, maxSubjects);
-
-// Subsector mapping
+document.getElementById('IC3ComplaintForm').addEventListener('submit', e => {
+    if (1 === new Set([document.getElementById('IC3ComplaintForm').action, e.submitter.formAction].map(x => Object.assign(new URL(x), { hash: '' }).toString().toLowerCase())).size) {
+        const err = [...document.querySelectorAll('.form-step[data-step-num]')].flatMap(x => x[validateStep]()).filter(x => x).shift();
+        if (err) {
+            e.preventDefault();
+            document.getElementById('complaintStep')?.[setStep](Number.parseInt(document.getElementById(err).closest('[data-step-num]').dataset.stepNum));
+        }
+    }
+});
 document.querySelectorAll('#infSub').forEach(x => {
     const target = document.querySelector('#inf select');
     if (!target) {
@@ -597,130 +545,7 @@ document.querySelectorAll('#infSub').forEach(x => {
     }, { passive: true });
     target.dispatchEvent(new Event('change'));
 });
-
-// Initialize step from URL hash
-document.querySelectorAll('#complaintStep').forEach(x => {
-    const initialStep = Number.parseInt(document.location.hash.match(/step(\d+)/)?.[1]) || 1;
-    if (x[setStep]) {
-        x[setStep](initialStep);
-    }
-});
-
+document.querySelectorAll('#complaintStep').forEach(x => x[setStep](Number.parseInt(document.location.hash.match(/step(\d+)/)?.[1]) || 1));
 if (!document.location.hash) {
     document.body.scrollIntoView(true, { behavior: 'instant' });
 }
-
-// ================================
-// AJAX FORM SUBMISSION CODE
-// ================================
-const displayValidationErrors = (errors) => {
-    console.log('Displaying validation errors:', errors);
-
-    // Clear previous errors
-    document.querySelectorAll('.usa-input--error').forEach(el => {
-        el.classList.remove('usa-input--error');
-    });
-    document.querySelectorAll('.val-error').forEach(error => {
-        error.textContent = '';
-    });
-
-    // Field name mapping for Laravel dot notation to HTML name attributes
-    const fieldMapping = {
-        'IsVictim': 'IsVictim',
-        'Complainant.Name': 'Complainant.Name',
-        'Complainant.Phone': 'Complainant.Phone',
-        'Complainant.Email': 'Complainant.Email',
-        'Victim.Name': 'Victim.Name',
-        'Victim.Address1': 'Victim.Address1',
-        'Victim.City': 'Victim.City',
-        'Victim.Country': 'Victim.Country',
-        'Victim.State': 'Victim.State',
-        'Victim.ZipCode': 'Victim.ZipCode',
-        'Victim.Phone': 'Victim.Phone',
-        'Victim.Email': 'Victim.Email',
-        'Victim.BusinessName': 'Victim.BusinessName',
-        'Victim.BusinessImpacted': 'Victim.BusinessImpacted',
-        'MoneySent': 'MoneySent',
-        'ReportedLoss': 'ReportedLoss',
-        'IncidentDescription': 'IncidentDescription',
-        'DigitalSignature': 'DigitalSignature',
-        'g-recaptcha-response': 'g-recaptcha-response'
-    };
-
-    let firstErrorElement = null;
-
-    // Process each error
-    Object.keys(errors).forEach(errorKey => {
-        console.log('Processing error key:', errorKey);
-
-        let fieldName = fieldMapping[errorKey];
-
-        // Handle array fields (Transactions, Subjects)
-        if (!fieldName && errorKey.includes('Transactions')) {
-            const match = errorKey.match(/Transactions\.(\d+)\.(\w+)/);
-            if (match) {
-                fieldName = `Transactions[${match[1]}].${match[2]}`;
-            }
-        }
-
-        if (!fieldName && errorKey.includes('Subjects')) {
-            const match = errorKey.match(/Subjects\.(\d+)\.(\w+)/);
-            if (match) {
-                fieldName = `Subjects[${match[1]}].${match[2]}`;
-            }
-        }
-
-        if (fieldName) {
-            console.log('Looking for field:', fieldName);
-
-            // Find the input element
-            let inputElement = document.querySelector(`[name="${fieldName}"]`);
-
-            // For radio buttons, find the container
-            if (!inputElement && fieldName.includes('IsVictim') || fieldName.includes('MoneySent')) {
-                const radioContainer = document.querySelector(`[name="${fieldName}"]`)?.closest('fieldset');
-                if (radioContainer) {
-                    inputElement = radioContainer;
-                }
-            }
-
-            if (inputElement) {
-                console.log('Found element for:', fieldName);
-
-                // Add error class
-                inputElement.classList.add('usa-input--error');
-
-                // Find or create error message element
-                let errorElement = document.getElementById(`${fieldName}_error`);
-                if (!errorElement) {
-                    // Try to find by aria-errormessage
-                    const errorId = inputElement.getAttribute('aria-errormessage');
-                    if (errorId) {
-                        errorElement = document.getElementById(errorId);
-                    }
-                }
-
-                if (errorElement) {
-                    errorElement.textContent = errors[errorKey][0];
-                    errorElement.style.display = 'block';
-                }
-
-                // Set first error for scrolling
-                if (!firstErrorElement) {
-                    firstErrorElement = inputElement;
-                }
-            } else {
-                console.log('Element not found for:', fieldName);
-            }
-        }
-    });
-
-    // Scroll to first error
-    if (firstErrorElement) {
-        firstErrorElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'
-        });
-        firstErrorElement.focus();
-    }
-};
