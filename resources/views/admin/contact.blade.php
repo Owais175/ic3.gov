@@ -12,7 +12,7 @@
                 <div class="dashborad-content">
                     <div class="content-dashborad-pg">
                         <section class="track-order user-contact-show">
-                            <table id="myTable" class="display">
+                           <table id="myTable" class="display">
                                 <thead>
                                     <tr>
                                         <th>#</th>
@@ -21,18 +21,18 @@
                                         <th>Phone</th>
                                         <th>Address</th>
                                         <th>Message</th>
-                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($contact as $contacts)
-                                        <th>{{ $contacts->id }}</th>
-                                        <th>{{ $contacts->name }}</th>
-                                        <th>{{ $contacts->email }}</th>
-                                        <th>{{ $contacts->phone }}</th>
-                                        <th>{{ $contacts->address }}</th>
-                                        <th>{{ $contacts->message }}</th>
-                                        <th>{{ $contacts->id }}</th>
+                                    <tr>
+                                         <td>{{ $contacts->id }}</td>
+                                        <td>{{ $contacts->name }}</td>
+                                        <td>{{ $contacts->email }}</td>
+                                        <td>{{ $contacts->phone }}</td>
+                                        <td>{{ $contacts->address }}</td>
+                                        <td>{{ $contacts->message }}</td>
+                                        </tr>
                                     @endforeach
                                 </tbody>
                                 <tfoot>
@@ -43,7 +43,6 @@
                                         <th>Phone</th>
                                         <th>Address</th>
                                         <th>Message</th>
-                                        <th>Action</th>
                                     </tr>
                                 </tfoot>
                             </table>
