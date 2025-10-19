@@ -112,7 +112,7 @@
                             data-field-type="Name" aria-errormessage="Complainant_Name_error" class="usa-input inline"
                             data-val="true" data-val-length="The Complainant Name must be no longer than 50 characters."
                             data-val-length-max="50" data-val-required="Please provide your name." id="Complainant_Name"
-                            maxlength="50" name="Complainant.Name" type="text" value="" />
+                            maxlength="50" name="Complainant_Name" type="text" value="" />
                         <div class="val-error" id="Complainant_Name_error"></div>
                     </fieldset>
                     <fieldset class="noborder"><label class="usa-label inline" for="Complainant_BusinessName">Business
@@ -160,7 +160,7 @@
                             data-field-type="Name" aria-errormessage="Victim_Name_error" class="usa-input inline"
                             data-val="true" data-val-length="The Complainant Name must be no longer than 50 characters."
                             data-val-length-max="50" data-val-required="Please provide a Complainant Name."
-                            id="Victim_Name" maxlength="50" name="Victim.Name" type="text" value="" />
+                            id="Victim_Name" maxlength="50" name="Victim_Name" type="text" value="" />
                         <div class="val-error" id="Victim_Name_error"></div>
                     </fieldset>
                     <fieldset class="noborder" data-target="isMinor" data-target-value="Under20">
@@ -3219,7 +3219,7 @@
                     <div id="captcha" class="margin-y-1 display-flex flex-justify-center">
 
                         <div class="g-recaptcha" aria-errormessage="g-recaptcha-responseError"
-                            data-sitekey="6LfaXhUTAAAAAAvKw_sNVIyc7f7wmqPdxd6p1hO9"></div>
+                            data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
 
 
                         <div class="val-error" id="g-recaptcha-responseError"></div>
