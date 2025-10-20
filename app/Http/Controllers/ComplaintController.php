@@ -147,7 +147,6 @@ class ComplaintController extends Controller
                 ]);
             }
         }
-        return 123;
 
         return redirect()
             ->back()
