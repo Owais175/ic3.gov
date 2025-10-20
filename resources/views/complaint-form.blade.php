@@ -1202,7 +1202,7 @@
                                 </label>
                                 <select class="usa-select inline transaction-type" data-ordinal="0.01"
                                     aria-errormessage="Transactions_0__TransactionType_error"
-                                    id="Transactions_0__TransactionType" name="Transactions[0].TransactionType">
+                                    id="Transactions_0__TransactionType" name="Transactions[0][TransactionType]">
                                     <option value="">Please select one...</option>
                                     <optgroup label="">
                                         <option value="0">Cash</option>
@@ -1229,7 +1229,7 @@
                                     data-val-required-when-allowempty="false"
                                     data-val-required-when-input="Transactions[0].TransactionType"
                                     data-val-required-when-op="eq" data-val-required-when-target="8"
-                                    id="Transactions_0__OtherType" maxlength="50" name="Transactions[0].OtherType"
+                                    id="Transactions_0__OtherType" maxlength="50" name="Transactions[0][OtherType]"
                                     type="text" value="" />
                                 <div class="val-error" id="Transactions_0__OtherType_error"></div>
                             </fieldset>
@@ -1238,17 +1238,17 @@
                                         title="Required">*</abbr>Was the money sent or lost?</legend>
                                 <div class="usa-radio">
                                     <input aria-errormessage="Transactions_0__WasSent_error" class="usa-radio__input"
-                                        id="Transactions_0__WasSent_yes" required type="radio" value="true"
+                                        id="Transactions_0__WasSent_yes" required type="radio" value="1"
                                         data-val="true"
                                         data-val-required-when="Please specify if the money was sent for transaction #TNUM."
                                         data-val-required-when-allowempty="false"
                                         data-val-required-when-input="Transactions[0].TransactionType"
                                         data-val-required-when-op="ne" data-val-required-when-target=""
-                                        name="Transactions[0].WasSent">
+                                        name="Transactions[0][WasSent]">
                                     <label class="usa-radio__label" for="Transactions_0__WasSent_yes">Yes</label>
                                     <input aria-errormessage="Transactions_0__WasSent_error" class="usa-radio__input"
-                                        id="Transactions_0__WasSent_no" required type="radio" value="false"
-                                        name="Transactions[0].WasSent">
+                                        id="Transactions_0__WasSent_no" required type="radio" value="0"
+                                        name="Transactions[0][WasSent]">
                                     <label class="usa-radio__label" for="Transactions_0__WasSent_no">No</label>
                                 </div>
                                 <div class="val-error" id="Transactions_0__WasSent_error"></div>
@@ -1265,7 +1265,7 @@
                                     data-val-required-when-allowempty="false"
                                     data-val-required-when-input="Transactions[0].TransactionType"
                                     data-val-required-when-op="ne" data-val-required-when-target=""
-                                    id="Transactions_0__Amount" name="Transactions[0].Amount" value="" />
+                                    id="Transactions_0__Amount" name="Transactions[0][Amount]" value="" />
                                 <div class="val-error" id="Transactions_0__Amount_error"></div>
                             </fieldset>
                             <fieldset class="noborder tall fieldset-contingent date"><label class="usa-label inline"
@@ -1278,7 +1278,7 @@
                                     data-val-required-when-allowempty="false"
                                     data-val-required-when-input="Transactions[0].TransactionType"
                                     data-val-required-when-op="ne" data-val-required-when-target=""
-                                    id="Transactions_0__Date" max="2025-10-17" name="Transactions[0].Date"
+                                    id="Transactions_0__Date" max="2025-10-17" name="Transactions[0][Date]"
                                     value="" aria-errormessage="Transactions_0__Date_error" />
                                 <div class="val-error" id="Transactions_0__Date_error"></div>
                             </fieldset>
@@ -1288,12 +1288,12 @@
                                 <div class="usa-radio">
                                     <input aria-errormessage="Transactions_0__InstitutionNotified_error"
                                         class="usa-radio__input" id="Transactions_0__InstitutionNotified_yes"
-                                        type="radio" value="true" name="Transactions[0].InstitutionNotified">
+                                        type="radio" value="1" name="Transactions[0][InstitutionNotified]">
                                     <label class="usa-radio__label"
                                         for="Transactions_0__InstitutionNotified_yes">Yes</label>
                                     <input aria-errormessage="Transactions_0__InstitutionNotified_error"
                                         class="usa-radio__input" id="Transactions_0__InstitutionNotified_no"
-                                        type="radio" value="false" name="Transactions[0].InstitutionNotified">
+                                        type="radio" value="0" name="Transactions[0][InstitutionNotified]">
                                     <label class="usa-radio__label"
                                         for="Transactions_0__InstitutionNotified_no">No</label>
                                 </div>
@@ -1307,7 +1307,7 @@
                                     data-val="true"
                                     data-val-length="The Originating Bank Name for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__VictimBankName" maxlength="50"
-                                    name="Transactions[0].VictimBankName" type="text" value="" />
+                                    name="Transactions[0][VictimBankName]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__VictimBankName_error"></div>
                             </fieldset>
                             <fieldset class="noborder t1 t2 t3 t4 t8 fieldset-contingent"><label
@@ -1317,7 +1317,7 @@
                                     class="usa-input inline" data-val="true"
                                     data-val-length="The Originating Bank Address for transaction #TNUM must be no longer than 75 characters."
                                     data-val-length-max="75" id="Transactions_0__VictimBankAddress1" maxlength="75"
-                                    name="Transactions[0].VictimBankAddress1" type="text" value="" />
+                                    name="Transactions[0][VictimBankAddress1]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__VictimBankAddress1_error"></div>
                             </fieldset>
                             <fieldset class="noborder label-sm t1 t2 t3 t4 t8 fieldset-contingent"><label
@@ -1327,7 +1327,7 @@
                                     class="usa-input inline" data-val="true"
                                     data-val-length="The Originating Bank Address (cont.) for transaction #TNUM must be no longer than 75 characters."
                                     data-val-length-max="75" id="Transactions_0__VictimBankAddress2" maxlength="75"
-                                    name="Transactions[0].VictimBankAddress2" type="text" value="" />
+                                    name="Transactions[0][VictimBankAddress2]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__VictimBankAddress2_error"></div>
                             </fieldset>
                             <fieldset class="noborder label-sm t1 t2 t3 t4 t8 fieldset-contingent"><label
@@ -1337,7 +1337,7 @@
                                     class="usa-input inline" data-val="true"
                                     data-val-length="The Originating Bank Suite/Mail Stop for transaction #TNUM must be no longer than 75 characters."
                                     data-val-length-max="75" id="Transactions_0__VictimBankMailStop" maxlength="75"
-                                    name="Transactions[0].VictimBankMailStop" type="text" value="" />
+                                    name="Transactions[0][VictimBankMailStop]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__VictimBankMailStop_error"></div>
                             </fieldset>
                             <fieldset class="noborder t1 t2 t3 t4 t8 fieldset-contingent"><label
@@ -1347,7 +1347,7 @@
                                     data-val="true"
                                     data-val-length="The Originating Bank City for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__VictimBankCity" maxlength="50"
-                                    name="Transactions[0].VictimBankCity" type="text" value="" />
+                                    name="Transactions[0][VictimBankCity]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__VictimBankCity_error"></div>
                             </fieldset>
                             <fieldset class="noborder t1 t2 t3 t4 t8 fieldset-contingent" data-ordinal="160"
@@ -1356,7 +1356,7 @@
                                     Country: </label>
                                 <select class="usa-select inline"
                                     aria-errormessage="Transactions_0__VictimBankCountryError"
-                                    id="Transactions_0__VictimBankCountry" name="Transactions[0].VictimBankCountry">
+                                    id="Transactions_0__VictimBankCountry" name="Transactions[0][VictimBankCountry]">
                                     <option value="">[None]</option>
                                     <optgroup label="">
                                         <option value="USA">United States of America</option>
@@ -1617,7 +1617,7 @@
                                     data-val-required-when-allowempty="false"
                                     data-val-required-when-input="Transactions[0].VictimBankCountry"
                                     data-val-required-when-op="eq" data-val-required-when-target="USA"
-                                    id="Transactions_0__VictimBankState" name="Transactions[0].VictimBankState">
+                                    id="Transactions_0__VictimBankState" name="Transactions[0][VictimBankState]">
                                     <option value="">[None]</option>
                                     <optgroup label="">
                                         <option value="AL">Alabama</option>
@@ -1688,7 +1688,7 @@
                                     data-val="true"
                                     data-val-length="The Originating Bank Zip Code for transaction #TNUM must be no longer than 20 characters."
                                     data-val-length-max="20" id="Transactions_0__VictimBankZipCode" maxlength="20"
-                                    name="Transactions[0].VictimBankZipCode" type="text" value="" />
+                                    name="Transactions[0][VictimBankZipCode]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__VictimBankZipCode_error"></div>
                             </fieldset>
                             <fieldset class="noborder t1 t2 t3 t4 t7 t8 fieldset-contingent"><label
@@ -1698,7 +1698,7 @@
                                     data-val="true"
                                     data-val-length="The Originating Account Name for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__VictimAccountName" maxlength="50"
-                                    name="Transactions[0].VictimAccountName" type="text" value="" />
+                                    name="Transactions[0][VictimAccountName]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__VictimAccountName_error"></div>
                             </fieldset>
                             <fieldset class="noborder t1 t2 t3 t4 t8 fieldset-contingent"><label
@@ -1708,7 +1708,7 @@
                                     class="usa-input inline" data-val="true"
                                     data-val-length="The Originating Account Number for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__VictimAccountNumber" maxlength="50"
-                                    name="Transactions[0].VictimAccountNumber" type="text" value="" />
+                                    name="Transactions[0][VictimAccountNumber]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__VictimAccountNumber_error"></div>
                             </fieldset>
                             <fieldset class="noborder t6 fieldset-contingent"><label class="usa-label inline"
@@ -1717,7 +1717,7 @@
                                     aria-errormessage="Transactions_0__CryptocurrencyType_error" data-val="true"
                                     data-val-length="The Type of Cryptocurrency for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__CryptocurrencyType" maxlength="50"
-                                    name="Transactions[0].CryptocurrencyType" type="text" value="" />
+                                    name="Transactions[0][CryptocurrencyType]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__CryptocurrencyType_error"></div>
                             </fieldset>
                             <fieldset class="noborder t7 fieldset-contingent"><label class="usa-label inline"
@@ -1726,7 +1726,7 @@
                                     class="usa-input inline" data-val="true"
                                     data-val-length="The P2P Application Used field for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__P2PApplication" maxlength="50"
-                                    name="Transactions[0].P2PApplication" type="text" value="" />
+                                    name="Transactions[0][P2PApplication]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__P2PApplication_error"></div>
                             </fieldset>
                             <fieldset class="noborder t6 fieldset-contingent"><label class="usa-label inline"
@@ -1735,7 +1735,7 @@
                                     aria-errormessage="Transactions_0__TransactionID_error" data-val="true"
                                     data-val-length="The Transaction ID for transaction #TNUM must be no longer than 75 characters."
                                     data-val-length-max="75" id="Transactions_0__TransactionID" maxlength="75"
-                                    name="Transactions[0].TransactionID" type="text" value="" />
+                                    name="Transactions[0][TransactionID]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__TransactionID_error"></div>
                             </fieldset>
                             <fieldset class="noborder t6 fieldset-contingent"><label class="usa-label inline"
@@ -1744,7 +1744,7 @@
                                     aria-errormessage="Transactions_0__CryptoATM_error" data-val="true"
                                     data-val-length="The Cryptocurrency ATM/Kiosk for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__CryptoATM" maxlength="50"
-                                    name="Transactions[0].CryptoATM" type="text" value="" />
+                                    name="Transactions[0][CryptoATM]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__CryptoATM_error"></div>
                             </fieldset>
                             <fieldset class="noborder t5 fieldset-contingent"><label class="usa-label inline"
@@ -1753,7 +1753,7 @@
                                     aria-errormessage="Transactions_0__GiftCardType_error" data-val="true"
                                     data-val-length="The Type of Prepaid/Gift Card field for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__GiftCardType" maxlength="50"
-                                    name="Transactions[0].GiftCardType" type="text" value="" />
+                                    name="Transactions[0][GiftCardType]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__GiftCardType_error"></div>
                             </fieldset>
                             <fieldset class="noborder t6 fieldset-contingent"><label class="usa-label inline"
@@ -1762,7 +1762,7 @@
                                     aria-errormessage="Transactions_0__ATMAddress_error" data-val="true"
                                     data-val-length="The ATM/Kiosk Address for transaction #TNUM must be no longer than 75 characters."
                                     data-val-length-max="75" id="Transactions_0__ATMAddress" maxlength="75"
-                                    name="Transactions[0].ATMAddress" type="text" value="" />
+                                    name="Transactions[0][ATMAddress]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__ATMAddress_error"></div>
                             </fieldset>
                             <fieldset class="noborder t6 fieldset-contingent"><label class="usa-label inline"
@@ -1771,7 +1771,7 @@
                                     data-val="true"
                                     data-val-length="The ATM/Kiosk City for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__ATMCity" maxlength="50"
-                                    name="Transactions[0].ATMCity" type="text" value="" />
+                                    name="Transactions[0][ATMCity]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__ATMCity_error"></div>
                             </fieldset>
                             <fieldset class="noborder t6 fieldset-contingent" data-ordinal="160"
@@ -1779,7 +1779,7 @@
                                 <label class="usa-label inline" for="Transactions_0__ATMCountry">ATM/Kiosk Country:
                                 </label>
                                 <select class="usa-select inline" aria-errormessage="Transactions_0__ATMCountryError"
-                                    id="Transactions_0__ATMCountry" name="Transactions[0].ATMCountry">
+                                    id="Transactions_0__ATMCountry" name="Transactions[0][ATMCountry]">
                                     <option value="">[None]</option>
                                     <optgroup label="">
                                         <option value="USA">United States of America</option>
@@ -2039,7 +2039,7 @@
                                     data-val-required-when-allowempty="false"
                                     data-val-required-when-input="Transactions[0].ATMCountry"
                                     data-val-required-when-op="eq" data-val-required-when-target="USA"
-                                    id="Transactions_0__ATMState" name="Transactions[0].ATMState">
+                                    id="Transactions_0__ATMState" name="Transactions[0][ATMState]">
                                     <option value="">[None]</option>
                                     <optgroup label="">
                                         <option value="AL">Alabama</option>
@@ -2109,7 +2109,7 @@
                                     class="usa-input inline" data-val="true"
                                     data-val-length="The ATM/Kiosk Zip Code for transaction #TNUM must be no longer than 20 characters."
                                     data-val-length-max="20" id="Transactions_0__ATMZipCode" maxlength="20"
-                                    name="Transactions[0].ATMZipCode" type="text" value="" />
+                                    name="Transactions[0][ATMZipCode]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__ATMZipCode_error"></div>
                             </fieldset>
                             <fieldset class="noborder t6 fieldset-contingent"><label class="usa-label inline"
@@ -2118,7 +2118,7 @@
                                     aria-errormessage="Transactions_0__VictimAccountWallet_error" data-val="true"
                                     data-val-length="The Originating Account/Wallet for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__VictimAccountWallet" maxlength="50"
-                                    name="Transactions[0].VictimAccountWallet" type="text" value="" />
+                                    name="Transactions[0][VictimAccountWallet]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__VictimAccountWallet_error"></div>
                             </fieldset>
                             <fieldset class="noborder t7 fieldset-contingent"><label class="usa-label inline"
@@ -2127,7 +2127,7 @@
                                     aria-errormessage="Transactions_0__VictimAccountIdentifier_error" data-val="true"
                                     data-val-length="The Originating Account Identifier for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__VictimAccountIdentifier"
-                                    maxlength="50" name="Transactions[0].VictimAccountIdentifier" type="text"
+                                    maxlength="50" name="Transactions[0][VictimAccountIdentifier]" type="text"
                                     value="" />
                                 <div class="val-error" id="Transactions_0__VictimAccountIdentifier_error"></div>
                             </fieldset>
@@ -2137,7 +2137,7 @@
                                     class="usa-input inline" data-val="true"
                                     data-val-length="The Prepaid/Gift Card Number for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__GiftCardNumber" maxlength="50"
-                                    name="Transactions[0].GiftCardNumber" type="text" value="" />
+                                    name="Transactions[0][GiftCardNumber]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__GiftCardNumber_error"></div>
                             </fieldset>
                             <hr class="opacity-0" data-ordinal="1000">
@@ -2148,7 +2148,7 @@
                                     data-val="true"
                                     data-val-length="The Recipient Bank Name for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__RecipientBankName" maxlength="50"
-                                    name="Transactions[0].RecipientBankName" type="text" value="" />
+                                    name="Transactions[0][RecipientBankName]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__RecipientBankName_error"></div>
                             </fieldset>
                             <fieldset class="noborder t0 t1 t2 t3 t4 t8 fieldset-contingent"><label
@@ -2158,7 +2158,7 @@
                                     class="usa-input inline" data-val="true"
                                     data-val-length="The Recipient Bank Address for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__RecipientBankAddress1" maxlength="50"
-                                    name="Transactions[0].RecipientBankAddress1" type="text" value="" />
+                                    name="Transactions[0][RecipientBankAddress1]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__RecipientBankAddress1_error"></div>
                             </fieldset>
                             <fieldset class="noborder label-sm t0 t1 t2 t3 t4 t8 fieldset-contingent"><label
@@ -2168,7 +2168,7 @@
                                     class="usa-input inline" data-val="true"
                                     data-val-length="The Recipient Bank Address (cont.) for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__RecipientBankAddress2" maxlength="50"
-                                    name="Transactions[0].RecipientBankAddress2" type="text" value="" />
+                                    name="Transactions[0][RecipientBankAddress2]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__RecipientBankAddress2_error"></div>
                             </fieldset>
                             <fieldset class="noborder label-sm t0 t1 t2 t3 t4 t8 fieldset-contingent"><label
@@ -2178,7 +2178,7 @@
                                     class="usa-input inline" data-val="true"
                                     data-val-length="The Recipient Bank Suite/Mail Stop for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__RecipientBankMailStop" maxlength="50"
-                                    name="Transactions[0].RecipientBankMailStop" type="text" value="" />
+                                    name="Transactions[0][RecipientBankMailStop]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__RecipientBankMailStop_error"></div>
                             </fieldset>
                             <fieldset class="noborder t0 t1 t2 t3 t4 t8 fieldset-contingent"><label
@@ -2188,7 +2188,7 @@
                                     data-val="true"
                                     data-val-length="The Recipient Bank City for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__RecipientBankCity" maxlength="50"
-                                    name="Transactions[0].RecipientBankCity" type="text" value="" />
+                                    name="Transactions[0][RecipientBankCity]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__RecipientBankCity_error"></div>
                             </fieldset>
                             <fieldset class="noborder t0 t1 t2 t3 t4 t8 fieldset-contingent" data-ordinal="1150"
@@ -2198,7 +2198,7 @@
                                 <select class="usa-select inline"
                                     aria-errormessage="Transactions_0__RecipientBankCountryError"
                                     id="Transactions_0__RecipientBankCountry"
-                                    name="Transactions[0].RecipientBankCountry">
+                                    name="Transactions[0][RecipientBankCountry]">
                                     <option value="">[None]</option>
                                     <optgroup label="">
                                         <option value="USA">United States of America</option>
@@ -2455,7 +2455,7 @@
                                     State: </label>
                                 <select class="usa-select inline"
                                     aria-errormessage="Transactions_0__RecipientBankStateError"
-                                    id="Transactions_0__RecipientBankState" name="Transactions[0].RecipientBankState">
+                                    id="Transactions_0__RecipientBankState" name="Transactions[0][RecipientBankState]">
                                     <option value="">[None]</option>
                                     <optgroup label="">
                                         <option value="AL">Alabama</option>
@@ -2526,7 +2526,7 @@
                                     class="usa-input inline" data-val="true"
                                     data-val-length="The Recipient Bank Zip Code for transaction #TNUM must be no longer than 20 characters."
                                     data-val-length-max="20" id="Transactions_0__RecipientBankZipCode" maxlength="20"
-                                    name="Transactions[0].RecipientBankZipCode" type="text" value="" />
+                                    name="Transactions[0][RecipientBankZipCode]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__RecipientBankZipCode_error"></div>
                             </fieldset>
                             <fieldset class="noborder t1 t2 t3 t4 t7 t8 fieldset-contingent"><label
@@ -2536,7 +2536,7 @@
                                     class="usa-input inline" data-val="true"
                                     data-val-length="The Recipient Account Name for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__RecipientAccountName" maxlength="50"
-                                    name="Transactions[0].RecipientAccountName" type="text" value="" />
+                                    name="Transactions[0][RecipientAccountName]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__RecipientAccountName_error"></div>
                             </fieldset>
                             <fieldset class="noborder t5 fieldset-contingent"><label class="usa-label inline"
@@ -2545,7 +2545,7 @@
                                     class="usa-input inline" data-val="true"
                                     data-val-length="The Recipient Name for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__RecipientName" maxlength="50"
-                                    name="Transactions[0].RecipientName" type="text" value="" />
+                                    name="Transactions[0][RecipientName]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__RecipientName_error"></div>
                             </fieldset>
                             <fieldset class="noborder label-sm t1 t2 t3 t4 t8 fieldset-contingent"><label
@@ -2555,7 +2555,7 @@
                                     aria-errormessage="Transactions_0__RecipientBankRoutingNumber_error" data-val="true"
                                     data-val-length="The Recipient Routing Number for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__RecipientBankRoutingNumber"
-                                    maxlength="50" name="Transactions[0].RecipientBankRoutingNumber" type="text"
+                                    maxlength="50" name="Transactions[0][RecipientBankRoutingNumber]" type="text"
                                     value="" />
                                 <div class="val-error" id="Transactions_0__RecipientBankRoutingNumber_error"></div>
                             </fieldset>
@@ -2566,7 +2566,7 @@
                                     class="usa-input inline" data-val="true"
                                     data-val-length="The Recipient Account Number for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__RecipientAccountNumber"
-                                    maxlength="50" name="Transactions[0].RecipientAccountNumber" type="text"
+                                    maxlength="50" name="Transactions[0][RecipientAccountNumber]" type="text"
                                     value="" />
                                 <div class="val-error" id="Transactions_0__RecipientAccountNumber_error"></div>
                             </fieldset>
@@ -2580,7 +2580,7 @@
                                     data-val-regex="The SWIFT Code for transaction #TNUM must be in a valid SWIFT Code format."
                                     data-val-regex-pattern="[a-zA-Z]{6}\w{2}(\w{3})?"
                                     id="Transactions_0__RecipientBankSwiftCode" maxlength="50"
-                                    name="Transactions[0].RecipientBankSwiftCode" type="text" value="" />
+                                    name="Transactions[0][RecipientBankSwiftCode]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__RecipientBankSwiftCode_error"></div>
                             </fieldset>
                             <fieldset class="noborder t6 fieldset-contingent"><label class="usa-label inline"
@@ -2589,7 +2589,7 @@
                                     aria-errormessage="Transactions_0__RecipientAccountWallet_error" data-val="true"
                                     data-val-length="The Recipient Account/Wallet for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__RecipientAccountWallet"
-                                    maxlength="50" name="Transactions[0].RecipientAccountWallet" type="text"
+                                    maxlength="50" name="Transactions[0][RecipientAccountWallet]" type="text"
                                     value="" />
                                 <div class="val-error" id="Transactions_0__RecipientAccountWallet_error"></div>
                             </fieldset>
@@ -2599,7 +2599,7 @@
                                     aria-errormessage="Transactions_0__RecipientAccountIdentifier_error" data-val="true"
                                     data-val-length="The Recipient Account Identifier for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__RecipientAccountIdentifier"
-                                    maxlength="50" name="Transactions[0].RecipientAccountIdentifier" type="text"
+                                    maxlength="50" name="Transactions[0][RecipientAccountIdentifier]" type="text"
                                     value="" />
                                 <div class="val-error" id="Transactions_0__RecipientAccountIdentifier_error"></div>
                             </fieldset>
@@ -2610,7 +2610,7 @@
                                     class="usa-input inline" data-val="true"
                                     data-val-length="The Recipient Identifier for transaction #TNUM must be no longer than 50 characters."
                                     data-val-length-max="50" id="Transactions_0__RecipientIdentifier" maxlength="50"
-                                    name="Transactions[0].RecipientIdentifier" type="text" value="" />
+                                    name="Transactions[0][RecipientIdentifier]" type="text" value="" />
                                 <div class="val-error" id="Transactions_0__RecipientIdentifier_error"></div>
                             </fieldset>
                         </div>
@@ -2646,7 +2646,7 @@
                                         data-val="true"
                                         data-val-length="The Name for subject #TNUM must be no longer than 50 characters."
                                         data-val-length-max="50" id="Subjects_0__Name" maxlength="50"
-                                        name="Subjects[0].Name" type="text" value="" />
+                                        name="Subjects[0][Name]" type="text" value="" />
                                     <div class="val-error" id="Subjects_0__Name_error"></div>
                                 </fieldset>
                                 <fieldset class="noborder"><label class="usa-label inline"
@@ -2655,7 +2655,7 @@
                                         data-val="true"
                                         data-val-length="The Business Name for subject #TNUM must be no longer than 50 characters."
                                         data-val-length-max="50" id="Subjects_0__BusinessName" maxlength="50"
-                                        name="Subjects[0].BusinessName" type="text" value="" />
+                                        name="Subjects[0][BusinessName]" type="text" value="" />
                                     <div class="val-error" id="Subjects_0__BusinessName_error"></div>
                                 </fieldset>
                                 <fieldset class="noborder"><label class="usa-label inline"
@@ -2664,7 +2664,7 @@
                                         data-val="true"
                                         data-val-length="The Address for subject #TNUM must be no longer than 50 characters."
                                         data-val-length-max="50" id="Subjects_0__Address1" maxlength="50"
-                                        name="Subjects[0].Address1" type="text" value="" />
+                                        name="Subjects[0][Address1]" type="text" value="" />
                                     <div class="val-error" id="Subjects_0__Address1_error"></div>
                                 </fieldset>
                                 <fieldset class="noborder"><label class="usa-label inline"
@@ -2673,7 +2673,7 @@
                                         data-val="true"
                                         data-val-length="The Address (cont.) for subject #TNUM must be no longer than 50 characters."
                                         data-val-length-max="50" id="Subjects_0__Address2" maxlength="50"
-                                        name="Subjects[0].Address2" type="text" value="" />
+                                        name="Subjects[0][Address2]" type="text" value="" />
                                     <div class="val-error" id="Subjects_0__Address2_error"></div>
                                 </fieldset>
                                 <fieldset class="noborder"><label class="usa-label inline"
@@ -2682,7 +2682,7 @@
                                         data-val="true"
                                         data-val-length="The Suite/Apt./MailStop for subject #TNUM must be no longer than 50 characters."
                                         data-val-length-max="50" id="Subjects_0__MailStop" maxlength="50"
-                                        name="Subjects[0].MailStop" type="text" value="" />
+                                        name="Subjects[0][MailStop]" type="text" value="" />
                                     <div class="val-error" id="Subjects_0__MailStop_error"></div>
                                 </fieldset>
                                 <fieldset class="noborder"><label class="usa-label inline"
@@ -2691,14 +2691,14 @@
                                         data-val="true"
                                         data-val-length="The City for subject #TNUM must be no longer than 50 characters."
                                         data-val-length-max="50" id="Subjects_0__City" maxlength="50"
-                                        name="Subjects[0].City" type="text" value="" />
+                                        name="Subjects[0][City]" type="text" value="" />
                                     <div class="val-error" id="Subjects_0__City_error"></div>
                                 </fieldset>
                                 <fieldset class="noborder" data-target="Subjects_0_StateField"
                                     data-target-value="USA">
                                     <label class="usa-label inline" for="Subjects_0__Country">Country: </label>
                                     <select class="usa-select inline" aria-errormessage="Subjects_0__CountryError"
-                                        id="Subjects_0__Country" name="Subjects[0].Country">
+                                        id="Subjects_0__Country" name="Subjects[0][Country]">
                                         <option value="">[None/Unknown]</option>
                                         <optgroup label="">
                                             <option value="USA">United States of America</option>
@@ -2952,7 +2952,7 @@
                                 <fieldset id="Subjects_0_StateField" class="noborder fieldset-contingent">
                                     <label class="usa-label inline" for="Subjects_0__State">State: </label>
                                     <select class="usa-select inline" aria-errormessage="Subjects_0__StateError"
-                                        id="Subjects_0__State" name="Subjects[0].State">
+                                        id="Subjects_0__State" name="Subjects[0][State]">
                                         <option value="">[None/Unknown]</option>
                                         <optgroup label="">
                                             <option value="AL">Alabama</option>
@@ -3022,7 +3022,7 @@
                                         data-val="true"
                                         data-val-length="The Zip Code for subject #TNUM must be no longer than 20 characters."
                                         data-val-length-max="20" id="Subjects_0__ZipCode" maxlength="20"
-                                        name="Subjects[0].ZipCode" type="text" value="" />
+                                        name="Subjects[0][ZipCode]" type="text" value="" />
                                     <div class="val-error" id="Subjects_0__ZipCode_error"></div>
                                 </fieldset>
                                 <fieldset class="noborder"><label class="usa-label inline"
@@ -3035,7 +3035,7 @@
                                         data-val-length-max="20"
                                         data-val-regex="The Phone number for subject #TNUM must be digits only. (ex. 1112223333)"
                                         data-val-regex-pattern="\d&#x2B;" id="Subjects_0__Phone" maxlength="20"
-                                        name="Subjects[0].Phone" value="" />
+                                        name="Subjects[0][Phone]" value="" />
                                     <div class="val-error" id="Subjects_0__Phone_error"></div>
                                 </fieldset>
                                 <fieldset class="noborder"><label class="usa-label inline"
@@ -3047,7 +3047,7 @@
                                         data-val-emailaddress="The Email Address for subject #TNUM must be a valid email address."
                                         data-val-length="The Email Address for subject #TNUM must be no longer than 50 characters."
                                         data-val-length-max="50" id="Subjects_0__Email" maxlength="50"
-                                        name="Subjects[0].Email" value="" />
+                                        name="Subjects[0][Email]" value="" />
                                     <div class="val-error" id="Subjects_0__Email_error"></div>
                                 </fieldset>
                                 <fieldset class="noborder label-sm"><label class="usa-label inline"
@@ -3056,7 +3056,7 @@
                                         class="usa-input inline" data-val="true"
                                         data-val-length="The Website Address/Social Media Account for subject #TNUM must be no longer than 100 characters."
                                         data-val-length-max="100" id="Subjects_0__Website" maxlength="100"
-                                        name="Subjects[0].Website" type="text" value="" />
+                                        name="Subjects[0][Website]" type="text" value="" />
                                     <div class="val-error" id="Subjects_0__Website_error"></div>
                                 </fieldset>
                                 <fieldset class="noborder"><label class="usa-label inline"
@@ -3068,7 +3068,7 @@
                                         data-val-ipaddress="The IP Address for subject #TNUM must be a valid IP address. (ex. 1.2.3.4 or 1111:2222::FFFF)"
                                         data-val-length="The IP Address for subject #TNUM must be no longer than 39 characters."
                                         data-val-length-max="39" id="Subjects_0__IPAddress" maxlength="39"
-                                        name="Subjects[0].IPAddress" type="text" value="" />
+                                        name="Subjects[0][IPAddress]" type="text" value="" />
                                     <div class="val-error" id="Subjects_0__IPAddress_error"></div>
                                 </fieldset>
                             </div>
@@ -3244,28 +3244,28 @@ document.addEventListener('DOMContentLoaded', function() {
             $fieldName = str_replace('[', '_', $fieldName);
             $fieldName = str_replace(']', '_', $fieldName);
         @endphp
-        
+
         const errorField = document.querySelector('[name="{{ $key }}"]');
         if (errorField) {
             // Add error class
             errorField.classList.add('usa-input--error');
-            
+
             // Find error message container
             let errorElement = document.getElementById(errorField.getAttribute('aria-errormessage'));
             if (!errorElement) {
                 errorElement = document.getElementById('{{ $fieldName }}_error');
             }
-            
+
             if (errorElement) {
                 errorElement.textContent = '{{ $errors->first($key) }}';
                 errorElement.style.display = 'block';
             }
-            
+
             // Scroll to first error
             @if($loop->first && session('scroll_to_errors'))
-                errorField.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'center' 
+                errorField.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
                 });
                 errorField.focus();
             @endif

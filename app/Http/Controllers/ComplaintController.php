@@ -15,12 +15,13 @@ class ComplaintController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all());
         // 🔹 Validation (optional — you can expand this)
         $validator = Validator::make($request->all(), [
-            'Complainant.Name' => 'nullable|string|max:255',
-            'Complainant.Email' => 'nullable|email|max:255',
-            'Victim.Name' => 'nullable|string|max:255',
-            'Victim.Email' => 'nullable|email|max:255',
+            'Complainant_Name' => 'nullable|string|max:255',
+            'Complainant_Email' => 'nullable|email|max:255',
+            'Victim_Name' => 'nullable|string|max:255',
+            'Victim_Email' => 'nullable|email|max:255',
             'IncidentDescription' => 'nullable|string',
         ]);
 
@@ -30,38 +31,36 @@ class ComplaintController extends Controller
 
         // 🔹 Create Complaint (explicit mapping)
         $complaint = Complaint::create([
-            'is_victim' => filter_var($request->input('IsVictim'), FILTER_VALIDATE_BOOLEAN),
-            'complainant_name' => $request->input('Complainant.Name'),
-            'complainant_business_name' => $request->input('Complainant.BusinessName'),
-            'complainant_phone' => $request->input('Complainant.Phone'),
-            'complainant_email' => $request->input('Complainant.Email'),
-            'victim_name' => $request->input('Victim.Name'),
-            'victim_age_range' => $request->input('Victim.AgeRange'),
-            'victim_is_minor' => filter_var($request->input('Victim.IsMinor'), FILTER_VALIDATE_BOOLEAN),
-            'victim_address1' => $request->input('Victim.Address1'),
-            'victim_address2' => $request->input('Victim.Address2'),
-            'victim_suite' => $request->input('Victim.Suite'),
-            'victim_city' => $request->input('Victim.City'),
-            'victim_county' => $request->input('Victim.County'),
-            'victim_country' => $request->input('Victim.Country'),
-            'victim_state' => $request->input('Victim.State'),
-            'victim_zipcode' => $request->input('Victim.ZipCode'),
-            'victim_phone' => $request->input('Victim.Phone'),
-            'victim_email' => $request->input('Victim.Email'),
-            'victim_is_business' => filter_var($request->input('Victim.IsBusiness'), FILTER_VALIDATE_BOOLEAN),
-            'victim_business_name' => $request->input('Victim.BusinessName'),
-            'victim_business_impacted' => $request->input('Victim.BusinessImpacted'),
-            'victim_it_poc' => $request->input('Victim.ItPoc'),
-            'victim_other_poc' => $request->input('Victim.OtherPoc'),
-            'victim_sector' => $request->input('Victim.Sector'),
-            'victim_subsector' => $request->input('Victim.Subsector'),
-            'money_sent' => filter_var($request->input('MoneySent'), FILTER_VALIDATE_BOOLEAN),
+            'is_victim' => $request->boolean('IsVictim'),
+            'complainant_name' => $request->input('Complainant_Name'),
+            'complainant_business_name' => $request->input('Complainant_BusinessName'),
+            'complainant_phone' => $request->input('Complainant_Phone'),
+            'complainant_email' => $request->input('Complainant_Email'),
+            'victim_name' => $request->input('Victim_Name'),
+            'victim_age_range' => $request->input('Victim_AgeRange'),
+            'victim_address1' => $request->input('Victim_Address1'),
+            'victim_address2' => $request->input('Victim_Address2'),
+            'victim_suite' => $request->input('Victim_Suite'),
+            'victim_city' => $request->input('Victim_City'),
+            'victim_county' => $request->input('Victim_County'),
+            'victim_country' => $request->input('Victim_Country'),
+            'victim_zipcode' => $request->input('Victim_ZipCode'),
+            'victim_phone' => $request->input('Victim_Phone'),
+            'victim_email' => $request->input('Victim_Email'),
+            'victim_is_business' => $request->boolean('Victim_IsBusiness'),
+            'victim_business_name' => $request->input('Victim_BusinessName'),
+            'victim_business_impacted' => $request->boolean('Victim_BusinessImpacted'),
+            'victim_it_poc' => $request->input('Victim_ItPoc'),
+            'victim_other_poc' => $request->input('Victim_OtherPoc'),
+            'victim_sector' => $request->input('Victim_Sector'),
+            'victim_subsector' => $request->input('Victim_Subsector'),
+            'money_sent' => $request->boolean('MoneySent'),
             'reported_loss' => $request->input('ReportedLoss'),
             'incident_description' => $request->input('IncidentDescription'),
             'email_headers' => $request->input('EmailHeaders'),
             'witnesses' => $request->input('Witnesses'),
             'law_enforcement' => $request->input('LawEnforcement'),
-            'complaint_update' => $request->input('ComplaintUpdate'),
+            'complaint_update' => $request->boolean('ComplaintUpdate'),
             'digital_signature' => $request->input('DigitalSignature'),
             'complaint_session' => $request->input('COMPLAINT_SESSION'),
         ]);
@@ -69,53 +68,62 @@ class ComplaintController extends Controller
         // 🔹 Handle Transactions
         if ($request->has('Transactions')) {
             foreach ($request->input('Transactions') as $tx) {
-                $complaint->transactions()->create([
-                    'transaction_type' => $tx['TransactionType'] ?? null,
-                    'other_type' => $tx['OtherType'] ?? null,
-                    'was_sent' => $tx['WasSent'] ?? null,
-                    'amount' => $tx['Amount'] ?? null,
-                    'date' => $tx['Date'] ?? null,
-                    'institution_notified' => $tx['InstitutionNotified'] ?? null,
-                    'victim_bank_name' => $tx['VictimBankName'] ?? null,
-                    'victim_bank_address1' => $tx['VictimBankAddress1'] ?? null,
-                    'victim_bank_address2' => $tx['VictimBankAddress2'] ?? null,
-                    'victim_bank_mail_stop' => $tx['VictimBankMailStop'] ?? null,
-                    'victim_bank_city' => $tx['VictimBankCity'] ?? null,
-                    'victim_bank_country' => $tx['VictimBankCountry'] ?? null,
-                    'victim_bank_state' => $tx['VictimBankState'] ?? null,
-                    'victim_bank_zipcode' => $tx['VictimBankZipCode'] ?? null,
-                    'victim_account_name' => $tx['VictimAccountName'] ?? null,
-                    'victim_account_number' => $tx['VictimAccountNumber'] ?? null,
-                    'cryptocurrency_type' => $tx['CryptocurrencyType'] ?? null,
-                    'p2p_application' => $tx['P2PApplication'] ?? null,
-                    'transaction_id' => $tx['TransactionID'] ?? null,
-                    'crypto_atm' => $tx['CryptoATM'] ?? null,
-                    'gift_card_type' => $tx['GiftCardType'] ?? null,
-                    'atm_address' => $tx['ATMAddress'] ?? null,
-                    'atm_city' => $tx['ATMCity'] ?? null,
-                    'atm_country' => $tx['ATMCountry'] ?? null,
-                    'atm_state' => $tx['ATMState'] ?? null,
-                    'atm_zipcode' => $tx['ATMZipCode'] ?? null,
-                    'victim_account_wallet' => $tx['VictimAccountWallet'] ?? null,
-                    'victim_account_identifier' => $tx['VictimAccountIdentifier'] ?? null,
-                    'gift_card_number' => $tx['GiftCardNumber'] ?? null,
-                    'recipient_bank_name' => $tx['RecipientBankName'] ?? null,
-                    'recipient_bank_address1' => $tx['RecipientBankAddress1'] ?? null,
-                    'recipient_bank_address2' => $tx['RecipientBankAddress2'] ?? null,
-                    'recipient_bank_mail_stop' => $tx['RecipientBankMailStop'] ?? null,
-                    'recipient_bank_city' => $tx['RecipientBankCity'] ?? null,
-                    'recipient_bank_country' => $tx['RecipientBankCountry'] ?? null,
-                    'recipient_bank_state' => $tx['RecipientBankState'] ?? null,
-                    'recipient_bank_zipcode' => $tx['RecipientBankZipCode'] ?? null,
-                    'recipient_account_name' => $tx['RecipientAccountName'] ?? null,
-                    'recipient_name' => $tx['RecipientName'] ?? null,
-                    'recipient_bank_routing_number' => $tx['RecipientBankRoutingNumber'] ?? null,
-                    'recipient_account_number' => $tx['RecipientAccountNumber'] ?? null,
-                    'recipient_bank_swift_code' => $tx['RecipientBankSwiftCode'] ?? null,
-                    'recipient_account_wallet' => $tx['RecipientAccountWallet'] ?? null,
-                    'recipient_account_identifier' => $tx['RecipientAccountIdentifier'] ?? null,
-                    'recipient_identifier' => $tx['RecipientIdentifier'] ?? null,
-                ]);
+                $transaction = new \App\Models\Transaction();
+
+                $transaction->complaint_id = $complaint->id;
+                $transaction->transaction_type = $tx['TransactionType'] ?? null;
+                $transaction->other_type = $tx['OtherType'] ?? null;
+                $transaction->was_sent = $tx['WasSent'] ?? null;
+                $transaction->amount = $tx['Amount'] ?? null;
+                $transaction->date = $tx['Date'] ?? null;
+                $transaction->institution_notified = $tx['InstitutionNotified'] ?? null;
+
+                // Victim Bank Info
+                $transaction->victim_bank_name = $tx['VictimBankName'] ?? null;
+                $transaction->victim_bank_address1 = $tx['VictimBankAddress1'] ?? null;
+                $transaction->victim_bank_address2 = $tx['VictimBankAddress2'] ?? null;
+                $transaction->victim_bank_mail_stop = $tx['VictimBankMailStop'] ?? null;
+                $transaction->victim_bank_city = $tx['VictimBankCity'] ?? null;
+                $transaction->victim_bank_country = $tx['VictimBankCountry'] ?? null;
+                $transaction->victim_bank_state = $tx['VictimBankState'] ?? null;
+                $transaction->victim_bank_zipcode = $tx['VictimBankZipCode'] ?? null;
+                $transaction->victim_account_name = $tx['VictimAccountName'] ?? null;
+                $transaction->victim_account_number = $tx['VictimAccountNumber'] ?? null;
+
+                // Crypto / Payment Info
+                $transaction->cryptocurrency_type = $tx['CryptocurrencyType'] ?? null;
+                $transaction->p2p_application = $tx['P2PApplication'] ?? null;
+                $transaction->transaction_id = $tx['TransactionID'] ?? null;
+                $transaction->crypto_atm = $tx['CryptoATM'] ?? null;
+                $transaction->gift_card_type = $tx['GiftCardType'] ?? null;
+                $transaction->atm_address = $tx['ATMAddress'] ?? null;
+                $transaction->atm_city = $tx['ATMCity'] ?? null;
+                $transaction->atm_country = $tx['ATMCountry'] ?? null;
+                $transaction->atm_state = $tx['ATMState'] ?? null;
+                $transaction->atm_zipcode = $tx['ATMZipCode'] ?? null;
+                $transaction->victim_account_wallet = $tx['VictimAccountWallet'] ?? null;
+                $transaction->victim_account_identifier = $tx['VictimAccountIdentifier'] ?? null;
+                $transaction->gift_card_number = $tx['GiftCardNumber'] ?? null;
+
+                // Recipient Info
+                $transaction->recipient_bank_name = $tx['RecipientBankName'] ?? null;
+                $transaction->recipient_bank_address1 = $tx['RecipientBankAddress1'] ?? null;
+                $transaction->recipient_bank_address2 = $tx['RecipientBankAddress2'] ?? null;
+                $transaction->recipient_bank_mail_stop = $tx['RecipientBankMailStop'] ?? null;
+                $transaction->recipient_bank_city = $tx['RecipientBankCity'] ?? null;
+                $transaction->recipient_bank_country = $tx['RecipientBankCountry'] ?? null;
+                $transaction->recipient_bank_state = $tx['RecipientBankState'] ?? null;
+                $transaction->recipient_bank_zipcode = $tx['RecipientBankZipCode'] ?? null;
+                $transaction->recipient_account_name = $tx['RecipientAccountName'] ?? null;
+                $transaction->recipient_name = $tx['RecipientName'] ?? null;
+                $transaction->recipient_bank_routing_number = $tx['RecipientBankRoutingNumber'] ?? null;
+                $transaction->recipient_account_number = $tx['RecipientAccountNumber'] ?? null;
+                $transaction->recipient_bank_swift_code = $tx['RecipientBankSwiftCode'] ?? null;
+                $transaction->recipient_account_wallet = $tx['RecipientAccountWallet'] ?? null;
+                $transaction->recipient_account_identifier = $tx['RecipientAccountIdentifier'] ?? null;
+                $transaction->recipient_identifier = $tx['RecipientIdentifier'] ?? null;
+
+                $transaction->save();
             }
         }
 
@@ -139,6 +147,7 @@ class ComplaintController extends Controller
                 ]);
             }
         }
+        return 123;
 
         return redirect()
             ->back()
