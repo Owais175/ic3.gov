@@ -1,6 +1,6 @@
 <a class="usa-skipnav" href="#main-content">Skip to content</a>
 <section class="usa-banner padding-bottom-2 desktop:padding-bottom-0"
-    aria-label="Official website of the United States government">
+    aria-label="Official website of the Government of India">
     <div class="usa-accordion">
         <header class="usa-banner__header">
             <div class="usa-banner__inner">
@@ -9,7 +9,7 @@
                         src="{{ asset('asset/image/us_flag_small.png') }}" alt="">
                 </div>
                 <div class="grid-col-fill tablet:grid-col-auto" aria-hidden="true">
-                    <p class="usa-banner__header-text">An official website of the United States government</p>
+                    <p class="usa-banner__header-text">An official website of the Government of India</p>
                     <p class="usa-banner__header-action">Here’s how you know</p>
                 </div>
                 <button type="button" class="usa-accordion__button usa-banner__button" aria-expanded="false"

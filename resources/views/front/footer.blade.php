@@ -8,23 +8,31 @@
                 </div>
             </div>
             <div class="font-serif-sm">
-                <p>Prior to filing a complaint with this portal, we would request you to read the below information
+                <p>
+                    Prior to filing a complaint with this portal, we would request you to read the below information
                     regarding terms and conditions. Should you have queries prior to filing your complaint, view
-                    Frequently Asked Questions FAQ
-                    The information I've provided on this form is correct to the best of my knowledge. I acknowledge
-                    that providing false information could make me liable to penal actions under Indian Laws.</p>
-
-
-                <p>I understand that action on the complaints reported on this portal shall be taken by concerned
-                    authorities as per Indian Laws.
+                    <a href="#"><b>Frequently Asked Questions (FAQ)</b></a>. The information I've provided on this form is correct to the best
+                    of my knowledge. I acknowledge that providing false information could make me liable to penal actions
+                    under Indian Laws.
                 </p>
-                <p>We thank you for your cooperation.</p>
-                <hr class="tablet:margin-left-0">
-                <p>The complaint information you submit to this site is encrypted via secure socket layer (SSL)
-                    encryption. Please see the <a href="{{ route('privacy-policy') }}">Privacy Policy</a> for further
-                    information.
+
+                <p>
+                    The information I have provided on this form is true and correct to the best of my knowledge. I acknowledge that providing false or misleading
+                    information may make me liable to legal action under applicable Indian laws.
                 </p>
-                <p>We thank you for your cooperation.
+
+                <p>
+                    I understand that the action taken on complaints submitted through this portal shall be carried out by concerned authorities in coordination with
+                    the <b>Ministry of Home Affairs (MHA), Indian Cyber Crime Coordination Centre (I4C),</b> and the <b>Central Bureau of Investigation (CBI),</b> as per the law.
+                </p>
+
+                <p>
+                    The complaint details submitted through this site are transmitted using <b>secure socket layer (SSL) encryption</b> to ensure confidentiality.
+                    For details on how your data is handled, please see our <a href="http://localhost/ic3.gov/public/privacy-policy">Privacy Policy</a>.
+                </p>
+
+                <p>
+                    We thank you for your cooperation.
                 </p>
             </div>
             <div class="usa-modal__footer">

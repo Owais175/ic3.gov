@@ -84,7 +84,7 @@
             </ul>
         </section>
 
-        <section class="what-happened">
+        {{-- <section class="what-happened">
             <div class="grid-row grid-gap">
                 <div class="text-center para-fill-grid">
                     <h3>
@@ -117,7 +117,7 @@
                     </p>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
         <section id="works" class="body-section">
             <h2>
