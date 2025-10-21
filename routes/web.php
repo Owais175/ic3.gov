@@ -18,23 +18,14 @@ Route::get('faq', [Homecontroller::class, 'faq'])->name('faq');
 
 
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('auth.register');
+Route::post('/register/send-otp', [AuthController::class, 'registerSendOtp'])->name('register.sendOtp');
+Route::post('/register/verify-otp', [AuthController::class, 'registerVerifyOtp'])->name('register.verifyOtp');
+Route::get('/login', [AuthController::class, 'showloginForm'])->name('auth.login');
+Route::post('/login/send-otp', [AuthController::class, 'sendOtp'])->name('login.sendOtp');
+Route::post('/login/verify', [AuthController::class, 'verifyOtp'])->name('login.verify');
 Route::post('/register', [AuthController::class, 'register'])->name('registeruser');
-Route::get('/login', [AuthController::class, 'showRegisterForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
-
-// Route::get('/complaints', [ComplaintController::class, 'index'])->name('complaint-form');
-
-// Route::post('/complaints', [ComplaintController::class, 'store'])
-//     ->name('complaints.store');
-
-// Route::get('/complaints/{id}', [ComplaintController::class, 'show'])
-//     ->name('complaints.show');
-
-// Route::put('/complaints/{id}/approve', [ComplaintController::class, 'approve'])->name('complaint.approve');
-
-
 
 
 Route::middleware('auth')->group(function () {

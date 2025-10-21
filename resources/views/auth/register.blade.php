@@ -11,56 +11,23 @@
                         <div class="form-fill-contact register-forms">
                             <form id="contactForm" method="POST" action="{{ route('registeruser') }}">
                                 @csrf
-                                <h3>Sign Up </h3>
-                                <div class="field-grid">
-                                    <div>
-                                        <label for="name">Full name</label>
-                                        <input id="name" name="name" type="text" required aria-required="true"
-                                            placeholder="Jane Doe">
-                                    </div>
-                                </div>
-                                <div class="field-grid">
+                                <label for="name">Full Name: <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
 
-                                    <div>
-                                        <label for="email">Email address</label>
-                                        <input id="email" name="email" type="email" required aria-required="true"
-                                            placeholder="you@example.com">
-                                    </div>
-                                </div>
+                                <label for="email">Email Address: <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
-                                <div class="field-grid">
-                                    <div>
-                                        <label for="phone">Password</label>
-                                        <input id="password" name="password" type="password" placeholder="">
-                                    </div>
+                                <label for="password">Password: <span class="required">*</span></label>
+                                <input type="password" id="password" name="password" placeholder="Enter Password" required>
 
-                                </div>
-                                <div class="actions">
-                                    <button type="submit" class="usa-button usa-button--big"
-                                        id="submitBtn">Register</button>
-                                </div>
-                            </form>
-                            <form id="loginform" method="POST" action="{{ route('login') }}">
-                                @csrf
-                                <h3>Login </h3>
-                                <div class="field-grid">
+                                <button type="button" class="otp-btn" id="sendOtpBtn">Send OTP</button>
 
-                                    <div>
-                                        <label for="email">Email address</label>
-                                        <input id="email" name="email" type="email" required aria-required="true"
-                                            placeholder="you@example.com">
-                                    </div>
-                                </div>
-
-                                <div class="field-grid">
-                                    <div>
-                                        <label for="phone">Password</label>
-                                        <input id="password" name="password" type="password" placeholder="">
-                                    </div>
-
-                                </div>
-                                <div class="actions">
-                                    <button type="submit" class="usa-button usa-button--big" id="submitBtn">Login</button>
+                                <div id="otpSection" style="display:none;">
+                                    <label for="otp">Enter OTP:</label>
+                                    <input type="text" id="otp" name="otp"
+                                        placeholder="Enter OTP received on email">
+                                    <button type="button" class="btn-submit" id="verifyOtpBtn">Verify OTP &
+                                        Register</button>
                                 </div>
                             </form>
 

@@ -689,7 +689,7 @@ button[disabled] {
 }
 
 .register-forms {
-    display: flex;
+    /* display: flex; */
     gap: 20px;
     align-items: self-start;
 }
@@ -704,7 +704,7 @@ button[disabled] {
 }
 
 .register-forms #contactForm {
-    width: 50%;
+    /* width: 50%; */
 }
 
 .register-forms #contactForm h3 {
@@ -1007,6 +1007,177 @@ form#IC3ComplaintForm input {
 div#accordionFlushExample {
     background: #0d2441;
     margin-top: 35px;
+}
+
+
+.citizen-login-container {
+    width: 50%;
+    margin: 40px auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.citizen-login-container h2 {
+    text-align: center;
+    color: #148855;
+    border-bottom: 2px solid #148855;
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.citizen-login-container p {
+    text-align: end;
+}
+
+.citizen-login-container a {
+    color: #007b9e;
+    text-decoration: none;
+}
+
+.required {
+    color: red;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.mobile-group {
+    display: flex;
+    gap: 5px;
+}
+
+.mobile-group select {
+    width: 30%;
+}
+
+.mobile-group input {
+    width: 70%;
+}
+
+.otp-btn {
+    background: #007b9e;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.captcha-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#captcha_text {
+    width: 30%;
+    text-align: center;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#captcha {
+    width: 70%;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.btn-clear {
+    background: #d9534f;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.forgot {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.checklist-complainant {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.login-blade-file {
+    max-width: 100rem;
+}
+
+.login-page-layout {
+    width: 50%;
+}
+
+.citizen-login-container.complain-citizen h3 {
+    text-align: start;
+    color: black;
+}
+
+.citizen-login-container.complain-citizen p {
+    text-align: start;
+    color: black;
+    margin: 0;
+}
+
+.citizen-login-container.complain-citizen .para-purple {
+    text-align: start;
+    color: #9f6782;
+    font-weight: 600;
+}
+
+.citizen-login-container #loginform {
+    background: transparent;
+}
+
+.citizen-login-container label {
+    color: black;
+}
+
+.citizen-login-container.complain-citizen ul {
+    padding-left: 15px;
+}
+
+.citizen-login-container.complain-citizen ul li p {
+    color: black;
+    margin: 0;
+}
+
+.citizen-login-container.complain-citizen ul li {
+    list-style: auto;
+    color: black;
+}
+
+.citizen-login-container #loginform input {
+    color: black;
 }
 
 /* new css added */
