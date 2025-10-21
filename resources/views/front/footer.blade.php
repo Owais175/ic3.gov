@@ -87,14 +87,14 @@
         <div class="grid-container">
             <div id="foot" class="usa-footer__logo grid-row grid-gap-2">
                 <div class="grid-col-auto">
-                    <picture>
+                    {{-- <picture>
                         <source srcset="{{ asset('asset/image/fbi_seal_new.png') }}" type="image/webp">
                         <img class="usa-footer__logo-img" src="{{ asset('asset/image/fbi_seal_new.png') }}"
                             alt="FBI Seal">
-                    </picture>
+                    </picture> --}}
                     <div class="agency">
-                        <h1>FBI</h1>
-                        <h3>Federal Bureau of Investigation</h3>
+                        <h1>CRAU</h1>
+                        <h3>Cyber Rapid Action Unit</h3>
                     </div>
                 </div>
                 <div class="grid-col-auto">
@@ -159,7 +159,7 @@
                             </li>
                         </ul>
                     </div>
-                    <p class="usa-footer__logo-heading">FBI.gov Contact Center</p>
+                    <p class="usa-footer__logo-heading">CRAU Contact Center</p>
                 </div>
             </div>
         </div>
