@@ -83,21 +83,29 @@
             </button>
             <ul class="usa-nav__primary usa-accordion">
                 <li class="usa-nav__primary-item">
-                    <a class="usa-nav-link" data-open-modal aria-controls="fileTerms" href="#fileTerms">File A
-                        Complaint</a>
-                </li>
-                <li class="usa-nav__primary-item">
                     <a class="usa-nav-link" href="{{ route('index') }}">Home</a>
                 </li>
                 <li class="usa-nav__primary-item">
                     <a class="usa-nav-link" href="{{ route('about') }}">About Us</a>
                 </li>
                 <li class="usa-nav__primary-item">
-                    <a class="usa-nav-link" href="{{ route('track-order') }}">Track Order</a>
+                    <a class="usa-nav-link" data-open-modal aria-controls="fileTerms" href="#fileTerms">File A
+                        Complaint</a>
                 </li>
                 <li class="usa-nav__primary-item">
-                    <a class="usa-nav-link" href="{{ route('contact') }}">Contact</a>
+                    <a class="usa-nav-link" href="{{ route('faq') }}">FAQ</a>
                 </li>
+                <li class="usa-nav__primary-item">
+                    <a class="usa-nav-link" href="{{ route('privacy-policy') }}">Privacy Policy</a>
+                </li>
+                <li class="usa-nav__primary-item">
+                    <a class="usa-nav-link" href="{{ route('contact') }}">Contact Us</a>
+                </li>
+                @if(Auth::check())
+                    <li class="usa-nav__primary-item">
+                        <a class="usa-nav-link" href="{{ route('track-order') }}">Track Order</a>
+                    </li>
+                @endif
                 @if (!Auth::check())
                     <li class="usa-nav__primary-item">
                         <a class="usa-button usa-button--big" href="{{ route('auth.register') }}">Register</a>

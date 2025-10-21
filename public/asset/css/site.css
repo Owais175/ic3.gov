@@ -1188,3 +1188,7 @@ form#registerForm input {
 }
 
 /* new css added */
+
+.usa-header .usa-nav-container {
+    width: 100%;
+}

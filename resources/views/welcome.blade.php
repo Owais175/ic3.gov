@@ -81,7 +81,7 @@
                 <div>File A Complaint</div>
             </button>
         </section>
-        <section id="works" class="body-section">
+        {{-- <section id="works" class="body-section">
             <h2>
                 HCyber Hygiene Post
             </h2>
@@ -117,7 +117,7 @@
                     </div>
                 </li>
             </ul>
-        </section>
+        </section> --}}
 
         {{-- <section class="what-happened">
             <div class="grid-row grid-gap">
@@ -306,8 +306,8 @@
                     <div>
                         <figure>
                             <picture>
-                                <source srcset="{{ asset('asset/image/losses.jpg') }}" type="image/webp">
-                                <img src="{{ asset('asset/image/losses.jpg') }}"
+                                <source srcset="{{ asset('asset/image/SS_1812275966.png') }}" type="image/webp">
+                                <img src="{{ asset('asset/image/SS_1812275966.png') }}"
                                     alt="Column chart showing complaint-reported losses over a five-year period: $4.2 billion in 2020, $6.9 billion in 2021, $10.3 billion in 2022, $12.5 billion in 2023, and $16.6 billion in 2024">
                             </picture>
                             <figcaption>Chart includes surge in cyber attacks for the year 2017 to 2021. Over
