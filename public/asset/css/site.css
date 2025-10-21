@@ -1183,5 +1183,8 @@ select {
 form#registerForm input {
     color: black;
 }
+.usa-footer__logo-img {
+    width: 5rem;
+}
 
 /* new css added */

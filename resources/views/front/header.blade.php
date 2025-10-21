@@ -39,8 +39,8 @@
                             <strong>Secure .gov websites use HTTPS</strong><br>
                             A <strong>lock</strong> (
                             <span class="icon-lock">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="52" height="64"
-                                    viewBox="0 0 52 64" class="usa-banner__lock-image" role="img"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64"
+                                    class="usa-banner__lock-image" role="img"
                                     aria-labelledby="banner-lock-description-default" focusable="false">
                                     <title id="banner-lock-title-default">Lock</title>
                                     <desc id="banner-lock-description-default">Locked padlock icon</desc>
@@ -63,8 +63,9 @@
             <div class="usa-logo">
                 <a href="{{ route('index') }}">
                     <picture>
-                        <source srcset="{{ asset('asset/image/ic3_logo.webp') }}" type="image/webp">
-                        <img class="usa-footer__logo-img" src="{{ asset('asset/image/ic3_logo.png') }}" alt="IC3 Logo">
+                        <source srcset="{{ asset('asset/image/logo-cyber-crime.png') }}" type="image/webp">
+                        <img class="usa-footer__logo-img" src="{{ asset('asset/image/logo-cyber-crime.png') }}"
+                            alt="IC3 Logo">
                     </picture>
                 </a>
                 <em class="usa-logo__text"><a href="{{ route('index') }}">Internet Crime Complaint Center (IC3)</a></em>
