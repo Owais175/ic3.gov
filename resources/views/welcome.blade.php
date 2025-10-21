@@ -71,8 +71,7 @@
             </p>
             <button id="fileComplaint" class="usa-button usa-button--big" type="button" data-open-modal href="#fileTerms"
                 aria-controls="fileTerms">
-                <svg width="25" height="25" fill="currentColor" viewBox="0 0 16 16" role="img"
-                    aria-hidden="true">
+                <svg width="25" height="25" fill="currentColor" viewBox="0 0 16 16" role="img" aria-hidden="true">
                     <path
                         d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5" />
                     <path
@@ -308,7 +307,8 @@
                             <picture>
                                 <source srcset="{{ asset('asset/image/SS_1812275966.png') }}" type="image/webp">
                                 <img src="{{ asset('asset/image/SS_1812275966.png') }}"
-                                    alt="Column chart showing complaint-reported losses over a five-year period: $4.2 billion in 2020, $6.9 billion in 2021, $10.3 billion in 2022, $12.5 billion in 2023, and $16.6 billion in 2024">
+                                    alt="Column chart showing complaint-reported losses over a five-year period: $4.2 billion in 2020, $6.9 billion in 2021, $10.3 billion in 2022, $12.5 billion in 2023, and $16.6 billion in 2024"
+                                    class="chartmap">
                             </picture>
                             <figcaption>Chart includes surge in cyber attacks for the year 2017 to 2021. Over
                                 this time period, over 14 lakh cyber attacks were registered. </figcaption>
@@ -317,7 +317,7 @@
                         </div>
                         <div class="display-flex flex-align-center flex-justify-space-around margin-top-05em">
                             <div>
-                                <a type="application/pdf" href="{{ asset('asset/image/2024_IC3Report.pdf') }}">
+                                <a type="application/pdf" href="{{ asset('asset/article/IJSRA-2024-1919.pdf') }}">
                                     <button class="usa-button margin-left-2px margin-right-2px" type="button">Annual
                                         Report</button>
                                 </a>
