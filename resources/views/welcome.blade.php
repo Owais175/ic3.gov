@@ -5,35 +5,70 @@
     <main id="main-content" class="usa-prose grid-container">
 
         <section class="body-section margin-top-1">
-            <h1>Welcome to the Internet Crime Complaint Center</h1>
+            <h1>Welcome to the Cyber Rapid Action Unit (CRAU)</h1>
             <div>
                 <p>
-                    The Internet Crime Complaint Center is the central hub for reporting cyber-enabled crime. It is
-                    run by the CBI, premier investigative agency in the country today, with a dual responsibility to
-                    investigate grievous cases and provide leadership and direction in fighting corruption to the Police
-                    force across the country
+                    The <strong>Cyber Rapid Action Unit (CRAU)</strong> serves as a centralized platform for reporting and
+                    addressing
+                    incidents of <strong>cybercrime and online fraud</strong> across India.
+                    It functions in close coordination with the <strong>Ministry of Home Affairs (MHA), Indian Cyber Crime
+                        Coordination Centre (I4C)</strong>, and Central Bureau of Investigation (CBI) to ensure swift
+                    investigation and
+                    action on cyber-enabled offenses.
+
                 </p>
                 <p>
-                    For more information about the Internet Crime Complaint Center and its mission, please see the <a
-                        href="{{ route('about') }}">About Us</a>
-                    page.
+                    For detailed information about CRAU’s objectives, structure, and operational framework, please visit our
+                    <a href="{{ route('about') }}">[About Us]</a> page.
                 </p>
             </div>
         </section>
         <section class="body-section">
             <h2>
-                File a Complaint with Us
+                Report a Cyber Complaint
             </h2>
             <div class="usa-alert usa-alert--error usa-alert--slim" role="alert">
                 <div class="usa-alert__body">
                     <p class="usa-alert__text text-bold">
-                        If you or someone else is in immediate danger, please call 911 or your local police.
+                        If you or someone else is in <strong>immediate danger</strong>, contact your <strong>nearest local
+                            police
+                            station</strong> or call <strong>112
+                            (National Emergency Number).</strong>
                     </p>
                 </div>
             </div>
-            <p>The Internet Crime Complaint Centre focuses on collecting cyber-enabled crime. Crimes against
-                women/ children should be filed with <span>Cyber Crime Portal</span>. Other types of crimes, such as threats
-                of terrorism, should be reported at <a href="{{ route('index') }}">https://cbi.gov.in/</a></p>
+            <p>The <strong>Cyber Rapid Action Unit</strong> primarily handles cases that need swift action:
+            </p>
+            <ul>
+                <li>
+                    <p>Online financial fraud and digital payment scams
+                    </p>
+                </li>
+                <li>
+                    <p>Cyberstalking, impersonation, and identity the
+                    </p>
+                </li>
+                <li>
+                    <p>Online harassment and defamation
+                    </p>
+                </li>
+                <li>
+                    <p>Data breaches and unauthorized access
+                    </p>
+                </li>
+                <li>
+                    <p>Other cyber-enabled criminal activities
+                    </p>
+                </li>
+            </ul>
+            <p>⚠️ <strong>Crimes involving children</strong> (such as online child abuse or exploitation) should be reported
+                directly to the
+                <strong>National Cyber Crime Reporting Portal</strong> under the section “Report Child Related Crime.”
+            </p>
+            <p>Cases involving <strong>national security or terrorism threats</strong> should be reported through the
+                <strong>National Investigation
+                    Agency (NIA)</strong> or relevant law enforcement authority.
+            </p>
             <button id="fileComplaint" class="usa-button usa-button--big" type="button" data-open-modal href="#fileTerms"
                 aria-controls="fileTerms">
                 <svg width="25" height="25" fill="currentColor" viewBox="0 0 16 16" role="img"
@@ -142,11 +177,24 @@
                                     transform="translate(18 -14)" />
                             </g>
                         </svg>
-                        <h3 class="tablet:font-sans-3xs desktop:font-sans-xs">Tell us what happened.</h3>
+                        <h3 class="tablet:font-sans-3xs desktop:font-sans-xs">Tell Us What Happened</h3>
                     </div>
-                    <p class="font-body-sm">File a report to share information with the FBI. IC3 is the main intake form for
-                        a variety of complaints &mdash; everything from cyber-enabled frauds and scams to cybercrime &mdash;
-                        so file a report even if you are unsure of whether your complaint qualifies.</p>
+                    <p class="font-body-sm">Report your cyber incident to the <strong>Cyber Rapid Action Unit
+                            (CRAU).</strong></p>
+                    <p>Whether you’ve experienced <strong>online fraud, data theft, cyber harassment, identity misuse, or
+                            unauthorized access</strong>, your report helps CRAU and partner agencies under the
+                        <strong>Ministry of
+                            Home Affairs
+                            (MHA)</strong> take swift and coordinated action.
+                    </p>
+                    <p>Even if you’re unsure whether your experience qualifies as a cybercrime, we encourage you to
+                        <strong>file a
+                            report.</strong>
+                    </p>
+                    <p>Every complaint helps strengthen our understanding of emerging threats and contributes to <strong>a
+                            safer
+                            digital India.</strong>
+                    </p>
                 </li>
                 <li class="text-center tablet:grid-col-4">
                     <div>
@@ -166,13 +214,24 @@
                                     transform="translate(18 -46)" />
                             </g>
                         </svg>
-                        <h3 class="font-family-sans tablet:font-sans-3xs desktop:font-sans-xs">Your contribution and our
-                            mission.</h3>
+                        <h3 class="font-family-sans tablet:font-sans-3xs desktop:font-sans-xs">Your Contribution, Our
+                            Commitment</h3>
                     </div>
-                    <p class="tablet:font-body-xs">Your report helps us fulfill our mission of protecting the American
-                        people. While we cannot guarantee a response to every complaint, your report is still valuable. It
-                        helps us understand the broader threat landscape. Furthermore, in those cases where we are able to
-                        take action, we will work to provide justice.</p>
+                    <p class="tablet:font-body-xs">Your report plays a vital role in supporting the <strong>Cyber Rapid
+                            Action Unit
+                            (CRAU)</strong> in its mission to protect India’s digital ecosystem.
+                    </p>
+                    <p>Every complaint strengthens our understanding of the <strong>national cyber threat landscape</strong>
+                        and helps us
+                        take timely action against organized cybercriminal activities.</p>
+                    <p>While it may not be possible to issue individual responses for every submission, each report is
+                        carefully analyzed and, where necessary, shared with the concerned law enforcement agency for
+                        investigation.
+                    </p>
+                    <p>By reporting cyber incidents, you are contributing directly to <strong>India’s fight against
+                            cybercrime</strong>r —
+                        helping ensure that our digital networks remain secure, resilient, and trustworthy.
+                    </p>
                 </li>
                 <li class="text-center tablet:grid-col-4">
                     <div>
@@ -217,23 +276,31 @@
 
         <section class="body-section">
             <h2>
-                Protecting Our Digitally-connected World is a Top Priority and
-                Focus of the CBI
+                Securing India’s Digital Future is the Core Mission of CRAU
             </h2>
             <div class="grid-row grid-gap">
                 <div class="grid-col-fill">
                     <h3>
-                        We Need You
+                        Your Vigilance Strengthens Our Cyber Shield
                     </h3>
-                    <p>Between staying connected with family and friends, shopping and banking online,
-                        and working remotely, we all depend on security in our interconnected digital world.
-                        Criminals from every corner of the globe attack our digital systems on a near
-                        constant basis. They strike targets large and small — from corporate networks to
-                        personal smart phones. No one — and no device — is immune from the threat. The
-                        only way forward is together. In cyber security, where a single compromise can
-                        impact millions of people, there can be no weak links. Every organization and every
-                        individual needs to take smart, reasonable steps to protect their own devices and
-                        systems and to learn how to spot and avoid scams.</p>
+                    <p>From connecting with loved ones and conducting digital payments, to working, learning, and
+                        transacting online — our lives are deeply intertwined with the digital ecosystem.
+                        With this connectivity comes an ever-growing threat: <strong>cybercriminals operating from across
+                            the globe</strong>
+                        attempt to breach networks, exploit systems, and steal sensitive information every day.
+                    </p>
+                    <p>No one — and no device — is entirely immune from cyber threats.
+                        That’s why the <strong>Cyber Rapid Action Unit (CRAU)</strong> works around the clock to detect,
+                        prevent, and respond
+                        to cyber incidents impacting individuals, businesses, and government systems.</p>
+                    <p>But security is a <strong>shared responsibility.</strong>
+                    </p>
+                    <p>In cyberspace, a single vulnerability can endanger thousands. Every citizen, institution, and
+                        organization must stay alert — adopting safe digital practices, securing personal data, and learning
+                        to recognize fraudulent schemes and online scams.
+                    </p>
+                    <p>Together, we can build a <strong>secure, resilient, and cyber-aware India.</strong>
+                    </p>
                 </div>
                 <div class="desktop:grid-col-6 tablet:display-flex flex-align-center">
                     <div>

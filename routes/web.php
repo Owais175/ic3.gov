@@ -14,6 +14,7 @@ Route::get('contact', [Homecontroller::class, 'contact'])->name('contact');
 Route::get('complaint-form', [Homecontroller::class, 'complaint'])->name('complaint');
 Route::get('privacy-policy', [Homecontroller::class, 'privacy_policy'])->name('privacy-policy');
 Route::post('contactsubmit', [Homecontroller::class, 'contactsubmit'])->name('contactsubmit');
+Route::get('faq', [Homecontroller::class, 'faq'])->name('faq');
 
 
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('auth.register');

@@ -3,43 +3,54 @@
         <div class="usa-modal__main" id="fileTermsDesc">
             <div class="usa-alert usa-alert--warning">
                 <div class="usa-alert__body">
-                    <h4 id="fileTermsHeading" class="usa-alert__heading">Filing a Complaint on National Cyber Crime
-                        Reporting Portal</h4>
+                    <h4 id="fileTermsHeading" class="usa-alert__heading">Filing a Complaint on Cyber Rapid Action Unit
+                        (CRAU) Portal
+                    </h4>
                 </div>
             </div>
             <div class="font-serif-sm">
                 <p>
-                    Prior to filing a complaint with this portal, we would request you to read the below information
-                    regarding terms and conditions. Should you have queries prior to filing your complaint, view
-                    <a href="#"><b>Frequently Asked Questions (FAQ)</b></a>. The information I've provided on this form is correct to the best
-                    of my knowledge. I acknowledge that providing false information could make me liable to penal actions
-                    under Indian Laws.
+                    Prior to filing a complaint through this portal, you are requested to carefully read the information
+                    regarding terms and conditions. Should you have any queries before submission, please refer to our
+                    <a href="{{ route('faq') }}">Frequently Asked Questions (FAQ)</a> section.
+
                 </p>
 
                 <p>
-                    The information I have provided on this form is true and correct to the best of my knowledge. I acknowledge that providing false or misleading
-                    information may make me liable to legal action under applicable Indian laws.
+                    The information I have provided on this form is true and correct to the best of my knowledge. I
+                    acknowledge that providing false or misleading information may make me liable to legal action under
+                    applicable Indian laws.
                 </p>
 
                 <p>
-                    I understand that the action taken on complaints submitted through this portal shall be carried out by concerned authorities in coordination with
-                    the <b>Ministry of Home Affairs (MHA), Indian Cyber Crime Coordination Centre (I4C),</b> and the <b>Central Bureau of Investigation (CBI),</b> as per the law.
+                    I understand that the action taken on complaints submitted through this portal shall be carried out
+                    by concerned authorities in coordination with the <strong>Ministry of Home Affairs (MHA), Indian
+                        Cyber Crime
+                        Coordination Centre (I4C)</strong>, and the <strong>Central Bureau of Investigation
+                        (CBI)</strong>, as per the
+                    law.
+
                 </p>
 
                 <p>
-                    The complaint details submitted through this site are transmitted using <b>secure socket layer (SSL) encryption</b> to ensure confidentiality.
-                    For details on how your data is handled, please see our <a href="http://localhost/ic3.gov/public/privacy-policy">Privacy Policy</a>.
+                    The complaint details submitted through this site are transmitted using <strong>secure socket layer
+                        (SSL)
+                        encryption</strong> to ensure confidentiality. For details on how your data is handled, please
+                    see our
+                    <a href="{{ route('privacy-policy') }}">Privacy Policy</a>.
+
                 </p>
 
                 <p>
-                    We thank you for your cooperation.
+                    We thank you for your cooperation in maintaining a secure and trustworthy digital ecosystem.
+
                 </p>
             </div>
             <div class="usa-modal__footer">
                 <ul class="usa-button-group display-flex flex-justify-center">
                     <li class="usa-button-group__item">
                         <button id="acceptFile" type="button" class="usa-button" data-close-modal>
-                            Accept
+                            I Accept
                         </button>
                     </li>
                 </ul>

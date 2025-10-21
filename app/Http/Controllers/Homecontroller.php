@@ -50,4 +50,9 @@ class Homecontroller extends Controller
         return redirect()->route('contact')
             ->with('success', '✅ Thank you! Your message has been sent successfully.');
     }
+
+    public function faq()
+    {
+        return view('faq');
+    }
 }

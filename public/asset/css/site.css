@@ -12,7 +12,7 @@
 
     body,
     .usa-radio {
-        background-color: #000;
+        background-color: #000 !important;
     }
 
     .usa-modal {
@@ -962,6 +962,51 @@ form#IC3ComplaintForm input {
 
 #contactForm input {
     color: black;
+}
+
+.faq-pg {
+    padding: 100px 0;
+}
+
+.faq-pg h2 {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.faq-pg p {
+    color: white;
+    font-size: 17px;
+}
+
+.faq-pg .accordion-item {
+    background: transparent;
+    margin-bottom: 12px;
+    border-radius: 10px;
+}
+
+.faq-pg .accordion-item ul li {
+    color: white;
+}
+
+.faq-pg h2.accordion-header button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.faq-pg h2.accordion-header button:after {
+    color: white;
+    filter: brightness(0) invert(2);
+}
+
+.faq-pg .accordion-item .accordion-body {
+    border: 1px solid white;
+}
+
+div#accordionFlushExample {
+    background: #0d2441;
+    margin-top: 35px;
 }
 
 /* new css added */

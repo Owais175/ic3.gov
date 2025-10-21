@@ -58,7 +58,7 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.css" />
 
-    @stack('css')
+    @yield('css')
 
 </head>
 
@@ -83,6 +83,7 @@
     <script src="{{ asset('asset/js/uswds-init.min.js') }}"></script>
     <script src="{{ asset('asset/js/uswds.min.js') }}"></script>
 
+    @yield('js')
 
     <script>
         $(document).ready(function() {
