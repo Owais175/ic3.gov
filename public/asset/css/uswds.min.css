@@ -4860,7 +4860,7 @@ var {
 }
 
 .usa-footer--slim .usa-footer__logo-img {
-    max-width: 3rem;
+        max-width: 100px;
 }
 
 .usa-footer--slim .usa-footer__contact-info {

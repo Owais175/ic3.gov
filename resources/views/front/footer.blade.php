@@ -87,11 +87,11 @@
         <div class="grid-container">
             <div id="foot" class="usa-footer__logo grid-row grid-gap-2">
                 <div class="grid-col-auto">
-                    {{-- <picture>
-                        <source srcset="{{ asset('asset/image/fbi_seal_new.png') }}" type="image/webp">
-                        <img class="usa-footer__logo-img" src="{{ asset('asset/image/fbi_seal_new.png') }}"
+                    <picture>
+                        <source srcset="{{ asset('asset/image/crau.png') }}" type="image/webp">
+                        <img class="usa-footer__logo-img" src="{{ asset('asset/image/crau.png') }}"
                             alt="FBI Seal">
-                    </picture> --}}
+                    </picture>
                     <div class="agency">
                         <h1>CRAU</h1>
                         <h3>Cyber Rapid Action Unit</h3>
@@ -169,10 +169,11 @@
 
         <nav class="usa-footer__nav" aria-label="Footer navigation">
             <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                <h4 class="usa-footer__primary-link">Website Contents are owned and maintained by Internet Crime
-                    Complaint Centre, Ministry of Home Affairs, Government of India.
-                    The Website is designed, developed and hosted by Central Bureau of
-                    Investigation (CBI), Government of India.</h4>
+                <h4 class="usa-footer__primary-link">
+                    Website contents are owned and maintained by the Cyber Rapid Action Unit (CRAU), under the Indian Cyber Crime Coordination Centre (14C), Ministry
+                    of Home Affairs, Government of India. The website is designed, developed and hosted by the Cyber and Information Security Division, in coordination with
+                    the Cyber Rapid Action Unit (CRAU) and other national cyber agencies.
+                </h4>
             </section>
         </nav>
         <nav class="usa-footer__nav" aria-label="Footer navigation">
