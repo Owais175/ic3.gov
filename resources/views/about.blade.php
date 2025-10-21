@@ -14,7 +14,7 @@
                         the Indian Cyber Crime Coordination Centre (I4C) and the Central Bureau of Investigation (CBI))
                     </p>
                 </div>
-                <div class="desktop:grid-col-6 tablet:display-flex flex-align-center">
+                {{-- <div class="desktop:grid-col-6 tablet:display-flex flex-align-center">
                     <div>
                         <figure>
                             <picture>
@@ -24,7 +24,7 @@
                         </figure>
                     </div>
 
-                </div>
+                </div> --}}
             </div>
             <div class="grid-row grid-gap">
                 <div class="grid-col-fill">
@@ -61,7 +61,7 @@
                             enforcement</strong> in partnership with MHA, I4C, and CBI.
                     </p>
                 </div>
-                <div class="desktop:grid-col-6 tablet:display-flex flex-align-center">
+                {{-- <div class="desktop:grid-col-6 tablet:display-flex flex-align-center">
                     <div>
                         <figure>
                             <picture>
@@ -70,7 +70,7 @@
                             </picture>
                         </figure>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <h3>
                 Mandate and Function
