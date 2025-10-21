@@ -88,8 +88,8 @@
             <div id="foot" class="usa-footer__logo grid-row grid-gap-2">
                 <div class="grid-col-auto">
                     <picture>
-                        <source srcset="{{ asset('asset/image/crau.png') }}" type="image/webp">
-                        <img class="usa-footer__logo-img" src="{{ asset('asset/image/crau.png') }}"
+                        <source srcset="{{ asset('asset/image/logo-cyber-crime.png') }}" type="image/webp">
+                        <img class="usa-footer__logo-img" src="{{ asset('asset/image/logo-cyber-crime.png') }}"
                             alt="FBI Seal">
                     </picture>
                     <div class="agency">
