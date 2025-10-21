@@ -68,7 +68,7 @@
                             alt="IC3 Logo">
                     </picture>
                 </a>
-                <em class="usa-logo__text"><a href="{{ route('index') }}">Internet Crime Complaint Center (IC3)</a></em>
+                <em class="usa-logo__text"><a href="{{ route('index') }}">Cyber Rapid Action Unit (CRAU)</a></em>
             </div>
             <button type="button" class="usa-menu-btn">Menu</button>
         </div>
