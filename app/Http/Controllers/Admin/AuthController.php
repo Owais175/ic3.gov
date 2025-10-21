@@ -29,126 +29,94 @@ class AuthController extends Controller
         return view('auth.login', compact('countries'));
     }
 
-    /**
-     * ✅ Common function for both Login & Register OTP send
-     */
     public function sendOtp(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'type' => 'required|in:login,register',
-        ]);
+        $type = $request->type;
 
-        $otp = rand(100000, 999999);
+        $rules = ['email' => 'required|email'];
+
+        if ($type === 'register') {
+            $rules['name'] = 'required|string|max:255';
+            $rules['password'] = 'required|min:6';
+        } elseif ($type === 'login') {
+            $rules['mobile'] = 'required';
+            $rules['country_code'] = 'required';
+        }
+
+        $request->validate($rules);
 
         $user = User::where('email', $request->email)->first();
 
-        // REGISTER FLOW
-        if ($request->type === 'register') {
-            if ($user) {
-                return response()->json(['status' => false, 'message' => 'This email is already registered. Please login.']);
-            }
-
-            // temporarily hold OTP without creating user
-            cache()->put('register_otp_' . $request->email, [
-                'otp' => $otp,
-                'expires_at' => now()->addMinutes(5)
-            ], 300);
-
-            $subject = 'Your Registration OTP';
-            $message = "Your OTP for registration is: {$otp}";
+        if ($type === 'register' && $user) {
+            return response()->json(['status' => false, 'message' => 'User already registered.']);
         }
-        // LOGIN FLOW
-        else {
-            if (!$user) {
-                return response()->json(['status' => false, 'message' => 'User not found. Please register first.']);
-            }
 
-            $user->update([
+        if ($type === 'login' && !$user) {
+            return response()->json(['status' => false, 'message' => 'User not found. Please register first.']);
+        }
+
+        $otp = rand(100000, 999999);
+        $user = User::updateOrCreate(
+            ['email' => $request->email],
+            [
                 'otp' => $otp,
                 'otp_expires_at' => now()->addMinutes(5),
-            ]);
+                'name' => $user->name ?? $request->name ?? null,
+                'password' => $user->password ?? Hash::make($request->password ?? 'temp'),
+            ]
+        );
 
-            $subject = 'Your Login OTP';
-            $message = "Your OTP for login is: {$otp}";
-        }
-
-        // Send OTP mail
-        Mail::raw($message, function ($m) use ($request, $subject) {
-            $m->from(config('mail.from.address'), config('mail.from.name'))
-                ->to($request->email)
-                ->subject($subject);
+        Mail::raw("Your OTP is: {$otp}", function ($message) use ($user, $type) {
+            $message->from('no-reply@yourapp.com', 'Your App Name');
+            $message->to($user->email)
+                ->subject("Your " . ucfirst($type) . " OTP");
         });
 
-        return response()->json(['status' => true, 'message' => 'OTP sent successfully to your email.']);
+        return response()->json(['status' => true, 'message' => 'OTP sent successfully!']);
     }
 
     public function verifyOtp(Request $request)
     {
         $request->validate([
             'email' => 'required|email',
-            'otp' => 'required',
-            'type' => 'required|in:login,register',
+            'otp' => 'required'
         ]);
 
-        // REGISTER FLOW
-        if ($request->type === 'register') {
-            $cachedOtp = cache()->get('register_otp_' . $request->email);
-
-            if (!$cachedOtp) {
-                return response()->json(['status' => false, 'message' => 'OTP expired or not found.']);
-            }
-
-            if ($cachedOtp['otp'] != $request->otp) {
-                return response()->json(['status' => false, 'message' => 'Invalid OTP.']);
-            }
-
-            if (now()->gt($cachedOtp['expires_at'])) {
-                return response()->json(['status' => false, 'message' => 'OTP expired.']);
-            }
-
-            // Create the new user now (only after OTP verified)
-            $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-                'role' => 2,
-            ]);
-
-            Auth::login($user);
-            cache()->forget('register_otp_' . $request->email);
-
-            return response()->json([
-                'status' => true,
-                'redirect' => route('dashboard'),
-                'message' => '🎉 Registration successful! Welcome aboard.'
-            ]);
+        $user = User::where('email', $request->email)->first();
+        if (!$user) {
+            return response()->json(['status' => false, 'message' => 'User not found.']);
         }
 
-        // LOGIN FLOW
-        else {
-            $user = User::where('email', $request->email)->first();
+        if ($user->otp !== $request->otp || now()->gt($user->otp_expires_at)) {
+            return response()->json(['status' => false, 'message' => 'Invalid or expired OTP.']);
+        }
 
-            if (!$user) {
-                return response()->json(['status' => false, 'message' => 'User not found.']);
-            }
-
-            if ($user->otp !== $request->otp) {
-                return response()->json(['status' => false, 'message' => 'Invalid OTP.']);
-            }
-
-            if (now()->gt($user->otp_expires_at)) {
-                return response()->json(['status' => false, 'message' => 'OTP expired. Please resend.']);
-            }
-
+        if ($request->type === 'register') {
+            $user->update([
+                'name' => $request->name,
+                'password' => Hash::make($request->password),
+                'role' => 2,
+                'otp' => null,
+                'otp_expires_at' => null,
+            ]);
+        } else {
             $user->update(['otp' => null, 'otp_expires_at' => null]);
+        }
 
-            Auth::login($user);
+        Auth::login($user);
+
+        if ($request->type === 'register') {
 
             return response()->json([
                 'status' => true,
                 'redirect' => route('dashboard'),
-                'message' => '✅ Login successful! Welcome back.'
+                'message' => ucfirst($request->type) . ' successful! Welcome ' . $user->name
+            ]);
+        } else {
+            return response()->json([
+                'status' => true,
+                'redirect' => route('complaint-form'),
+                'message' => ucfirst($request->type) . ' successful! Welcome ' . $user->name
             ]);
         }
     }

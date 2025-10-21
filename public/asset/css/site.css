@@ -1180,4 +1180,8 @@ select {
     color: black;
 }
 
+form#registerForm input {
+    color: black;
+}
+
 /* new css added */

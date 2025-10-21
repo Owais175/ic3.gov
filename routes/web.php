@@ -18,13 +18,11 @@ Route::get('faq', [Homecontroller::class, 'faq'])->name('faq');
 
 
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('auth.register');
-Route::post('/register/send-otp', [AuthController::class, 'registerSendOtp'])->name('register.sendOtp');
-Route::post('/register/verify-otp', [AuthController::class, 'registerVerifyOtp'])->name('register.verifyOtp');
 Route::get('/login', [AuthController::class, 'showloginForm'])->name('auth.login');
-Route::post('/login/send-otp', [AuthController::class, 'sendOtp'])->name('login.sendOtp');
-Route::post('/login/verify', [AuthController::class, 'verifyOtp'])->name('login.verify');
 Route::post('/register', [AuthController::class, 'register'])->name('registeruser');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/send-otp', [AuthController::class, 'sendOtp'])->name('auth.sendOtp');
+Route::post('/verify-otp', [AuthController::class, 'verifyOtp'])->name('auth.verifyOtp');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 

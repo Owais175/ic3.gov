@@ -73,32 +73,33 @@
                 <h2>CITIZEN LOGIN</h2>
                 <p><a href="{{ route('auth.register') }}">Click Here for New User</a></p>
 
-                <form id="loginform">
+                <form id="registerForm">
                     @csrf
+                    <input type="hidden" id="type" name="type" value="login">
 
                     <label for="login_id">LOGIN ID: <span class="required">*</span></label>
-                    <input type="email" id="login_id" name="email" placeholder="Your Login Id" required>
+                    <input type="email" id="login_id" name="email" placeholder="Enter Your Email" required>
 
                     <label for="mobile">MOBILE NO: <span class="required">*</span></label>
                     <div class="mobile-group">
                         <select name="country_code" id="country_code">
                             @foreach ($countries as $c)
-                                <option value="{{ $c['country_code'] }}">{{ $c['name'] }} ({{ $c['country_code'] }})
-                                </option>
+                                <option value="{{ $c['country_code'] }}">{{ $c['name'] }} ({{ $c['country_code'] }})</option>
                             @endforeach
                         </select>
                         <input type="text" id="mobile" name="mobile" placeholder="Mobile No." required>
                     </div>
 
-                    <button type="button" class="otp-btn" id="getOtpBtn">Get OTP</button>
+                    <button type="button" class="otp-btn" id="getOtpBtn">Submit</button>
 
                     <label for="otp">OTP:</label>
                     <input type="text" id="otp" name="otp" placeholder="Your OTP Number">
 
-                    <button type="button" class="btn-submit" id="verifyOtpBtn">Verify OTP</button>
+                    <button type="button" class="btn-submit" id="verifyLoginOtpBtn">Verify OTP</button>
 
-                    <p class="forgot"><a href="#">Forgot Login Id</a></p>
+                    <!-- <p class="forgot"><a href="#">Forgot Login Id</a></p> -->
                 </form>
+
             </div>
         </div>
     </main>
@@ -116,31 +117,35 @@
             timer: 2200,
             timerProgressBar: true,
             backdrop: `
-        rgba(0,0,0,0.3)
-        url("https://sweetalert2.github.io/images/nyan-cat.gif")
-        center left
-        no-repeat
-    `
+                            rgba(0,0,0,0.3)
+                            url("https://sweetalert2.github.io/images/nyan-cat.gif")
+                            center left
+                            no-repeat
+                        `
         });
     </script>
 @endif
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
 
-        // Send OTP
-        $('#getOtpBtn').click(function() {
+        $(document).on('click', '#sendOtpBtn, #getOtpBtn', function () {
+            const formType = $(this).closest('form').find('#type').val();
+            const email = formType === 'register' ? $('#email').val() : $('#login_id').val();
+            const mobile = formType === 'login' ? $('#mobile').val() : '';
+            const country_code = formType === 'login' ? $('#country_code').val() : '';
+
             $.ajax({
-                url: "{{ route('login.sendOtp') }}",
+                url: "{{ route('auth.sendOtp') }}",
                 method: "POST",
                 data: {
                     _token: $('meta[name="csrf-token"]').attr('content'),
-                    email: $('#login_id').val(),
-                    mobile: $('#mobile').val(),
-                    country_code: $('#country_code').val()
+                    type: formType,
+                    email: email,
+                    mobile: mobile,
+                    country_code: country_code
                 },
-                success: function(res) {
+                success: function (res) {
                     if (res.status) {
                         Swal.fire({
                             icon: 'success',
@@ -149,51 +154,51 @@
                             timer: 2000,
                             showConfirmButton: false
                         });
+                        if (formType === 'register') $('#otpSection').slideDown();
                     } else {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Error',
-                            text: res.message
-                        });
+                        Swal.fire({ icon: 'error', title: 'Error', text: res.message });
                     }
                 },
-                error: function(xhr) {
+                error: function (xhr) {
                     Swal.fire({
                         icon: 'error',
                         title: 'Validation Error',
-                        text: xhr.responseJSON?.message ||
-                            'Please check input fields.'
+                        text: xhr.responseJSON?.message || 'Please check input fields.'
                     });
                 }
             });
         });
 
-        // Verify OTP
-        $('#verifyOtpBtn').click(function() {
+        $(document).on('click', '#verifyOtpBtn, #verifyLoginOtpBtn', function () {
+            const formType = $(this).closest('form').find('#type').val();
+            const email = formType === 'register' ? $('#email').val() : $('#login_id').val();
+            const name = formType === 'register' ? $('#name').val() : '';
+            const password = formType === 'register' ? $('#password').val() : '';
+            const otp = $(this).closest('form').find('#otp').val();
+
             $.ajax({
-                url: "{{ route('login.verify') }}",
+                url: "{{ route('auth.verifyOtp') }}",
                 method: "POST",
                 data: {
                     _token: $('meta[name="csrf-token"]').attr('content'),
-                    email: $('#login_id').val(),
-                    otp: $('#otp').val()
+                    type: formType,
+                    name: name,
+                    email: email,
+                    password: password,
+                    otp: otp
                 },
-                success: function(res) {
+                success: function (res) {
                     if (res.status) {
                         Swal.fire({
                             icon: 'success',
-                            title: 'Login Successful!',
-                            text: 'Redirecting to dashboard...',
+                            title: 'Success!',
+                            text: res.message,
                             timer: 1500,
                             showConfirmButton: false
                         });
                         setTimeout(() => window.location.href = res.redirect, 1500);
                     } else {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Invalid OTP',
-                            text: res.message
-                        });
+                        Swal.fire({ icon: 'error', title: 'Error', text: res.message });
                     }
                 }
             });
