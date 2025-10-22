@@ -1269,3 +1269,7 @@ section#works p {
 }
 
 /* new css added */
+
+figcaption.chart_image {
+    text-align: justify;
+}
