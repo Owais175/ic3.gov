@@ -68,6 +68,9 @@
     $(document).ready(function () {
 
         $('#sendOtpBtn').click(function () {
+            let $btn = $(this);
+            $btn.prop('disabled', true).text('Sending...');
+
             $.ajax({
                 url: "{{ route('auth.sendOtp') }}",
                 method: "POST",
@@ -87,7 +90,7 @@
                             timer: 1500,
                             showConfirmButton: false
                         });
-                        $('#otpSection').show();
+                        $('#otpSection').slideDown();
                     } else {
                         Swal.fire({
                             icon: 'error',
@@ -102,11 +105,18 @@
                         title: 'Validation Error',
                         text: xhr.responseJSON?.message || 'Please check required fields.'
                     });
+                },
+                complete: function () {
+                    // Always re-enable button after response
+                    $btn.prop('disabled', false).text('Submit');
                 }
             });
         });
 
         $('#verifyOtpBtn').click(function () {
+            let $btn = $(this);
+            $btn.prop('disabled', true).text('Verifying...');
+
             $.ajax({
                 url: "{{ route('auth.verifyOtp') }}",
                 method: "POST",
@@ -135,6 +145,16 @@
                             text: res.message
                         });
                     }
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Something went wrong. Please try again.'
+                    });
+                },
+                complete: function () {
+                    $btn.prop('disabled', false).text('Verify OTP & Register');
                 }
             });
         });
