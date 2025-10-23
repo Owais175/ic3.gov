@@ -1194,6 +1194,11 @@ form#registerForm input {
 
 section#works p {
     margin: 0;
+    text-align: left;
+}
+
+section#works h2 {
+    text-align: center;
 }
 
 .chartmap {
@@ -1265,6 +1270,10 @@ section#works p {
 
     section.body-section.margin-top-1 h1 {
         font-size: 25px;
+    }
+
+    section#works p {
+        text-align: center;
     }
 }
 
