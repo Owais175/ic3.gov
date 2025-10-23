@@ -1205,6 +1205,10 @@ section#works h2 {
     width: 100%;
 }
 
+section.track-order.user-contact-show div#myTable_wrapper {
+    overflow: auto;
+}
+
 @media(max-width:991px) {
     .usa-navbar {
         height: 8rem;
@@ -1219,6 +1223,23 @@ section#works h2 {
         padding: 4px;
         font-size: 13px;
     }
+
+    .sidebar-user-profile {
+        width: 100%;
+    }
+
+    .dashborad-content {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .main-dashborad-flex {
+        display: block;
+    }
+
+    .sidebar-user-profile ul li a {
+        padding: 15px 10px;
+    }
 }
 
 @media(max-width:767px) {
@@ -1230,6 +1251,16 @@ section#works h2 {
     .citizen-login-container {
         width: 100%;
     }
+
+    section.track-order.user-contact-show div.dt-container div.dt-layout-row:not(.dt-layout-table) div.dt-layout-cell.dt-layout-end {
+        text-align: end;
+    }
+
+    section.track-order.user-contact-show div.dt-container div.dt-layout-row:not(.dt-layout-table) {
+        display: flex;
+    }
+
+
 }
 
 @media(max-width:575px) {
@@ -1275,6 +1306,16 @@ section#works h2 {
     section#works p {
         text-align: center;
     }
+    section.track-order.user-contact-show div#myTable_info {
+        font-size: 12px;
+    }
+
+    .dashborad-content .usa-button {
+        width: 40%;
+        font-size: 14px;
+        padding: 1rem 1rem;
+    }
+
 }
 
 /* new css added */
