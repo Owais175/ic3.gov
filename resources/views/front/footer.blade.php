@@ -160,31 +160,24 @@
                             <!-- NEW SOCIAL LINKS -->
                             <li>
                                 <a target="_blank" href="https://sharechat.com/profile/cyberdost?d=n">
-                                    <svg version="1.1" viewBox="0 0 24 24" role="img">
-                                        <title>ShareChat</title>
-                                        <circle cx="12" cy="12" r="10" fill="#FFD54F"></circle>
-                                        <text x="12" y="16" text-anchor="middle" font-size="8" fill="#333" font-weight="bold">S</text>
-                                    </svg>
+                                    <img src="{{ asset('asset/image/public1.png') }}" alt="">
                                 </a>
                             </li>
                             <li>
                                 <a target="_blank" href="https://public.app/user/profile/1ZCQuF5wrRbR9lcsrtcZgsPkYfC2">
-                                    <svg version="1.1" viewBox="0 0 24 24" role="img">
-                                        <title>Public App</title>
-                                        <rect x="2" y="2" width="20" height="20" rx="4" fill="#1976D2"></rect>
-                                        <text x="12" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold">P</text>
-                                    </svg>
+                                    <img src="{{ asset('asset/image/public.png') }}" alt="">
                                 </a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a target="_blank" href="https://kooapp.com/profile/cyberdosti4c">
                                     <svg version="1.1" viewBox="0 0 24 24" role="img">
                                         <title>Koo App</title>
                                         <circle cx="12" cy="12" r="10" fill="#FFCC00"></circle>
-                                        <text x="12" y="16" text-anchor="middle" font-size="8" fill="#000" font-weight="bold">K</text>
+                                        <text x="12" y="16" text-anchor="middle" font-size="8" fill="#000"
+                                            font-weight="bold">K</text>
                                     </svg>
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                     <p class="usa-footer__logo-heading">CRAU Contact Center</p>
