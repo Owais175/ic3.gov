@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="format-detection" content="telephone=no">
-    <title>Home Page - Internet Crime Complaint Center (IC3)</title>
+    <title>Home Page- Cyber Rapid Action Unit (CRAU)</title>
     <script nonce="dvm0ixsemwv20rrd">
         if (window.trustedTypes) {
             trustedTypes.createPolicy('default', {
@@ -55,6 +55,7 @@
     <link rel="alternate" type="application/rss+xml" href="PSA/rss.txt" title="IC3 News">
     <link rel="alternate" type="application/rss+xml" href="CSA/rss.txt" title="IC3 Industry Alerts">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.css" />
 
@@ -75,13 +76,37 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: false,
+            dots: false,
+            slidesPerView: 5,
+            loop: true,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: -50,
+                modifier: 2,
+                slideShadows: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
 
     <script src="https://cdn.datatables.net/2.3.4/js/dataTables.js"></script>
 
     <script src="{{ asset('asset/js/form.js') }}"></script>
     <script src="{{ asset('asset/js/uswds-init.min.js') }}"></script>
     <script src="{{ asset('asset/js/uswds.min.js') }}"></script>
+
+
 
     @yield('js')
 

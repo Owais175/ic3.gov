@@ -31,34 +31,34 @@
                     <h3>
                         Introduction
                     </h3>
-                    <p>The <strong>Cyber Rapid Action Unit (CRAU)</strong> is a specialized national task force established
+                    <p>The Cyber Rapid Action Unit (CRAU) is a specialized national task force established
                         under the aegis
-                        of the <strong>Ministry of Home Affairs (MHA)</strong> to provide a swift, intelligence-led response
+                        of the Ministry of Home Affairs (MHA) to provide a swift, intelligence-led response
                         to serious
                         cybercrime incidents and digital emergencies.
 
                     </p>
-                    <p>Functioning in coordination with the <strong>Indian Cyber Crime Coordination Centre (I4C)</strong>
-                        and the <strong>Central
-                            Bureau of Investigation (CBI)</strong>, CRAU operates as an <strong>elite operational
-                            command</strong>
+                    <p>Functioning in coordination with the Indian Cyber Crime Coordination Centre (I4C)
+                        and the Central
+                        Bureau of Investigation (CBI), CRAU operates as an elite operational
+                        command
                         responsible for
-                        <strong>filtering, prioritizing, and acting</strong> upon a limited number of <strong>high-severity
-                            cybercrime</strong> cases that
+                        filtering, prioritizing, and acting upon a limited number of high-severity
+                        cybercrime cases that
                         require urgent national-level intervention.
 
                     </p>
                     <p>Every day, a massive number of cyber incidents and digital frauds are reported across India. While
                         most cases are addressed at the state or district cyber police level, CRAU’s responsibility is
-                        <strong>to
-                            identify the most complex, organized, and high-impact threats</strong>—those that endanger
+                        to
+                        identify the most complex, organized, and high-impact threats—those that endanger
                         national
                         infrastructure, compromise sensitive data, involve large-scale fraud, or have inter-state or
                         international implications.
                     </p>
-                    <p>These critical cases are taken up for <strong>centralized investigation, digital forensics, and
-                            coordinated
-                            enforcement</strong> in partnership with MHA, I4C, and CBI.
+                    <p>These critical cases are taken up for centralized investigation, digital forensics, and
+                        coordinated
+                        enforcement in partnership with MHA, I4C, and CBI.
                     </p>
                 </div>
                 {{-- <div class="desktop:grid-col-6 tablet:display-flex flex-align-center">
@@ -75,37 +75,37 @@
             <h3>
                 Mandate and Function
             </h3>
-            <p>The CRAU has been mandated to serve as <strong>India’s national cyber emergency command and enforcement
-                    hub</strong>, ensuring
+            <p>The CRAU has been mandated to serve as India’s national cyber emergency command and enforcement
+                hub, ensuring
                 that no major cyber threat goes unaddressed. Its responsibilities include:
             </p>
             <ul>
                 <li>
-                    <p><strong>Rapid Identification and Escalation</strong>: Using advanced data triage systems and
+                    <p>Rapid Identification and Escalation: Using advanced data triage systems and
                         intelligence tools, CRAU
                         filters national cyber reports and escalates only the most urgent cases requiring immediate
                         multi-agency action.
                     </p>
                 </li>
                 <li>
-                    <p><strong>Real-Time Coordination</strong>: Facilitating direct collaboration between MHA, I4C, CBI,
+                    <p>Real-Time Coordination: Facilitating direct collaboration between MHA, I4C, CBI,
                         CERT-In, and State Cyber Cells to ensure synchronized responses to cyber incidents.
                     </p>
                 </li>
                 <li>
-                    <p><strong>Digital Forensics and Analysis</strong>: Conducting technical investigation, data recovery,
+                    <p>Digital Forensics and Analysis: Conducting technical investigation, data recovery,
                         and digital
                         evidence validation through certified forensic experts.
 
                     </p>
                 </li>
                 <li>
-                    <p><strong>Operational Response</strong>: Deploying specialized teams for containment, tracing, and
+                    <p>Operational Response: Deploying specialized teams for containment, tracing, and
                         enforcement against perpetrators operating across borders or in organized networks.
                     </p>
                 </li>
                 <li>
-                    <p><strong>Strategic Policy Support</strong>: Advising the Government of India on cyber risk trends,
+                    <p>Strategic Policy Support: Advising the Government of India on cyber risk trends,
                         threat intelligence,
                         and future readiness measures.
                     </p>
@@ -115,7 +115,7 @@
             <p>To create a cyber-secure India where every major digital threat is detected, analyzed, and neutralized
                 through national-level coordination, intelligence, and precision action.
             </p>
-            <p>CRAU envisions a nation where the Government of India can <strong>respond rapidly to cyber crises</strong>,
+            <p>CRAU envisions a nation where the Government of India can respond rapidly to cyber crises,
                 protect critical
                 digital infrastructure, and build a culture of trust and safety in cyberspace.
             </p>
@@ -125,31 +125,31 @@
             </p>
             <ul>
                 <li>
-                    <p>Establish a <strong>centralized cyber emergency action framework</strong> that ensures immediate
+                    <p>Establish a centralized cyber emergency action framework that ensures immediate
                         national intervention
                         in critical digital crimes.
                     </p>
                 </li>
                 <li>
-                    <p><strong>Filter, assess, and prioritize</strong> complex cyber incidents based on threat level and
+                    <p>Filter, assess, and prioritize complex cyber incidents based on threat level and
                         public impact.
 
                     </p>
                 </li>
                 <li>
-                    <p>Conduct <strong>multi-agency coordination</strong> among MHA, I4C, CBI, CERT-In, and other
+                    <p>Conduct multi-agency coordination among MHA, I4C, CBI, CERT-In, and other
                         specialized law enforcement
                         units.
 
                     </p>
                 </li>
                 <li>
-                    <p>Strengthen national capabilities in <strong>cyber forensics, intelligence, and prevention.</strong>
+                    <p>Strengthen national capabilities in cyber forensics, intelligence, and prevention.
 
                     </p>
                 </li>
                 <li>
-                    <p>Promote <strong>public awareness and training</strong> to empower institutions and citizens against
+                    <p>Promote public awareness and training to empower institutions and citizens against
                         cyber
                         vulnerabilities.
 
@@ -158,93 +158,93 @@
             </ul>
             <h3>Operational Framework
             </h3>
-            <p>CRAU operates through a <strong>multi-tiered response system</strong> comprising the following divisions:
+            <p>CRAU operates through a multi-tiered response system comprising the following divisions:
             </p>
             <ul>
                 <li>
-                    <p><strong>Cyber Emergency Response Division (CERD)</strong>: Manages real-time containment of ongoing
+                    <p>Cyber Emergency Response Division (CERD): Manages real-time containment of ongoing
                         cyber incidents
                         and coordinates emergency interventions.</p>
                 </li>
                 <li>
-                    <p><strong>Digital Forensics & Intelligence Division (DFID)</strong>: Analyzes digital evidence,
+                    <p>Digital Forensics & Intelligence Division (DFID): Analyzes digital evidence,
                         monitors threat
                         patterns, and provides intelligence support to investigative bodies.
                     </p>
                 </li>
                 <li>
-                    <p><strong>Rapid Enforcement & Coordination Wing (RECW)</strong>: Works with state police, cyber cells,
+                    <p>Rapid Enforcement & Coordination Wing (RECW): Works with state police, cyber cells,
                         and the CBI for
                         on-ground enforcement operations</p>
                 </li>
                 <li>
-                    <p><strong>Surveillance and Command Control Division (SCCD)</strong>: Oversees the National Cyber
+                    <p>Surveillance and Command Control Division (SCCD): Oversees the National Cyber
                         Operations Centre and
                         maintains 24×7 situational awareness.
                     </p>
                 </li>
                 <li>
-                    <p><strong>Public Awareness & Training Division (PATD)</strong>: Conducts digital safety campaigns,
+                    <p>Public Awareness & Training Division (PATD): Conducts digital safety campaigns,
                         cyber hygiene
                         programs, and awareness initiatives.
                     </p>
                 </li>
             </ul>
             <h3>Coordination and Integration</h3>
-            <p>The CRAU functions as a <strong>bridge between central and state-level enforcement</strong>, ensuring that
+            <p>The CRAU functions as a bridge between central and state-level enforcement, ensuring that
                 intelligence,
                 forensics, and enforcement operations move seamlessly.</p>
             <p>It collaborates directly with:
             </p>
             <ul>
                 <li>
-                    <p><strong>Ministry of Home Affairs (MHA)</strong> — for administrative and strategic oversight.
+                    <p>Ministry of Home Affairs (MHA) — for administrative and strategic oversight.
                     </p>
                 </li>
                 <li>
-                    <p><strong>Indian Cyber Crime Coordination Centre (I4C)</strong> — for centralized intelligence and data
+                    <p>Indian Cyber Crime Coordination Centre (I4C) — for centralized intelligence and data
                         analysis.
                     </p>
                 </li>
                 <li>
-                    <p><strong>Central Bureau of Investigation (CBI)</strong> — for high-profile investigation and
+                    <p>Central Bureau of Investigation (CBI) — for high-profile investigation and
                         prosecution support.
                     </p>
                 </li>
                 <li>
-                    <p><strong>CERT-In (Ministry of Electronics & IT)</strong> — for technical incident response and
+                    <p>CERT-In (Ministry of Electronics & IT) — for technical incident response and
                         advisories.
                     </p>
                 </li>
                 <li>
-                    <p><strong>State Cyber Cells & Law Enforcement Agencies</strong> — for field-level coordination and
+                    <p>State Cyber Cells & Law Enforcement Agencies — for field-level coordination and
                         execution.
 
                     </p>
                 </li>
             </ul>
-            <p>This structure ensures that CRAU’s actions align with India’s <strong>national cybercrime response and
-                    security
-                    objectives.</strong></p>
+            <p>This structure ensures that CRAU’s actions align with India’s national cybercrime response and
+                security
+                objectives.</p>
             <h3>Our Core Principles
             </h3>
             <ul>
                 <li>
-                    <p><strong>Integrity</strong>: Upholding transparency and ethics in all operations.
+                    <p>Integrity: Upholding transparency and ethics in all operations.
                     </p>
                 </li>
                 <li>
-                    <p><strong>Speed</strong>: Acting decisively during time-sensitive cyber crises. </p>
+                    <p>Speed: Acting decisively during time-sensitive cyber crises. </p>
                 </li>
                 <li>
-                    <p><strong>Confidentiality</strong>: Protecting data, identities, and ongoing investigations.
+                    <p>Confidentiality: Protecting data, identities, and ongoing investigations.
                     </p>
                 </li>
                 <li>
-                    <p><strong>Precision</strong>: Deploying targeted, evidence-driven interventions.</p>
+                    <p>Precision: Deploying targeted, evidence-driven interventions.</p>
                 </li>
                 <li>
-                    <p><strong>Accountability</strong>: Maintaining audit-ready compliance with MHA and I4C directives.
+                    <p>Accountability: Maintaining audit-ready compliance with MHA and I4C directives.
                     </p>
                 </li>
             </ul>
@@ -252,10 +252,10 @@
             </h3>
             <p>“Swift Response. Secure Nation.”
             </p>
-            <p>CRAU stands committed to ensuring that India’s digital space remains <strong>resilient, secure</strong>, and
-                <strong>trusted</strong>.
+            <p>CRAU stands committed to ensuring that India’s digital space remains resilient, secure, and
+                trusted.
             </p>
-            <p>By intervening only in <strong>select, high-impact cases</strong>, CRAU ensures that government resources are
+            <p>By intervening only in select, high-impact cases, CRAU ensures that government resources are
                 optimized,
                 response timelines are shortened, and justice is delivered efficiently.
             </p>

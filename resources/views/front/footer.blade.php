@@ -26,7 +26,7 @@
                     I understand that the action taken on complaints submitted through this portal shall be carried out
                     by concerned authorities in coordination with the <strong>Ministry of Home Affairs (MHA), Indian
                         Cyber Crime
-                        Coordination Centre (I4C)</strong>, and the <strong>Central Bureau of Investigation
+                        Coordination Centre (14C)</strong>, and the <strong>Central Bureau of Investigation
                         (CBI)</strong>, as per the
                     law.
 
@@ -170,8 +170,10 @@
         <nav class="usa-footer__nav" aria-label="Footer navigation">
             <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
                 <h4 class="usa-footer__primary-link">
-                    Website contents are owned and maintained by the Cyber Rapid Action Unit (CRAU), under the Indian Cyber Crime Coordination Centre (14C), Ministry
-                    of Home Affairs, Government of India. The website is designed, developed and hosted by the Cyber and Information Security Division, in coordination with
+                    Website contents are owned and maintained by the Cyber Rapid Action Unit (CRAU), under the Indian
+                    Cyber Crime Coordination Centre (14C), Ministry
+                    of Home Affairs, Government of India. The website is designed, developed and hosted by the Cyber and
+                    Information Security Division, in coordination with
                     the Cyber Rapid Action Unit (CRAU) and other national cyber agencies.
                 </h4>
             </section>
@@ -186,7 +188,7 @@
             </div>
             <div>
                 <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                    <h4 class="usa-footer__primary-link">Copyright @ Internet Crime Complaint Centre</h4>
+                    <h4 class="usa-footer__primary-link">Copyright@Cyber Rapid Action Unit</h4>
                 </section>
             </div>
             <div>

@@ -25,7 +25,7 @@
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
-                            <p>When registering a complaint on the <strong>Cyber Rapid Action Unit (CRAU)</strong> portal,
+                            <p>When registering a complaint on the Cyber Rapid Action Unit (CRAU) portal,
                                 you are required
                                 to provide accurate and verifiable information related to the incident. Depending on the
                                 nature of your case, you may be asked to upload:</p>
@@ -55,9 +55,9 @@
                                 </li>
                             </ul>
                             <p>Providing complete and factual information enables CRAU to triage your case efficiently and,
-                                if necessary, escalate it for central-level investigation in coordination with <strong>MHA,
-                                    I4C</strong>, and
-                                <strong>CBI</strong>.
+                                if necessary, escalate it for central-level investigation in coordination with MHA,
+                                I4C, and
+                                CBI.
                             </p>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                                 <li>
                                     <p>National-level implications, <br>
                                         it may be automatically reviewed by CRAU for central coordination and investigation
-                                        through <strong>I4C</strong> and <strong>CBI</strong>.
+                                        through I4C and CBI.
                                     </p>
                                 </li>
                             </ul>
@@ -129,7 +129,7 @@
                                     </p>
                                 </li>
                             </ul>
-                            <p>To file a complaint, navigate to <strong>Register a Complaint</strong> on the CRAU website.
+                            <p>To file a complaint, navigate to Register a Complaint on the CRAU website.
                                 Provide the
                                 requested details and evidence, and submit the form through the secure CRAU complaint
                                 portal.
@@ -217,7 +217,7 @@
                                 </li>
                                 <li>
                                     <p>High-impact, organized, or national-level threats are escalated for coordinated
-                                        investigation with <strong>MHA, I4C</strong>, and <strong>CBI</strong>.
+                                        investigation with MHA, I4C, and CBI.
                                     </p>
                                 </li>
                                 <li>
@@ -274,7 +274,7 @@
                     <div id="flush-collapseeight" class="accordion-collapse collapse"
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
-                            <p>Yes. After submission, you will receive an <strong>Acknowledgement Number</strong> via email
+                            <p>Yes. After submission, you will receive an Acknowledgement Number via email
                                 or SMS (as
                                 provided). You can use this number to check the progress or outcome of your complaint.
 
@@ -330,7 +330,7 @@
                     <div id="flush-collapseeleven" class="accordion-collapse collapse"
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
-                            <p>A <strong>hash value</strong> is a unique digital signature assigned to each uploaded file or
+                            <p>A hash value is a unique digital signature assigned to each uploaded file or
                                 document. It
                                 helps ensure that the evidence submitted remains unaltered throughout the investigation.
                                 CRAU uses hash validation to maintain the integrity of digital evidence.
@@ -406,14 +406,14 @@
                     <div id="flush-collapsefifteen" class="accordion-collapse collapse"
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
-                            <p>Yes. All data submitted through CRAU’s official portal is encrypted using <strong>Secure
-                                    Socket Layer
-                                    (SSL)</strong> technology and stored within <strong>Government of India</strong> data
+                            <p>Yes. All data submitted through CRAU’s official portal is encrypted using Secure
+                                Socket Layer
+                                (SSL) technology and stored within Government of India data
                                 centers.
 
                             </p>
-                            <p>Access is strictly limited to authorized officers under <strong>MHA, I4C</strong>, and
-                                <strong>CBI</strong>
+                            <p>Access is strictly limited to authorized officers under MHA, I4C, and
+                                CBI
                                 supervision.
                             </p>
                         </div>

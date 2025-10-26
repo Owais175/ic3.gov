@@ -26,8 +26,8 @@
                     <div class="usa-media-block__body">
                         <p>
                             <strong>Official websites use .gov</strong><br>
-                            A <strong>.gov</strong> website belongs to an official government organization in the United
-                            States.
+                            A <strong>.org.in</strong> website belongs to an official organisation in Government
+                            of India
                         </p>
                     </div>
                 </div>
@@ -39,8 +39,8 @@
                             <strong>Secure .gov websites use HTTPS</strong><br>
                             A <strong>lock</strong> (
                             <span class="icon-lock">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64"
-                                    class="usa-banner__lock-image" role="img"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="52" height="64"
+                                    viewBox="0 0 52 64" class="usa-banner__lock-image" role="img"
                                     aria-labelledby="banner-lock-description-default" focusable="false">
                                     <title id="banner-lock-title-default">Lock</title>
                                     <desc id="banner-lock-description-default">Locked padlock icon</desc>
@@ -101,14 +101,17 @@
                 <li class="usa-nav__primary-item">
                     <a class="usa-nav-link" href="{{ route('contact') }}">Contact Us</a>
                 </li>
-                @if(Auth::check())
+                @if (Auth::check())
                     <li class="usa-nav__primary-item">
                         <a class="usa-nav-link" href="{{ route('track-order') }}">Track Order</a>
                     </li>
                 @endif
                 @if (!Auth::check())
                     <li class="usa-nav__primary-item">
-                        <a class="usa-button usa-button--big" href="{{ route('auth.register') }}">Register</a>
+                        <a class="usa-button usa-button--big register-icon-show"
+                            href="{{ route('auth.register') }}"><img
+                                src="{{ asset('asset/image/register-icon.png') }}" class="img-fluid"
+                                alt="">Register</a>
                     </li>
                 @else
                     <li class="usa-nav__primary-item">

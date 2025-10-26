@@ -8,11 +8,11 @@
             <h1>Welcome to the Cyber Rapid Action Unit (CRAU)</h1>
             <div>
                 <p>
-                    The <strong>Cyber Rapid Action Unit (CRAU)</strong> serves as a centralized platform for reporting and
+                    The Cyber Rapid Action Unit (CRAU) serves as a centralized platform for reporting and
                     addressing
-                    incidents of <strong>cybercrime and online fraud</strong> across India.
-                    It functions in close coordination with the <strong>Ministry of Home Affairs (MHA), Indian Cyber Crime
-                        Coordination Centre (I4C)</strong>, and Central Bureau of Investigation (CBI) to ensure swift
+                    incidents of cybercrime and online fraud across India.
+                    It functions in close coordination with the Ministry of Home Affairs (MHA), Indian Cyber Crime
+                    Coordination Centre (I4C), and Central Bureau of Investigation (CBI) to ensure swift
                     investigation and
                     action on cyber-enabled offenses.
 
@@ -30,16 +30,16 @@
             <div class="usa-alert usa-alert--error usa-alert--slim" role="alert">
                 <div class="usa-alert__body">
                     <p class="usa-alert__text text-bold">
-                        If you or someone else is in <strong>immediate danger</strong>, contact your <strong>nearest local
-                            police
-                            station</strong> or call <strong>112
-                            (National Emergency Number).</strong>
+                        If you or someone else is in immediate danger, contact your nearest local
+                        police
+                        station or call 112
+                        (National Emergency Number).
                     </p>
                 </div>
             </div>
-            <p>The <strong>Cyber Rapid Action Unit</strong> primarily handles cases that need swift action:
+            <p>The Cyber Rapid Action Unit primarily handles cases that need swift action:
             </p>
-            <ul>
+            {{-- <ul>
                 <li>
                     <p>Online financial fraud and digital payment scams
                     </p>
@@ -60,18 +60,43 @@
                     <p>Other cyber-enabled criminal activities
                     </p>
                 </li>
-            </ul>
-            <p>⚠️ <strong>Crimes involving children</strong> (such as online child abuse or exploitation) should be reported
+            </ul> --}}
+            <div class="cyber-slider-main">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="{{ asset('asset/image/slider-1.png') }}" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="{{ asset('asset/image/slider-2.png') }}" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="{{ asset('asset/image/slider-3.png') }}" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="{{ asset('asset/image/slider-1.png') }}" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="{{ asset('asset/image/slider-2.png') }}" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="{{ asset('asset/image/slider-3.png') }}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>Crimes involving children (such as online child abuse or exploitation) should be reported
                 directly to the
-                <strong>National Cyber Crime Reporting Portal</strong> under the section “Report Child Related Crime.”
+                National Cyber Crime Reporting Portal under the section “Report Child Related Crime.”
             </p>
-            <p>Cases involving <strong>national security or terrorism threats</strong> should be reported through the
-                <strong>National Investigation
-                    Agency (NIA)</strong> or relevant law enforcement authority.
+            <p>Cases involving national security or terrorism threats should be reported through the
+                National Investigation
+                Agency (NIA) or relevant law enforcement authority.
             </p>
             <button id="fileComplaint" class="usa-button usa-button--big" type="button" data-open-modal href="#fileTerms"
                 aria-controls="fileTerms">
-                <svg width="25" height="25" fill="currentColor" viewBox="0 0 16 16" role="img" aria-hidden="true">
+                <svg width="25" height="25" fill="currentColor" viewBox="0 0 16 16" role="img"
+                    aria-hidden="true">
                     <path
                         d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5" />
                     <path
@@ -178,21 +203,18 @@
                         </svg>
                         <h3 class="tablet:font-sans-3xs desktop:font-sans-xs">Tell Us What Happened</h3>
                     </div>
-                    <p class="font-body-sm">Report your cyber incident to the <strong>Cyber Rapid Action Unit
-                            (CRAU).</strong></p>
-                    <p>Whether you’ve experienced <strong>online fraud, data theft, cyber harassment, identity misuse, or
-                            unauthorized access</strong>, your report helps CRAU and partner agencies under the
-                        <strong>Ministry of
-                            Home Affairs
-                            (MHA)</strong> take swift and coordinated action.
-                    </p>
-                    <p>Even if you’re unsure whether your experience qualifies as a cybercrime, we encourage you to
-                        <strong>file a
-                            report.</strong>
-                    </p>
-                    <p>Every complaint helps strengthen our understanding of emerging threats and contributes to <strong>a
-                            safer
-                            digital India.</strong>
+                    <p class="font-body-sm">Report your cyber incident to the Cyber Rapid Action Unit
+                        (CRAU). Whether you’ve experienced online fraud, data theft, cyber harassment, identity misuse, or
+                        unauthorized access, your report helps CRAU and partner agencies under the
+                        Ministry of
+                        Home Affairs
+                        (MHA) take swift and coordinated action.
+                        Even if you’re unsure whether your experience qualifies as a cybercrime, we encourage you to
+                        file a
+                        report.
+                        Every complaint helps strengthen our understanding of emerging threats and contributes to a
+                        safer
+                        digital India.
                     </p>
                 </li>
                 <li class="text-center tablet:grid-col-4">
@@ -216,21 +238,20 @@
                         <h3 class="font-family-sans tablet:font-sans-3xs desktop:font-sans-xs">Your Contribution, Our
                             Commitment</h3>
                     </div>
-                    <p class="tablet:font-body-xs">Your report plays a vital role in supporting the <strong>Cyber Rapid
-                            Action Unit
-                            (CRAU)</strong> in its mission to protect India’s digital ecosystem.
-                    </p>
-                    <p>Every complaint strengthens our understanding of the <strong>national cyber threat landscape</strong>
+                    <p class="tablet:font-body-xs">Your report plays a vital role in supporting the Cyber Rapid
+                        Action Unit
+                        (CRAU) in its mission to protect India’s digital ecosystem.
+                        Every complaint strengthens our understanding of the national cyber threat landscape
                         and helps us
-                        take timely action against organized cybercriminal activities.</p>
-                    <p>While it may not be possible to issue individual responses for every submission, each report is
+                        take timely action against organized cybercriminal activities. While it may not be possible to issue
+                        individual responses for every submission, each report is
                         carefully analyzed and, where necessary, shared with the concerned law enforcement agency for
                         investigation.
                     </p>
-                    <p>By reporting cyber incidents, you are contributing directly to <strong>India’s fight against
-                            cybercrime</strong>r —
+                    {{-- <p>By reporting cyber incidents, you are contributing directly to India’s fight against
+                        cybercrimer —
                         helping ensure that our digital networks remain secure, resilient, and trustworthy.
-                    </p>
+                    </p> --}}
                 </li>
                 <li class="text-center tablet:grid-col-4">
                     <div>
@@ -284,25 +305,25 @@
                     </h3>
                     <p>From connecting with loved ones and conducting digital payments, to working, learning, and
                         transacting online — our lives are deeply intertwined with the digital ecosystem.
-                        With this connectivity comes an ever-growing threat: <strong>cybercriminals operating from across
-                            the globe</strong>
+                        With this connectivity comes an ever-growing threat: cybercriminals operating from across
+                        the globe
                         attempt to breach networks, exploit systems, and steal sensitive information every day.
                     </p>
                     <p>No one — and no device — is entirely immune from cyber threats.
-                        That’s why the <strong>Cyber Rapid Action Unit (CRAU)</strong> works around the clock to detect,
+                        That’s why the Cyber Rapid Action Unit (CRAU) works around the clock to detect,
                         prevent, and respond
                         to cyber incidents impacting individuals, businesses, and government systems.</p>
-                    <p>But security is a <strong>shared responsibility.</strong>
+                    <p>But security is a shared responsibility.
                     </p>
                     <p>In cyberspace, a single vulnerability can endanger thousands. Every citizen, institution, and
                         organization must stay alert — adopting safe digital practices, securing personal data, and learning
                         to recognize fraudulent schemes and online scams.
                     </p>
-                    <p>Together, we can build a <strong>secure, resilient, and cyber-aware India.</strong>
+                    <p>Together, we can build a secure, resilient, and cyber-aware India.
                     </p>
                 </div>
                 <div class="desktop:grid-col-6 tablet:display-flex flex-align-center">
-                    <div>
+                    <div class="chat-cyber">
                         <figure>
                             <picture>
                                 <source srcset="{{ asset('asset/image/SS_1812275966.png') }}" type="image/webp">
@@ -310,7 +331,8 @@
                                     alt="Column chart showing complaint-reported losses over a five-year period: $4.2 billion in 2020, $6.9 billion in 2021, $10.3 billion in 2022, $12.5 billion in 2023, and $16.6 billion in 2024"
                                     class="chartmap">
                             </picture>
-                            <figcaption class="chart_image">Chart includes surge in cyber attacks for the year 2017 to 2021. Over
+                            <figcaption class="chart_image">Chart includes surge in cyber attacks for the year 2017 to
+                                2021. Over
                                 this time period, over 14 lakh cyber attacks were registered. </figcaption>
                         </figure>
                         <div class="text-center text-bold">For more information, please read our most latest Annual Report

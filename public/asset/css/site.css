@@ -1209,6 +1209,18 @@ section.track-order.user-contact-show div#myTable_wrapper {
     overflow: auto;
 }
 
+@media(max-width:1199px) {
+    a.usa-button.usa-button--big.register-icon-show {
+        margin-top: 16px;
+    }
+}
+
+@media(max-width:1440px) {
+    a.usa-button.usa-button--big.register-icon-show {
+        padding-right: 40px;
+    }
+}
+
 @media(max-width:991px) {
     .usa-navbar {
         height: 8rem;
@@ -1306,6 +1318,7 @@ section.track-order.user-contact-show div#myTable_wrapper {
     section#works p {
         text-align: center;
     }
+
     section.track-order.user-contact-show div#myTable_info {
         font-size: 12px;
     }
@@ -1318,8 +1331,48 @@ section.track-order.user-contact-show div#myTable_wrapper {
 
 }
 
+.chat-cyber figure {
+    margin: 0;
+}
+
 /* new css added */
 
 figcaption.chart_image {
     text-align: justify;
+}
+
+.cyber-slider-main .swiper {
+    width: 100%;
+}
+
+.cyber-slider-main .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 250px !important;
+    height: 230px !important;
+    /* border-radius: 15px; */
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    margin: 0 10px;
+}
+
+.cyber-slider-main .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+}
+
+.cyber-slider-main .scroll-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #777;
+}
+
+a.usa-button.usa-button--big.register-icon-show img {
+    width: 30px;
+    filter: brightness(0.5) invert(1);
+}
+
+a.usa-button.usa-button--big.register-icon-show {
+    justify-content: space-between;
 }
