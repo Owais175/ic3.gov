@@ -84,7 +84,7 @@
             grabCursor: true,
             centeredSlides: false,
             dots: false,
-            slidesPerView: 5,
+            slidesPerView: 1,
             loop: true,
             coverflowEffect: {
                 rotate: 0,
