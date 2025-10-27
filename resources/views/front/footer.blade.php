@@ -101,7 +101,7 @@
                     <div class="social-icons">
                         <ul>
                             <li>
-                                <a target="_blank" href="https://www.facebook.com/">
+                                <a target="_blank" href="https://www.facebook.com/CyberDostI4C">
                                     <svg version="1.1" viewBox="0 0 16 16" role="img">
                                         <title>Facebook</title>
                                         <path class="facebook-icon"
@@ -110,7 +110,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://x.com/">
+                                <a target="_blank" href="https://x.com/Cyberdost?t=gpY_dTqYVwEvjfFhtjwlQg&s=09">
                                     <svg version="1.1" viewBox="0 0 46 46" role="img">
                                         <title>X (Twitter)</title>
                                         <path class="twitter-icon"
@@ -119,7 +119,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://youtube.com/">
+                                <a target="_blank" href="https://youtube.com/@cyberdosti4c?si=5YhCaAdCF0PGjrLL">
                                     <svg version="1.1" viewBox="0 0 16 16" role="img">
                                         <title>YouTube</title>
                                         <path class="youtube-icon"
@@ -127,17 +127,17 @@
                                     </svg>
                                 </a>
                             </li>
+                            <!--<li>-->
+                            <!--    <a href="#">-->
+                            <!--        <svg version="1.1" viewBox="0 0 16 16" role="img">-->
+                            <!--            <title>Flickr</title>-->
+                            <!--            <path class="flickr-icon"-->
+                            <!--                d="m13 0q1.239 0 2.12 0.88021 0.88 0.88029 0.88 2.1198v10q0 1.2396-0.8802 2.1198-0.881 0.88-2.12 0.88h-10q-1.2398 0-2.1201-0.88-0.8802-0.88-0.8802-2.12v-10q0-1.2395 0.88021-2.1198 0.88029-0.88015 2.1198-0.88015h10zm-5.7294 8q0-0.91667-0.64584-1.5625-0.64584-0.64584-1.5625-0.64584-0.91667 0-1.5625 0.64584-0.64576 0.64592-0.64576 1.5626 0 0.91667 0.64584 1.5625 0.64584 0.64584 1.5625 0.64584 0.91667 0 1.5625-0.64584 0.64576-0.64592 0.64576-1.5626zm5.875 0q0-0.91667-0.64584-1.5625-0.64584-0.64584-1.5625-0.64584-0.91667 0-1.5625 0.64584-0.64592 0.64592-0.64592 1.5626 0 0.91667 0.64584 1.5625 0.64584 0.64584 1.5625 0.64584 0.91667 0 1.5625-0.64584 0.64576-0.64592 0.64576-1.5626z" />-->
+                            <!--        </svg>-->
+                            <!--    </a>-->
+                            <!--</li>-->
                             <li>
-                                <a href="#">
-                                    <svg version="1.1" viewBox="0 0 16 16" role="img">
-                                        <title>Flickr</title>
-                                        <path class="flickr-icon"
-                                            d="m13 0q1.239 0 2.12 0.88021 0.88 0.88029 0.88 2.1198v10q0 1.2396-0.8802 2.1198-0.881 0.88-2.12 0.88h-10q-1.2398 0-2.1201-0.88-0.8802-0.88-0.8802-2.12v-10q0-1.2395 0.88021-2.1198 0.88029-0.88015 2.1198-0.88015h10zm-5.7294 8q0-0.91667-0.64584-1.5625-0.64584-0.64584-1.5625-0.64584-0.91667 0-1.5625 0.64584-0.64576 0.64592-0.64576 1.5626 0 0.91667 0.64584 1.5625 0.64584 0.64584 1.5625 0.64584 0.91667 0 1.5625-0.64584 0.64576-0.64592 0.64576-1.5626zm5.875 0q0-0.91667-0.64584-1.5625-0.64584-0.64584-1.5625-0.64584-0.91667 0-1.5625 0.64584-0.64592 0.64592-0.64592 1.5626 0 0.91667 0.64584 1.5625 0.64584 0.64584 1.5625 0.64584 0.91667 0 1.5625-0.64584 0.64576-0.64592 0.64576-1.5626z" />
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="https://www.linkedin.com/">
+                                <a target="_blank" href="https://in.linkedin.com/company/cyberdosti4c">
                                     <svg version="1.1" viewBox="0 0 16 16" role="img">
                                         <title>LinkedIn</title>
                                         <path class="linkedin-icon"
@@ -146,7 +146,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://www.instagram.com/">
+                                <a target="_blank" href="https://www.instagram.com/cyberdosti4c?igsh=MnRlcHdkNGVzbWQ3">
                                     <svg version="1.1" viewBox="0 0 512 512" role="img">
                                         <title>Instagram</title>
                                         <path class="instagram-icon"
@@ -154,6 +154,34 @@
                                         <path class="instagram-icon"
                                             d="M256,126.635A129.365,129.365,0,1,0,385.365,256,129.365,129.365,0,0,0,256,126.635Zm0,213.338A83.973,83.973,0,1,1,339.974,256,83.974,83.974,0,0,1,256,339.973Z" />
                                         <circle class="instagram-icon" cx="390.476" cy="121.524" r="30.23" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <!-- NEW SOCIAL LINKS -->
+                            <li>
+                                <a target="_blank" href="https://sharechat.com/profile/cyberdost?d=n">
+                                    <svg version="1.1" viewBox="0 0 24 24" role="img">
+                                        <title>ShareChat</title>
+                                        <circle cx="12" cy="12" r="10" fill="#FFD54F"></circle>
+                                        <text x="12" y="16" text-anchor="middle" font-size="8" fill="#333" font-weight="bold">S</text>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://public.app/user/profile/1ZCQuF5wrRbR9lcsrtcZgsPkYfC2">
+                                    <svg version="1.1" viewBox="0 0 24 24" role="img">
+                                        <title>Public App</title>
+                                        <rect x="2" y="2" width="20" height="20" rx="4" fill="#1976D2"></rect>
+                                        <text x="12" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold">P</text>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://kooapp.com/profile/cyberdosti4c">
+                                    <svg version="1.1" viewBox="0 0 24 24" role="img">
+                                        <title>Koo App</title>
+                                        <circle cx="12" cy="12" r="10" fill="#FFCC00"></circle>
+                                        <text x="12" y="16" text-anchor="middle" font-size="8" fill="#000" font-weight="bold">K</text>
                                     </svg>
                                 </a>
                             </li>
