@@ -80,6 +80,7 @@
                             <img src="{{ asset('asset/image/slider-5.png') }}" />
                         </div>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
             <p>Crimes involving children (such as online child abuse or exploitation) should be reported

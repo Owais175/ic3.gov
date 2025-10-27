@@ -83,9 +83,13 @@
             effect: "coverflow",
             grabCursor: true,
             centeredSlides: false,
-            dots: false,
+            dots: true,
             slidesPerView: 1,
             loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
             coverflowEffect: {
                 rotate: 0,
                 stretch: 0,

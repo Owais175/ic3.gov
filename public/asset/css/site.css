@@ -1343,6 +1343,7 @@ figcaption.chart_image {
 
 .cyber-slider-main .swiper {
     width: 100%;
+    padding-bottom: 28px;
 }
 
 .cyber-slider-main .swiper-slide {
@@ -1384,4 +1385,18 @@ a.usa-button.usa-button--big.register-icon-show {
 .social-icons a img {
     width: 30px;
     filter: grayscale(100%) brightness(2) sepia(100%) hue-rotate(0deg) saturate(0%);
+}
+
+.cyber-slider-main .swiper-pagination {
+    bottom: -5px !important;
+}
+
+.cyber-slider-main .mySwipper {
+    padding-bottom: 11px;
+}
+
+.cyber-slider-main .swiper-pagination span.swiper-pagination-bullet {
+    background: aliceblue;
+    width: 13px;
+    height: 11px;
 }
