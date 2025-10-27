@@ -1348,12 +1348,12 @@ figcaption.chart_image {
 .cyber-slider-main .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 250px !important;
-    height: 230px !important;
+    width: 100% !important;
+    height: 100% !important;
     /* border-radius: 15px; */
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    margin: 0 10px;
+    /* margin: 0 10px; */
 }
 
 .cyber-slider-main .swiper-slide img {
@@ -1375,4 +1375,8 @@ a.usa-button.usa-button--big.register-icon-show img {
 
 a.usa-button.usa-button--big.register-icon-show {
     justify-content: space-between;
+}
+
+.usa-media-block__body p img {
+    width: 15px;
 }

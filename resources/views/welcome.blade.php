@@ -74,13 +74,10 @@
                             <img src="{{ asset('asset/image/slider-3.png') }}" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="{{ asset('asset/image/slider-1.png') }}" />
+                            <img src="{{ asset('asset/image/slider-4.png') }}" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="{{ asset('asset/image/slider-2.png') }}" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('asset/image/slider-3.png') }}" />
+                            <img src="{{ asset('asset/image/slider-5.png') }}" />
                         </div>
                     </div>
                 </div>
