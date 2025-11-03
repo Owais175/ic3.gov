@@ -67,7 +67,7 @@ class AuthController extends Controller
         );
 
         Mail::raw("Your OTP is: {$otp}", function ($message) use ($user, $type) {
-            $message->from('no-reply@yourapp.com', 'Your App Name');
+            $message->from(env('MAIL_USERNAME'), env('APP_NAME'));
             $message->to($user->email)
                 ->subject("Your " . ucfirst($type) . " OTP");
         });
